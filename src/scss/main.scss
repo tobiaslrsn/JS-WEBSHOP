@@ -1,0 +1,12 @@
+@use "./elements/startpage/header";
+@use "./elements/startpage/carousell";
+@use "./elements/startpage/feed";
+@use "./elements/startpage/footer";
+
+// @import "mixins";
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+}

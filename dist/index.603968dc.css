@@ -1,0 +1,31 @@
+header {
+  height: 100px;
+  width: 100%;
+  background-color: blue;
+}
+
+#karusell {
+  height: 100px;
+  width: 100%;
+  background-color: black;
+  color: white;
+}
+
+main {
+  height: 100px;
+  width: 100%;
+  background-color: red;
+}
+
+footer {
+  height: 100px;
+  width: 100%;
+  background-color: orange;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: antiquewhite;
+}
+/*# sourceMappingURL=index.603968dc.css.map */
