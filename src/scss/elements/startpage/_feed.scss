@@ -25,9 +25,10 @@ h2 {
   display: inline-block;
   width: 300px;
 }
-.product > img {
+.product-image {
   max-width: 300px;
   max-height: 300px;
+  cursor: pointer;
 }
 .artist,
 .album,
@@ -36,4 +37,5 @@ h2 {
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.4;
+  cursor: pointer;
 }
