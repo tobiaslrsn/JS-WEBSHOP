@@ -54,18 +54,44 @@ h2 {
 .price {
   justify-content: space-evenly;
   align-items: center;
-  line-height: 0.4;
+  line-height: 1;
   cursor: pointer;
 }
 
-#myImg {
-  border-radius: 5px;
-  cursor: pointer;
-  transition: 0.3s;
+/* The Image Box */
+div.img {
+  border: 1px solid #ccc;
 }
 
-#myImg:hover {
-  opacity: 0.7;
+div.img:hover {
+  border: 1px solid #777;
+}
+
+/* The Image */
+div.img img {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+
+/* Description of Image */
+div.desc {
+  padding: 15px;
+  text-align: center;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+/* The Modal (background) */
+.modal-container {
+  display: flex;
+  width: 90vw;
+  height: 70vh;
+  justify-content: center;
+  align-items: center;
 }
 
 .modal {
@@ -77,28 +103,26 @@ h2 {
   /* Sit on top */
   padding-top: 100px;
   /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%;
+  width: 99vw;
   /* Full width */
-  height: 100%;
+  height: 99vh;
   /* Full height */
-  overflow: auto;
-  /* Enable scroll if needed */
-  background-color: black;
-  /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.199);
   /* Black w/ opacity */
 }
 
-.modal-content {
+/* Modal Content (image) */
+/* .modal-content {
   margin: auto;
-  display: block;
-  width: 80%;
-  max-width: 700px;
-}
-
-#caption {
+  display: flex;
+  width: 50%;
+  max-width: 400px;
+  justify-content: center;
+  align-items: center;
+  padding-left: 100px;
+} */
+/* Caption of Modal Image */
+/* #caption {
   margin: auto;
   display: block;
   width: 80%;
@@ -107,22 +131,25 @@ h2 {
   color: #ccc;
   padding: 10px 0;
   height: 150px;
-}
-
+} */
+/* Add Animation */
 .modal-content,
 #caption {
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
   animation-name: zoom;
   animation-duration: 0.6s;
 }
 
 @keyframes zoom {
   from {
-    transform: scale(0);
+    transform: scale(0.1);
   }
   to {
     transform: scale(1);
   }
 }
+/* The Close Button */
 .close {
   position: absolute;
   top: 15px;
@@ -140,11 +167,6 @@ h2 {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 700px) {
-  .modal-content {
-    width: 100%;
-  }
-}
 footer {
   height: 15rem;
   width: 100%;
