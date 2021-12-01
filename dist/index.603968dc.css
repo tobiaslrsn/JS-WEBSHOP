@@ -5,10 +5,16 @@ header {
   border-bottom: 2px solid yellow;
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 header .logo {
   width: 75px;
   margin-left: 25px;
+}
+header .cart {
+  display: flex;
+  width: 35px;
+  margin-right: 25px;
 }
 
 #karusell {
