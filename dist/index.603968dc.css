@@ -16,6 +16,16 @@ header .cart {
   width: 35px;
   margin-right: 25px;
 }
+header ul {
+  list-style-type: none;
+}
+header ul li {
+  display: inline;
+  justify-content: space-between;
+}
+header ul li a {
+  color: black;
+}
 
 #karusell {
   height: 100vh;

@@ -17,4 +17,15 @@ header {
     width: 35px;
     margin-right: 25px;
   }
+
+  ul {
+    list-style-type: none;
+    li {
+      display: inline;
+      justify-content: space-between;
+      a {
+        color: black;
+      }
+    }
+  }
 }
