@@ -5,7 +5,6 @@
   price: number;
   description: string;
   purchased: boolean;
-
   constructor(
     artist: string,
     album: string,
@@ -22,9 +21,7 @@
     this.purchased = purchased;
   }
 }
-
 let todos: Article[
-
 ]; */ window.onload = function() {
     // Get the modal
     var modal = document.getElementById("myModal");
