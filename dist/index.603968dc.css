@@ -12,9 +12,40 @@ header {
 }
 
 main {
-  height: 100vh;
   width: 100%;
-  background-color: red;
+  background-color: white;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+h2 {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 30px;
+}
+
+.product {
+  margin-bottom: 10px;
+}
+
+.product > img {
+  max-width: 300px;
+  max-height: 300px;
+}
+
+.artist,
+.album,
+.description,
+.price {
+  justify-content: space-evenly;
+  align-items: center;
+  line-height: 0.4;
 }
 
 footer {
@@ -23,9 +54,13 @@ footer {
   background-color: orange;
 }
 
+html {
+  scroll-behavior: smooth;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;
-  background-color: antiquewhite;
 }
 /*# sourceMappingURL=index.603968dc.css.map */
