@@ -80,9 +80,10 @@ div.desc {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
   padding-top: 100px; /* Location of the box */
-  width: 99vw; /* Full width */
-  height: 99vh; /* Full height */
-  background-color: rgba(0, 0, 0, 0.199); /* Black w/ opacity */
+  width: 90vw; /* Full width */
+  height: 90vh; /* Full height */
+  background-color: white;
+  margin: 0 auto;
 }
 
 /* Modal Content (image) */
