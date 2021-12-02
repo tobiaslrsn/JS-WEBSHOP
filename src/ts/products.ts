@@ -20,7 +20,7 @@ let product002: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
@@ -31,7 +31,7 @@ let product003: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
@@ -42,7 +42,7 @@ let product004: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
@@ -53,7 +53,7 @@ let product005: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
@@ -64,7 +64,7 @@ let product006: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
@@ -75,7 +75,7 @@ let product007: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
@@ -86,7 +86,7 @@ let product008: Article = new Article(
   "album name",
   1222,
   253,
-  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
