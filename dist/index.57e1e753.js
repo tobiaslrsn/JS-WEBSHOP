@@ -463,14 +463,14 @@ var _productObjects = require("./models/product-objects");
 /* 
 let image001 = "src/assets/product-feed-img/1.jpg";
 let image002 = "src/assets/product-feed-img/2.jpg";
- */ let product001 = new _productObjects.Article("1.b18e163d.jpg", "Daft Punk", "Homework", 1997, 250, "Electronic", "DESCRIPTION", "purchase", "more info");
-let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "rock", "DESCRIPTION", "purchase", "more info");
-let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "rock", "DESCRIPTION", "purchase", "more info");
-let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "Electronic", "DESCRIPTION", "purchase", "more info");
-let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "Electronic", "DESCRIPTION", "purchase", "more info");
-let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "rock", "DESCRIPTION", "purchase", "more info");
-let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "rock", "DESCRIPTION", "purchase", "more info");
-let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "rock", "DESCRIPTION", "purchase", "more info");
+ */ let product001 = new _productObjects.Article("1.b18e163d.jpg", "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
+let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
+let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
+let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
 let products = [
     product001,
     product002,

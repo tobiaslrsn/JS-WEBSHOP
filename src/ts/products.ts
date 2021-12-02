@@ -10,8 +10,8 @@ let product001: Article = new Article(
   "Homework",
   1997,
   250,
-  "Electronic",
   "DESCRIPTION",
+  "Electronic",
   "purchase",
   "more info"
 );
@@ -21,8 +21,8 @@ let product002: Article = new Article(
   "Holy diver",
   1983,
   250,
-  "rock",
   "DESCRIPTION",
+  "rock",
   "purchase",
   "more info"
 );
@@ -32,8 +32,8 @@ let product003: Article = new Article(
   "New of the world",
   1977,
   250,
-  "rock",
   "DESCRIPTION",
+  "rock",
   "purchase",
   "more info"
 );
@@ -43,8 +43,8 @@ let product004: Article = new Article(
   "I created disco",
   1222,
   250,
-  "Electronic",
   "DESCRIPTION",
+  "Electronic",
   "purchase",
   "more info"
 );
@@ -54,8 +54,8 @@ let product005: Article = new Article(
   "True",
   2013,
   250,
-  "Electronic",
   "DESCRIPTION",
+  "Electronic",
   "purchase",
   "more info"
 );
@@ -65,8 +65,8 @@ let product006: Article = new Article(
   "the stone roses",
   1989,
   250,
-  "rock",
   "DESCRIPTION",
+  "rock",
   "purchase",
   "more info"
 );
@@ -76,8 +76,8 @@ let product007: Article = new Article(
   "Kaputt",
   2011,
   250,
-  "rock",
   "DESCRIPTION",
+  "rock",
   "purchase",
   "more info"
 );
@@ -87,8 +87,8 @@ let product008: Article = new Article(
   "Infidels",
   1983,
   250,
-  "rock",
   "DESCRIPTION",
+  "rock",
   "purchase",
   "more info"
 );
