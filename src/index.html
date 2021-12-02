@@ -6,152 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/main.scss" />
     <script src="/src/ts/main.ts"></script>
-
+    <script src="/src/ts/products.ts" type="module"></script>
     <title>Document</title>
   </head>
   <body>
     <header>HEADER</header>
     <div id="karusell">KARUSELL</div>
+
     <main>
       <div class="product-container">
-        <div id="category-one">
-          <h2>NYHETER</h2>
-          <div class="products">
-            <div class="product">
-              <img src="/src/assets/product-feed-img/1.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/2.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/3.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/4.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-          </div>
-        </div>
-        <div id="category-two">
-          <h2>NYHETER</h2>
-          <div class="products">
-            <div class="product">
-              <img src="/src/assets/product-feed-img/6.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/7.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/8.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/9.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-          </div>
-        </div>
-        <div id="category-three">
-          <h2>NYHETER</h2>
-          <div class="products">
-            <div class="product">
-              <img src="/src/assets/product-feed-img/11.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/12.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/13.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/14.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-          </div>
-        </div>
-        <div id="category-three">
-          <h2>NYHETER</h2>
-          <div class="products">
-            <div class="product">
-              <img src="/src/assets/product-feed-img/15.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/10.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-
-            <div class="product">
-              <img src="/src/assets/product-feed-img/5.jpg" />
-              <p class="artist">DAFT PUNK</p>
-              <p class="album">SELF-TITLED</p>
-              <p class="description">BRA sKIVA</p>
-              <p class="price">229SEK</p>
-            </div>
-          </div>
+        <div class="category-one">
+          <h2>NEWS</h2>
+          <div id="products"></div>
         </div>
       </div>
     </main>
+
     <footer>FOOTER</footer>
   </body>
 </html>
