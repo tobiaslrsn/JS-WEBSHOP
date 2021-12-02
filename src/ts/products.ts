@@ -48,7 +48,7 @@ let product004: Article = new Article(
   "more info"
 );
 let product005: Article = new Article(
-  "4.a09afae4.jpg",
+  "5.ad46c5a6.jpg",
   "blur",
   "album name",
   1222,
@@ -59,7 +59,7 @@ let product005: Article = new Article(
   "more info"
 );
 let product006: Article = new Article(
-  "4.a09afae4.jpg",
+  "6.692c53f5.jpg",
   "blur",
   "album name",
   1222,
@@ -70,7 +70,7 @@ let product006: Article = new Article(
   "more info"
 );
 let product007: Article = new Article(
-  "4.a09afae4.jpg",
+  "7.318e1685.jpg",
   "blur",
   "album name",
   1222,
@@ -81,7 +81,7 @@ let product007: Article = new Article(
   "more info"
 );
 let product008: Article = new Article(
-  "4.a09afae4.jpg",
+  "8.14acd5c6.jpg",
   "blur",
   "album name",
   1222,

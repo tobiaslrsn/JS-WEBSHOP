@@ -467,10 +467,10 @@ let image002 = "src/assets/product-feed-img/2.jpg";
 let product002 = new _productObjects.Article("2.0fe79b40.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
 let product003 = new _productObjects.Article("3.4e0a3919.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
 let product004 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
-let product005 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
-let product006 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
-let product007 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
-let product008 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product006 = new _productObjects.Article("6.692c53f5.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product007 = new _productObjects.Article("7.318e1685.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product008 = new _productObjects.Article("8.14acd5c6.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
 let products = [
     product001,
     product002,
