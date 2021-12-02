@@ -1,80 +1,170 @@
 import { Article } from "./models/product-objects";
-
-// let image001 = image;
-
+/* 
+let image001 = "src/assets/product-feed-img/1.jpg";
+let image002 = "src/assets/product-feed-img/2.jpg";
+ */
 let product001: Article = new Article(
+  "1.b18e163d.jpg",
   "Oasis",
   "albumn name",
   1222,
   253,
   "HEJ HEJ HEJ ",
-  "photo",
   "rock",
   "purchase",
   "more info"
 );
 let product002: Article = new Article(
+  "2.0fe79b40.jpg",
   "blur",
   "album name",
   1222,
   253,
   "LOREMLOREMLOREM LOREMLOREMLOREM",
-  "photo",
+  "rock",
+  "purchase",
+  "more info"
+);
+let product003: Article = new Article(
+  "3.4e0a3919.jpg",
+  "blur",
+  "album name",
+  1222,
+  253,
+  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "rock",
+  "purchase",
+  "more info"
+);
+let product004: Article = new Article(
+  "4.a09afae4.jpg",
+  "blur",
+  "album name",
+  1222,
+  253,
+  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "rock",
+  "purchase",
+  "more info"
+);
+let product005: Article = new Article(
+  "4.a09afae4.jpg",
+  "blur",
+  "album name",
+  1222,
+  253,
+  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "rock",
+  "purchase",
+  "more info"
+);
+let product006: Article = new Article(
+  "4.a09afae4.jpg",
+  "blur",
+  "album name",
+  1222,
+  253,
+  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "rock",
+  "purchase",
+  "more info"
+);
+let product007: Article = new Article(
+  "4.a09afae4.jpg",
+  "blur",
+  "album name",
+  1222,
+  253,
+  "LOREMLOREMLOREM LOREMLOREMLOREM",
+  "rock",
+  "purchase",
+  "more info"
+);
+let product008: Article = new Article(
+  "4.a09afae4.jpg",
+  "blur",
+  "album name",
+  1222,
+  253,
+  "LOREMLOREMLOREM LOREMLOREMLOREM",
   "rock",
   "purchase",
   "more info"
 );
 
-let products = [product001, product002];
+let products = [
+  product001,
+  product002,
+  product003,
+  product004,
+  product005,
+  product006,
+  product007,
+  product008,
+];
 
-for (let i = 0; i < products.length; i++) {
-  let productArtist: HTMLSpanElement = document.createElement("h1");
-  productArtist.className = "artist";
-  productArtist.innerHTML = "Artist: " + products[i].artist;
+window.onload = function () {
+  productsToPage();
+};
 
-  let productAlbum: HTMLSpanElement = document.createElement("p");
-  productAlbum.className = "album";
-  productAlbum.innerHTML = "Album: " + products[i].album;
+function productsToPage() {
+  let productContaier: HTMLDivElement = document.getElementById(
+    "products"
+  ) as HTMLDivElement;
 
-  let productYear: HTMLSpanElement = document.createElement("p");
-  productYear.className = "year";
-  productYear.innerHTML = "year: " + products[i].year;
+  for (let i = 0; i < products.length; i++) {
+    // let productContainer = document.getElementsByTagName("main");
+    let productOneSection: HTMLDivElement = document.createElement("div");
+    productOneSection.className = "product";
 
-  let productPrice: HTMLSpanElement = document.createElement("p");
-  productPrice.className = "price";
-  productPrice.innerHTML = "price: " + products[i].price + " SEK";
+    let productImage: HTMLImageElement = document.createElement("img");
+    productImage.className = "product-image";
+    productImage.src = products[i].photo;
+    // productImage.innerHTML = "image: " + products[i].photo;
 
-  let productDesc: HTMLSpanElement = document.createElement("p");
-  productDesc.className = "description";
-  productDesc.innerHTML = "Description: " + products[i].description;
+    let productArtist: HTMLParagraphElement = document.createElement("p");
+    productArtist.className = "artist";
+    productArtist.innerHTML = "Artist: " + products[i].artist;
 
-  let productGenre: HTMLSpanElement = document.createElement("p");
-  productGenre.className = "genre";
-  productGenre.innerHTML = "Genre: " + products[i].genre;
+    let productAlbum: HTMLParagraphElement = document.createElement("p");
+    productAlbum.className = "album";
+    productAlbum.innerHTML = "Album: " + products[i].album;
 
-  let productImage = document.createElement("img");
-  productImage.className = "product-image";
-  productImage.src = "../assets/product-feed-img/10.jpg";
-  productImage.innerHTML = "image: " + products[i].photo;
+    let productYear: HTMLParagraphElement = document.createElement("p");
+    productYear.className = "year";
+    productYear.innerHTML = "year: " + products[i].year;
 
-  let purchaseBtn = document.createElement("button");
-  purchaseBtn.className = "purchase-button";
-  purchaseBtn.innerHTML = products[i].purchaseBtn;
+    let productPrice: HTMLParagraphElement = document.createElement("p");
+    productPrice.className = "price";
+    productPrice.innerHTML = "price: " + products[i].price + " SEK";
 
-  let infoBtn = document.createElement("button");
-  infoBtn.className = "info-button";
-  infoBtn.innerHTML = products[i].infoBtn;
+    let productDesc: HTMLSpanElement = document.createElement("span");
+    productDesc.className = "description";
+    productDesc.innerHTML = "Description: " + products[i].description;
 
-  document.body.appendChild(productImage);
-  document.body.appendChild(productArtist);
-  document.body.appendChild(productAlbum);
-  document.body.appendChild(productYear);
-  document.body.appendChild(productPrice);
-  document.body.appendChild(productDesc);
-  document.body.appendChild(productGenre);
-  document.body.appendChild(productImage);
-  document.body.appendChild(purchaseBtn);
-  document.body.appendChild(infoBtn);
+    let productGenre: HTMLParagraphElement = document.createElement("p");
+    productGenre.className = "genre";
+    productGenre.innerHTML = "Genre: " + products[i].genre;
+
+    let purchaseBtn = document.createElement("button");
+    purchaseBtn.className = "purchase-button";
+    purchaseBtn.innerHTML = products[i].purchaseBtn;
+
+    let infoBtn = document.createElement("button");
+    infoBtn.className = "info-button";
+    infoBtn.innerHTML = products[i].infoBtn;
+
+    productOneSection.appendChild(productImage);
+    productOneSection.appendChild(productArtist);
+    productOneSection.appendChild(productAlbum);
+    productOneSection.appendChild(productYear);
+    productOneSection.appendChild(productPrice);
+    productOneSection.appendChild(productDesc);
+    productOneSection.appendChild(productGenre);
+    productOneSection.appendChild(purchaseBtn);
+    productOneSection.appendChild(infoBtn);
+    productContaier.appendChild(productOneSection);
+  }
+
+  console.log(products);
 }
-
-console.log(products);

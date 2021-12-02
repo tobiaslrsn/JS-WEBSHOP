@@ -20,13 +20,11 @@ main {
   padding-bottom: 70px;
 }
 
-.products {
+#products {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
-  margin-right: 2rem;
-  margin-left: 2rem;
 }
 
 h2 {
@@ -57,7 +55,6 @@ h2 {
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.4;
-  color: red;
 }
 
 .purchase-button,

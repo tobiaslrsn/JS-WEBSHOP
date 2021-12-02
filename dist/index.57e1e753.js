@@ -460,54 +460,77 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"9WuRb":[function(require,module,exports) {
 var _productObjects = require("./models/product-objects");
-// let image001 = image;
-let product001 = new _productObjects.Article("Oasis", "albumn name", 1222, 253, "HEJ HEJ HEJ ", "photo", "rock", "purchase", "more info");
-let product002 = new _productObjects.Article("blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "photo", "rock", "purchase", "more info");
+/* 
+let image001 = "src/assets/product-feed-img/1.jpg";
+let image002 = "src/assets/product-feed-img/2.jpg";
+ */ let product001 = new _productObjects.Article("1.b18e163d.jpg", "Oasis", "albumn name", 1222, 253, "HEJ HEJ HEJ ", "rock", "purchase", "more info");
+let product002 = new _productObjects.Article("2.0fe79b40.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product003 = new _productObjects.Article("3.4e0a3919.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product004 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product005 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product006 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product007 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
+let product008 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "LOREMLOREMLOREM LOREMLOREMLOREM", "rock", "purchase", "more info");
 let products = [
     product001,
-    product002
+    product002,
+    product003,
+    product004,
+    product005,
+    product006,
+    product007,
+    product008, 
 ];
-for(let i = 0; i < products.length; i++){
-    let productArtist = document.createElement("h1");
-    productArtist.className = "artist";
-    productArtist.innerHTML = "Artist: " + products[i].artist;
-    let productAlbum = document.createElement("p");
-    productAlbum.className = "album";
-    productAlbum.innerHTML = "Album: " + products[i].album;
-    let productYear = document.createElement("p");
-    productYear.className = "year";
-    productYear.innerHTML = "year: " + products[i].year;
-    let productPrice = document.createElement("p");
-    productPrice.className = "price";
-    productPrice.innerHTML = "price: " + products[i].price + " SEK";
-    let productDesc = document.createElement("p");
-    productDesc.className = "description";
-    productDesc.innerHTML = "Description: " + products[i].description;
-    let productGenre = document.createElement("p");
-    productGenre.className = "genre";
-    productGenre.innerHTML = "Genre: " + products[i].genre;
-    let productImage = document.createElement("img");
-    productImage.className = "product-image";
-    productImage.src = "../assets/product-feed-img/10.jpg";
-    productImage.innerHTML = "image: " + products[i].photo;
-    let purchaseBtn = document.createElement("button");
-    purchaseBtn.className = "purchase-button";
-    purchaseBtn.innerHTML = products[i].purchaseBtn;
-    let infoBtn = document.createElement("button");
-    infoBtn.className = "info-button";
-    infoBtn.innerHTML = products[i].infoBtn;
-    document.body.appendChild(productImage);
-    document.body.appendChild(productArtist);
-    document.body.appendChild(productAlbum);
-    document.body.appendChild(productYear);
-    document.body.appendChild(productPrice);
-    document.body.appendChild(productDesc);
-    document.body.appendChild(productGenre);
-    document.body.appendChild(productImage);
-    document.body.appendChild(purchaseBtn);
-    document.body.appendChild(infoBtn);
+window.onload = function() {
+    productsToPage();
+};
+function productsToPage() {
+    let productContaier = document.getElementById("products");
+    for(let i = 0; i < products.length; i++){
+        // let productContainer = document.getElementsByTagName("main");
+        let productOneSection = document.createElement("div");
+        productOneSection.className = "product";
+        let productImage = document.createElement("img");
+        productImage.className = "product-image";
+        productImage.src = products[i].photo;
+        // productImage.innerHTML = "image: " + products[i].photo;
+        let productArtist = document.createElement("p");
+        productArtist.className = "artist";
+        productArtist.innerHTML = "Artist: " + products[i].artist;
+        let productAlbum = document.createElement("p");
+        productAlbum.className = "album";
+        productAlbum.innerHTML = "Album: " + products[i].album;
+        let productYear = document.createElement("p");
+        productYear.className = "year";
+        productYear.innerHTML = "year: " + products[i].year;
+        let productPrice = document.createElement("p");
+        productPrice.className = "price";
+        productPrice.innerHTML = "price: " + products[i].price + " SEK";
+        let productDesc = document.createElement("span");
+        productDesc.className = "description";
+        productDesc.innerHTML = "Description: " + products[i].description;
+        let productGenre = document.createElement("p");
+        productGenre.className = "genre";
+        productGenre.innerHTML = "Genre: " + products[i].genre;
+        let purchaseBtn = document.createElement("button");
+        purchaseBtn.className = "purchase-button";
+        purchaseBtn.innerHTML = products[i].purchaseBtn;
+        let infoBtn = document.createElement("button");
+        infoBtn.className = "info-button";
+        infoBtn.innerHTML = products[i].infoBtn;
+        productOneSection.appendChild(productImage);
+        productOneSection.appendChild(productArtist);
+        productOneSection.appendChild(productAlbum);
+        productOneSection.appendChild(productYear);
+        productOneSection.appendChild(productPrice);
+        productOneSection.appendChild(productDesc);
+        productOneSection.appendChild(productGenre);
+        productOneSection.appendChild(purchaseBtn);
+        productOneSection.appendChild(infoBtn);
+        productContaier.appendChild(productOneSection);
+    }
+    console.log(products);
 }
-console.log(products);
 
 },{"./models/product-objects":"d5Ism"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -515,13 +538,13 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
 );
 class Article {
-    constructor(artist, album, year, price, description, photo, genre, purchaseBtn, infoBtn){
+    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn){
+        this.photo = photo;
         this.artist = artist;
         this.album = album;
         this.year = year;
         this.price = price;
         this.description = description;
-        this.photo = photo;
         this.genre = genre;
         this.purchaseBtn = purchaseBtn;
         this.infoBtn = infoBtn;
