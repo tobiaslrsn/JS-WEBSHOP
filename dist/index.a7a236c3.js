@@ -1,30 +1,23 @@
-/* class Article {
-  artist: string;
-  album: string;
-  year: number;
-  price: number;
-  description: string;
-  purchased: boolean;
-  constructor(
-    artist: string,
-    album: string,
-    year: number,
-    price: number,
-    description: string,
-    purchased: boolean
-  ) {
-    this.artist = artist;
-    this.album = album;
-    this.year = year;
-    this.price = price;
-    this.description = description;
-    this.purchased = purchased;
-  }
+let pimage = "https://scontent.farn2-1.fna.fbcdn.net/v/t1.15752-9/262186386_1378403952618584_3248604606257487723_n.jpg?_nc_cat=102&ccb=1-5&_nc_sid=ae9488&_nc_ohc=trerNDGs5coAX8bDpJU&_nc_ht=scontent.farn2-1.fna&oh=5532dc35fe97c2a841686a8b907e07d2&oe=61CC6064";
+class Article {
+    constructor(artist, album, year, price, description, photo, genre){
+        this.artist = artist;
+        this.album = album;
+        this.year = year;
+        this.price = price;
+        this.description = description;
+        this.photo = photo;
+        this.genre = genre;
+    }
 }
-let todos: Article[
-]; 
-
-*/ window.onload = function() {
+let product001 = new Article("Oasis", "albumn name", 1222, 253, "sag", pimage, "rock");
+let product002 = new Article("Oasis", "album name", 1222, 253, "sag", pimage, "rock");
+let products = [
+    product001,
+    product001
+];
+console.log(products);
+window.onload = function() {
     // Get the modal
     productModal();
     function productModal() {
