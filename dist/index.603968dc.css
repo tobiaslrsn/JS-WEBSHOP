@@ -65,6 +65,20 @@ h2 {
   cursor: pointer;
 }
 
+.product-image {
+  transition: transform 0.2s;
+  cursor: pointer;
+}
+
+.product-image:hover {
+  transform: scale(1.02);
+}
+
+.artist {
+  border-bottom: 1px solid black;
+  padding-top: 10px;
+}
+
 footer {
   height: 15rem;
   width: 100%;
