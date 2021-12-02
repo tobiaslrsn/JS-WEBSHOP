@@ -460,17 +460,26 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"9WuRb":[function(require,module,exports) {
 var _productObjects = require("./models/product-objects");
-/* 
-let image001 = "src/assets/product-feed-img/1.jpg";
-let image002 = "src/assets/product-feed-img/2.jpg";
- */ let product001 = new _productObjects.Article("1.b18e163d.jpg", "Oasis", "albumn name", 1222, 253, "HEJ HEJ HEJ ", "rock", "purchase", "more info");
-let product002 = new _productObjects.Article("2.0fe79b40.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
-let product003 = new _productObjects.Article("3.4e0a3919.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
-let product004 = new _productObjects.Article("4.a09afae4.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
-let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
-let product006 = new _productObjects.Article("6.692c53f5.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
-let product007 = new _productObjects.Article("7.318e1685.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
-let product008 = new _productObjects.Article("8.14acd5c6.jpg", "blur", "album name", 1222, 253, "DESCRIPTION", "rock", "purchase", "more info");
+/* FRÅGOR:
+flera html-filer = ny mapp?
+ny scss för ny html fil, kamn man importera t.ex header och footer till den?
+hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
+*/ let image001 = "1.b18e163d.jpg";
+let image002 = "2.0fe79b40.jpg";
+let image003 = "3.4e0a3919.jpg";
+let image004 = "4.a09afae4.jpg";
+let image005 = "5.ad46c5a6.jpg";
+let image006 = "6.692c53f5.jpg";
+let image007 = "7.318e1685.jpg";
+let image008 = "8.14acd5c6.jpg";
+let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
+let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product003 = new _productObjects.Article(image003, "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product004 = new _productObjects.Article(image004, "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
+let product005 = new _productObjects.Article(image005, "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
+let product006 = new _productObjects.Article(image006, "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product007 = new _productObjects.Article(image007, "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product008 = new _productObjects.Article(image008, "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
 let products = [
     product001,
     product002,
@@ -487,19 +496,17 @@ window.onload = function() {
 function productsToPage() {
     let productContaier = document.getElementById("products");
     for(let i = 0; i < products.length; i++){
-        // let productContainer = document.getElementsByTagName("main");
         let productOneSection = document.createElement("div");
         productOneSection.className = "product";
         let productImage = document.createElement("img");
         productImage.className = "product-image";
         productImage.src = products[i].photo;
-        // productImage.innerHTML = "image: " + products[i].photo;
         let productArtist = document.createElement("p");
         productArtist.className = "artist";
-        productArtist.innerHTML = "Artist: " + products[i].artist;
+        productArtist.innerHTML = products[i].artist;
         let productAlbum = document.createElement("p");
         productAlbum.className = "album";
-        productAlbum.innerHTML = "Album: " + products[i].album;
+        productAlbum.innerHTML = products[i].album;
         let productYear = document.createElement("p");
         productYear.className = "year";
         productYear.innerHTML = "year: " + products[i].year;

@@ -1,91 +1,103 @@
 import { Article } from "./models/product-objects";
-/* 
-let image001 = "src/assets/product-feed-img/1.jpg";
-let image002 = "src/assets/product-feed-img/2.jpg";
- */
+
+/* FRÅGOR:
+flera html-filer = ny mapp?
+ny scss för ny html fil, kamn man importera t.ex header och footer till den?
+hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
+*/
+
+let image001: string = "1.b18e163d.jpg";
+let image002: string = "2.0fe79b40.jpg";
+let image003: string = "3.4e0a3919.jpg";
+let image004: string = "4.a09afae4.jpg";
+let image005: string = "5.ad46c5a6.jpg";
+let image006: string = "6.692c53f5.jpg";
+let image007: string = "7.318e1685.jpg";
+let image008: string = "8.14acd5c6.jpg";
+
 let product001: Article = new Article(
-  "1.b18e163d.jpg",
-  "Oasis",
-  "albumn name",
-  1222,
-  253,
-  "HEJ HEJ HEJ ",
-  "rock",
+  image001,
+  "Daft Punk",
+  "Homework",
+  1997,
+  250,
+  "DESCRIPTION",
+  "Electronic",
   "purchase",
   "more info"
 );
 let product002: Article = new Article(
-  "2.0fe79b40.jpg",
-  "blur",
-  "album name",
-  1222,
-  253,
+  image002,
+  "DIO",
+  "Holy diver",
+  1983,
+  250,
   "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
 );
 let product003: Article = new Article(
-  "3.4e0a3919.jpg",
-  "blur",
-  "album name",
-  1222,
-  253,
+  image003,
+  "Queen",
+  "New of the world",
+  1977,
+  250,
   "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
 );
 let product004: Article = new Article(
-  "4.a09afae4.jpg",
-  "blur",
-  "album name",
+  image004,
+  "Calvin Harris",
+  "I created disco",
   1222,
-  253,
+  250,
   "DESCRIPTION",
-  "rock",
+  "Electronic",
   "purchase",
   "more info"
 );
 let product005: Article = new Article(
-  "5.ad46c5a6.jpg",
-  "blur",
-  "album name",
-  1222,
-  253,
+  image005,
+  "Avicii",
+  "True",
+  2013,
+  250,
   "DESCRIPTION",
-  "rock",
+  "Electronic",
   "purchase",
   "more info"
 );
 let product006: Article = new Article(
-  "6.692c53f5.jpg",
-  "blur",
-  "album name",
-  1222,
-  253,
+  image006,
+  "The Stone Roses",
+  "the stone roses",
+  1989,
+  250,
   "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
 );
 let product007: Article = new Article(
-  "7.318e1685.jpg",
-  "blur",
-  "album name",
-  1222,
-  253,
+  image007,
+  "Destroyer",
+  "Kaputt",
+  2011,
+  250,
   "DESCRIPTION",
   "rock",
   "purchase",
   "more info"
 );
 let product008: Article = new Article(
-  "8.14acd5c6.jpg",
-  "blur",
-  "album name",
-  1222,
-  253,
+  image008,
+  "Bob Dylan",
+  "Infidels",
+  1983,
+  250,
   "DESCRIPTION",
   "rock",
   "purchase",
@@ -113,22 +125,20 @@ function productsToPage() {
   ) as HTMLDivElement;
 
   for (let i = 0; i < products.length; i++) {
-    // let productContainer = document.getElementsByTagName("main");
     let productOneSection: HTMLDivElement = document.createElement("div");
     productOneSection.className = "product";
 
     let productImage: HTMLImageElement = document.createElement("img");
     productImage.className = "product-image";
     productImage.src = products[i].photo;
-    // productImage.innerHTML = "image: " + products[i].photo;
 
     let productArtist: HTMLParagraphElement = document.createElement("p");
     productArtist.className = "artist";
-    productArtist.innerHTML = "Artist: " + products[i].artist;
+    productArtist.innerHTML = products[i].artist;
 
     let productAlbum: HTMLParagraphElement = document.createElement("p");
     productAlbum.className = "album";
-    productAlbum.innerHTML = "Album: " + products[i].album;
+    productAlbum.innerHTML = products[i].album;
 
     let productYear: HTMLParagraphElement = document.createElement("p");
     productYear.className = "year";
@@ -146,11 +156,11 @@ function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-    let purchaseBtn = document.createElement("button");
+    let purchaseBtn: HTMLButtonElement = document.createElement("button");
     purchaseBtn.className = "purchase-button";
     purchaseBtn.innerHTML = products[i].purchaseBtn;
 
-    let infoBtn = document.createElement("button");
+    let infoBtn: HTMLButtonElement = document.createElement("button");
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
 
