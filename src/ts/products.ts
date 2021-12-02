@@ -1,4 +1,5 @@
 import { Article } from "./models/product-objects";
+
 /* 
 let image001 = "src/assets/product-feed-img/1.jpg";
 let image002 = "src/assets/product-feed-img/2.jpg";
@@ -9,8 +10,8 @@ let product001: Article = new Article(
   "Homework",
   1997,
   250,
-  "DESCRIPTION",
   "Electronic",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -20,8 +21,8 @@ let product002: Article = new Article(
   "Holy diver",
   1983,
   250,
-  "DESCRIPTION",
   "rock",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -31,8 +32,8 @@ let product003: Article = new Article(
   "New of the world",
   1977,
   250,
-  "DESCRIPTION",
   "rock",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -42,8 +43,8 @@ let product004: Article = new Article(
   "I created disco",
   1222,
   250,
-  "DESCRIPTION",
   "Electronic",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -51,10 +52,10 @@ let product005: Article = new Article(
   "5.ad46c5a6.jpg",
   "Avicii",
   "True",
-  1222,
+  2013,
   250,
-  "DESCRIPTION",
   "Electronic",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -64,8 +65,8 @@ let product006: Article = new Article(
   "the stone roses",
   1989,
   250,
-  "DESCRIPTION",
   "rock",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -75,8 +76,8 @@ let product007: Article = new Article(
   "Kaputt",
   2011,
   250,
-  "DESCRIPTION",
   "rock",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );
@@ -86,8 +87,8 @@ let product008: Article = new Article(
   "Infidels",
   1983,
   250,
-  "DESCRIPTION",
   "rock",
+  "DESCRIPTION",
   "purchase",
   "more info"
 );

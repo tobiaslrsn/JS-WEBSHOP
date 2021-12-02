@@ -75,8 +75,8 @@ h2 {
 }
 
 .artist {
-  border-bottom: 1px solid black;
-  padding-top: 10px;
+  font-size: 14pt;
+  text-decoration: underline;
 }
 
 footer {
