@@ -50,10 +50,20 @@ h2 {
 .artist,
 .album,
 .description,
-.price {
+.price,
+.year,
+.genre,
+.product-image {
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.4;
+  color: red;
+}
+
+.purchase-button,
+.info-button {
+  background-color: orange;
+  color: white;
 }
 
 footer {
