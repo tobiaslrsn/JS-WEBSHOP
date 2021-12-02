@@ -124,11 +124,11 @@ function productsToPage() {
 
     let productArtist: HTMLParagraphElement = document.createElement("p");
     productArtist.className = "artist";
-    productArtist.innerHTML = "Artist: " + products[i].artist;
+    productArtist.innerHTML = products[i].artist;
 
     let productAlbum: HTMLParagraphElement = document.createElement("p");
     productAlbum.className = "album";
-    productAlbum.innerHTML = "Album: " + products[i].album;
+    productAlbum.innerHTML = products[i].album;
 
     let productYear: HTMLParagraphElement = document.createElement("p");
     productYear.className = "year";

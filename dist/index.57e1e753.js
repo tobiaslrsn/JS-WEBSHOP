@@ -496,10 +496,10 @@ function productsToPage() {
         // productImage.innerHTML = "image: " + products[i].photo;
         let productArtist = document.createElement("p");
         productArtist.className = "artist";
-        productArtist.innerHTML = "Artist: " + products[i].artist;
+        productArtist.innerHTML = products[i].artist;
         let productAlbum = document.createElement("p");
         productAlbum.className = "album";
-        productAlbum.innerHTML = "Album: " + products[i].album;
+        productAlbum.innerHTML = products[i].album;
         let productYear = document.createElement("p");
         productYear.className = "year";
         productYear.innerHTML = "year: " + products[i].year;
