@@ -1,11 +1,30 @@
+import * as productObjects from "./models/product-objects";
 import { Article } from "./models/product-objects";
 
-/* 
-let image001 = "src/assets/product-feed-img/1.jpg";
-let image002 = "src/assets/product-feed-img/2.jpg";
- */
-let product001: Article = new Article(
-  "1.b18e163d.jpg",
+/* FRÅGOR:
+flera html-filer = ny mapp?
+ny scss för ny html fil, kamn man importera t.ex header och footer till den?
+hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
+
+Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
+till en annan html fil så landar dem på plats direkt?
+
+få in t.ex font awesome på knappen nedan?
+
+fråga till gruppen:
+*/
+
+let image001: string = "1.b18e163d.jpg";
+let image002: string = "2.0fe79b40.jpg";
+let image003: string = "3.4e0a3919.jpg";
+let image004: string = "4.a09afae4.jpg";
+let image005: string = "5.ad46c5a6.jpg";
+let image006: string = "6.692c53f5.jpg";
+let image007: string = "7.318e1685.jpg";
+let image008: string = "8.14acd5c6.jpg";
+
+let product001: productObjects.Article = new productObjects.Article(
+  image001,
   "Daft Punk",
   "Homework",
   1997,
@@ -13,7 +32,9 @@ let product001: Article = new Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  1
 );
 let product002: Article = new Article(
   "2.0fe79b40.jpg",
@@ -24,7 +45,9 @@ let product002: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  2
 );
 let product003: Article = new Article(
   "3.4e0a3919.jpg",
@@ -35,7 +58,9 @@ let product003: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  3
 );
 let product004: Article = new Article(
   "4.a09afae4.jpg",
@@ -46,7 +71,9 @@ let product004: Article = new Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  4
 );
 let product005: Article = new Article(
   "5.ad46c5a6.jpg",
@@ -57,7 +84,9 @@ let product005: Article = new Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  5
 );
 let product006: Article = new Article(
   "6.692c53f5.jpg",
@@ -68,7 +97,9 @@ let product006: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  6
 );
 let product007: Article = new Article(
   "7.318e1685.jpg",
@@ -79,7 +110,9 @@ let product007: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  7
 );
 let product008: Article = new Article(
   "8.14acd5c6.jpg",
@@ -90,7 +123,9 @@ let product008: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify",
+  8
 );
 
 let products = [
@@ -106,6 +141,8 @@ let products = [
 
 window.onload = function () {
   productsToPage();
+
+  // cartNumbers();
 };
 
 function productsToPage() {

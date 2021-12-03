@@ -460,17 +460,33 @@ function hmrAcceptRun(bundle, id) {
 
 },{}],"9WuRb":[function(require,module,exports) {
 var _productObjects = require("./models/product-objects");
-/* 
-let image001 = "src/assets/product-feed-img/1.jpg";
-let image002 = "src/assets/product-feed-img/2.jpg";
- */ let product001 = new _productObjects.Article("1.b18e163d.jpg", "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
+/* FRÅGOR:
+flera html-filer = ny mapp?
+ny scss för ny html fil, kamn man importera t.ex header och footer till den?
+hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
+
+Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
+till en annan html fil så landar dem på plats direkt?
+
+få in t.ex font awesome på knappen nedan?
+
+fråga till gruppen:
+*/ let image001 = "1.b18e163d.jpg";
+let image002 = "2.0fe79b40.jpg";
+let image003 = "3.4e0a3919.jpg";
+let image004 = "4.a09afae4.jpg";
+let image005 = "5.ad46c5a6.jpg";
+let image006 = "6.692c53f5.jpg";
+let image007 = "7.318e1685.jpg";
+let image008 = "8.14acd5c6.jpg";
+let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 1);
+let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2);
+let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 3);
+let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 4);
+let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 5);
+let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 6);
+let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 7);
+let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 8);
 let products = [
     product001,
     product002,
@@ -483,6 +499,7 @@ let products = [
 ];
 window.onload = function() {
     productsToPage();
+// cartNumbers();
 };
 function productsToPage() {
     let productContaier = document.getElementById("products");
@@ -538,7 +555,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
 );
 class Article {
-    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn){
+    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn, listenBtn, id){
         this.photo = photo;
         this.artist = artist;
         this.album = album;
@@ -548,6 +565,8 @@ class Article {
         this.genre = genre;
         this.purchaseBtn = purchaseBtn;
         this.infoBtn = infoBtn;
+        this.listenBtn = listenBtn;
+        this.id = id;
     }
 }
 
