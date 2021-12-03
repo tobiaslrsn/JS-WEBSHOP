@@ -192,6 +192,10 @@ function productsToPage() {
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
 
+    let listenBtn = document.createElement("button");
+    listenBtn.className = "listen-button";
+    listenBtn.innerHTML = products[i].listenBtn;
+
     productOneSection.appendChild(productImage);
     productOneSection.appendChild(productArtist);
     productOneSection.appendChild(productAlbum);
@@ -201,6 +205,8 @@ function productsToPage() {
     productOneSection.appendChild(productGenre);
     productOneSection.appendChild(purchaseBtn);
     productOneSection.appendChild(infoBtn);
+    productOneSection.appendChild(listenBtn);
+
     productContaier.appendChild(productOneSection);
   }
 
