@@ -1,4 +1,5 @@
 import * as productObjects from "./models/product-objects";
+import { Article } from "./models/product-objects";
 
 /* FRÅGOR:
 flera html-filer = ny mapp?
@@ -35,8 +36,8 @@ let product001: productObjects.Article = new productObjects.Article(
   "spotify",
   1
 );
-let product002: productObjects.Article = new productObjects.Article(
-  image002,
+let product002: Article = new Article(
+  "2.0fe79b40.jpg",
   "DIO",
   "Holy diver",
   1983,
@@ -48,8 +49,8 @@ let product002: productObjects.Article = new productObjects.Article(
   "spotify",
   2
 );
-let product003: productObjects.Article = new productObjects.Article(
-  image003,
+let product003: Article = new Article(
+  "3.4e0a3919.jpg",
   "Queen",
   "New of the world",
   1977,
@@ -61,8 +62,8 @@ let product003: productObjects.Article = new productObjects.Article(
   "spotify",
   3
 );
-let product004: productObjects.Article = new productObjects.Article(
-  image004,
+let product004: Article = new Article(
+  "4.a09afae4.jpg",
   "Calvin Harris",
   "I created disco",
   1222,
@@ -74,8 +75,8 @@ let product004: productObjects.Article = new productObjects.Article(
   "spotify",
   4
 );
-let product005: productObjects.Article = new productObjects.Article(
-  image005,
+let product005: Article = new Article(
+  "5.ad46c5a6.jpg",
   "Avicii",
   "True",
   2013,
@@ -87,8 +88,8 @@ let product005: productObjects.Article = new productObjects.Article(
   "spotify",
   5
 );
-let product006: productObjects.Article = new productObjects.Article(
-  image006,
+let product006: Article = new Article(
+  "6.692c53f5.jpg",
   "The Stone Roses",
   "the stone roses",
   1989,
@@ -100,8 +101,8 @@ let product006: productObjects.Article = new productObjects.Article(
   "spotify",
   6
 );
-let product007: productObjects.Article = new productObjects.Article(
-  image007,
+let product007: Article = new Article(
+  "7.318e1685.jpg",
   "Destroyer",
   "Kaputt",
   2011,
@@ -113,8 +114,8 @@ let product007: productObjects.Article = new productObjects.Article(
   "spotify",
   7
 );
-let product008: productObjects.Article = new productObjects.Article(
-  image008,
+let product008: Article = new Article(
+  "8.14acd5c6.jpg",
   "Bob Dylan",
   "Infidels",
   1983,
@@ -150,12 +151,14 @@ function productsToPage() {
   ) as HTMLDivElement;
 
   for (let i = 0; i < products.length; i++) {
+    // let productContainer = document.getElementsByTagName("main");
     let productOneSection: HTMLDivElement = document.createElement("div");
     productOneSection.className = "product";
 
     let productImage: HTMLImageElement = document.createElement("img");
     productImage.className = "product-image";
     productImage.src = products[i].photo;
+    // productImage.innerHTML = "image: " + products[i].photo;
 
     let productArtist: HTMLParagraphElement = document.createElement("p");
     productArtist.className = "artist";
@@ -181,17 +184,13 @@ function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-    let purchaseBtn: HTMLButtonElement = document.createElement("button");
+    let purchaseBtn = document.createElement("button");
     purchaseBtn.className = "purchase-button";
     purchaseBtn.innerHTML = products[i].purchaseBtn;
 
-    let infoBtn: HTMLButtonElement = document.createElement("button");
+    let infoBtn = document.createElement("button");
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
-
-    let listenBtn: HTMLButtonElement = document.createElement("button");
-    listenBtn.className = "listen-button";
-    listenBtn.innerHTML = products[i].listenBtn;
 
     productOneSection.appendChild(productImage);
     productOneSection.appendChild(productArtist);
@@ -202,21 +201,8 @@ function productsToPage() {
     productOneSection.appendChild(productGenre);
     productOneSection.appendChild(purchaseBtn);
     productOneSection.appendChild(infoBtn);
-    productOneSection.appendChild(listenBtn);
     productContaier.appendChild(productOneSection);
-    // cartNumbers();
   }
+
   console.log(products);
 }
-/* 
-let carts = document.getElementsByClassName("add-cart");
-
-for (let i = 0; i < carts.length; i++) {
-  carts[i].addEventListener("click", () => {
-    cartNumbers();
-  });
-}
-function cartNumbers() {
-  localStorage.setItem("cartNumbers", product007);
-}
- */

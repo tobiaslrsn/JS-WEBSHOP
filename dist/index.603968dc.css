@@ -1,8 +1,31 @@
 header {
   height: 5rem;
   width: 100%;
-  background-color: white;
+  position: fixed;
+  background-color: #f2f2f2;
   border-bottom: 2px solid yellow;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .logo {
+  width: 75px;
+  margin-left: 25px;
+}
+header .cart {
+  display: flex;
+  width: 35px;
+  margin-right: 25px;
+}
+header ul {
+  list-style-type: none;
+}
+header ul li {
+  display: inline;
+  justify-content: space-between;
+}
+header ul li a {
+  color: black;
 }
 
 #karusell {
@@ -20,12 +43,13 @@ main {
   padding-bottom: 70px;
 }
 
-#products {
+.products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  padding: 1.9rem;
+  margin-right: 2rem;
+  margin-left: 2rem;
 }
 
 h2 {
@@ -36,20 +60,24 @@ h2 {
 }
 
 .product {
-  margin: 2rem;
+  margin-bottom: 10px;
   display: inline-block;
   width: 300px;
+}
+
+.product > img {
+  max-width: 300px;
+  max-height: 300px;
 }
 
 .artist,
 .album,
 .description,
-.price,
-.year,
-.genre {
+.price {
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.4;
+<<<<<<< HEAD
   text-align: left;
   padding-left: 1rem;
 }
@@ -97,6 +125,8 @@ h2 {
 .artist {
   font-size: 15pt;
   font-weight: 700;
+=======
+>>>>>>> 6e055e74b8d28c830636802b55db0f4d2fdebc93
 }
 
 footer {

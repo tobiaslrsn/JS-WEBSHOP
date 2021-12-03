@@ -480,13 +480,13 @@ let image006 = "6.692c53f5.jpg";
 let image007 = "7.318e1685.jpg";
 let image008 = "8.14acd5c6.jpg";
 let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 1);
-let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2);
-let product003 = new _productObjects.Article(image003, "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 3);
-let product004 = new _productObjects.Article(image004, "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 4);
-let product005 = new _productObjects.Article(image005, "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 5);
-let product006 = new _productObjects.Article(image006, "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 6);
-let product007 = new _productObjects.Article(image007, "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 7);
-let product008 = new _productObjects.Article(image008, "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 8);
+let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2);
+let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 3);
+let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 4);
+let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 5);
+let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 6);
+let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 7);
+let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 8);
 let products = [
     product001,
     product002,
@@ -504,11 +504,13 @@ window.onload = function() {
 function productsToPage() {
     let productContaier = document.getElementById("products");
     for(let i = 0; i < products.length; i++){
+        // let productContainer = document.getElementsByTagName("main");
         let productOneSection = document.createElement("div");
         productOneSection.className = "product";
         let productImage = document.createElement("img");
         productImage.className = "product-image";
         productImage.src = products[i].photo;
+        // productImage.innerHTML = "image: " + products[i].photo;
         let productArtist = document.createElement("p");
         productArtist.className = "artist";
         productArtist.innerHTML = products[i].artist;
@@ -533,9 +535,6 @@ function productsToPage() {
         let infoBtn = document.createElement("button");
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
-        let listenBtn = document.createElement("button");
-        listenBtn.className = "listen-button";
-        listenBtn.innerHTML = products[i].listenBtn;
         productOneSection.appendChild(productImage);
         productOneSection.appendChild(productArtist);
         productOneSection.appendChild(productAlbum);
@@ -545,23 +544,10 @@ function productsToPage() {
         productOneSection.appendChild(productGenre);
         productOneSection.appendChild(purchaseBtn);
         productOneSection.appendChild(infoBtn);
-        productOneSection.appendChild(listenBtn);
         productContaier.appendChild(productOneSection);
-    // cartNumbers();
     }
     console.log(products);
-} /* 
-let carts = document.getElementsByClassName("add-cart");
-
-for (let i = 0; i < carts.length; i++) {
-  carts[i].addEventListener("click", () => {
-    cartNumbers();
-  });
 }
-function cartNumbers() {
-  localStorage.setItem("cartNumbers", product007);
-}
- */ 
 
 },{"./models/product-objects":"d5Ism"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
