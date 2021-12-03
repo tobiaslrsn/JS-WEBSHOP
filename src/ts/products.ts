@@ -1,27 +1,11 @@
-import * as productObjects from "./models/product-objects";
+import { Article } from "./models/product-objects";
 
-/* FRÅGOR:
-flera html-filer = ny mapp?
-ny scss för ny html fil, kamn man importera t.ex header och footer till den?
-hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
-
-Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
-till en annan html fil så landar dem på plats direkt?
-
-fråga till gruppen:
-*/
-
-let image001: string = "1.b18e163d.jpg";
-let image002: string = "2.0fe79b40.jpg";
-let image003: string = "3.4e0a3919.jpg";
-let image004: string = "4.a09afae4.jpg";
-let image005: string = "5.ad46c5a6.jpg";
-let image006: string = "6.692c53f5.jpg";
-let image007: string = "7.318e1685.jpg";
-let image008: string = "8.14acd5c6.jpg";
-
-let product001: productObjects.Article = new productObjects.Article(
-  image001,
+/* 
+let image001 = "src/assets/product-feed-img/1.jpg";
+let image002 = "src/assets/product-feed-img/2.jpg";
+ */
+let product001: Article = new Article(
+  "1.b18e163d.jpg",
   "Daft Punk",
   "Homework",
   1997,
@@ -29,11 +13,10 @@ let product001: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product002: productObjects.Article = new productObjects.Article(
-  image002,
+let product002: Article = new Article(
+  "2.0fe79b40.jpg",
   "DIO",
   "Holy diver",
   1983,
@@ -41,11 +24,10 @@ let product002: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product003: productObjects.Article = new productObjects.Article(
-  image003,
+let product003: Article = new Article(
+  "3.4e0a3919.jpg",
   "Queen",
   "New of the world",
   1977,
@@ -53,11 +35,10 @@ let product003: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product004: productObjects.Article = new productObjects.Article(
-  image004,
+let product004: Article = new Article(
+  "4.a09afae4.jpg",
   "Calvin Harris",
   "I created disco",
   1222,
@@ -65,11 +46,10 @@ let product004: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product005: productObjects.Article = new productObjects.Article(
-  image005,
+let product005: Article = new Article(
+  "5.ad46c5a6.jpg",
   "Avicii",
   "True",
   2013,
@@ -77,11 +57,10 @@ let product005: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product006: productObjects.Article = new productObjects.Article(
-  image006,
+let product006: Article = new Article(
+  "6.692c53f5.jpg",
   "The Stone Roses",
   "the stone roses",
   1989,
@@ -89,11 +68,10 @@ let product006: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product007: productObjects.Article = new productObjects.Article(
-  image007,
+let product007: Article = new Article(
+  "7.318e1685.jpg",
   "Destroyer",
   "Kaputt",
   2011,
@@ -101,11 +79,10 @@ let product007: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
-let product008: productObjects.Article = new productObjects.Article(
-  image008,
+let product008: Article = new Article(
+  "8.14acd5c6.jpg",
   "Bob Dylan",
   "Infidels",
   1983,
@@ -113,8 +90,7 @@ let product008: productObjects.Article = new productObjects.Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info",
-  "spotify"
+  "more info"
 );
 
 let products = [
@@ -130,7 +106,6 @@ let products = [
 
 window.onload = function () {
   productsToPage();
-  // cartNumbers();
 };
 
 function productsToPage() {
@@ -139,12 +114,14 @@ function productsToPage() {
   ) as HTMLDivElement;
 
   for (let i = 0; i < products.length; i++) {
+    // let productContainer = document.getElementsByTagName("main");
     let productOneSection: HTMLDivElement = document.createElement("div");
     productOneSection.className = "product";
 
     let productImage: HTMLImageElement = document.createElement("img");
     productImage.className = "product-image";
     productImage.src = products[i].photo;
+    // productImage.innerHTML = "image: " + products[i].photo;
 
     let productArtist: HTMLParagraphElement = document.createElement("p");
     productArtist.className = "artist";
@@ -170,17 +147,13 @@ function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-    let purchaseBtn: HTMLButtonElement = document.createElement("button");
+    let purchaseBtn = document.createElement("button");
     purchaseBtn.className = "purchase-button";
     purchaseBtn.innerHTML = products[i].purchaseBtn;
 
-    let infoBtn: HTMLButtonElement = document.createElement("button");
+    let infoBtn = document.createElement("button");
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
-
-    let listenBtn: HTMLButtonElement = document.createElement("button");
-    listenBtn.className = "listen-button";
-    listenBtn.innerHTML = products[i].listenBtn;
 
     productOneSection.appendChild(productImage);
     productOneSection.appendChild(productArtist);
@@ -191,21 +164,8 @@ function productsToPage() {
     productOneSection.appendChild(productGenre);
     productOneSection.appendChild(purchaseBtn);
     productOneSection.appendChild(infoBtn);
-    productOneSection.appendChild(listenBtn);
     productContaier.appendChild(productOneSection);
-    // cartNumbers();
   }
+
   console.log(products);
 }
-/* 
-let carts = document.getElementsByClassName("add-cart");
-
-for (let i = 0; i < carts.length; i++) {
-  carts[i].addEventListener("click", () => {
-    cartNumbers();
-  });
-}
-function cartNumbers() {
-  localStorage.setItem("cartNumbers", product007);
-}
- */

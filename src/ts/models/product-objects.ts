@@ -7,8 +7,7 @@ export class Article {
   description: string;
   genre: string;
   purchaseBtn: string;
-  infoBtn: string;
-  listenBtn: string;
+  infoBtn: any;
 
   constructor(
     photo: string,
@@ -19,8 +18,7 @@ export class Article {
     description: string,
     genre: string,
     purchaseBtn: string,
-    infoBtn: string,
-    listenBtn: string
+    infoBtn: any
   ) {
     this.photo = photo;
     this.artist = artist;
@@ -31,6 +29,5 @@ export class Article {
     this.genre = genre;
     this.purchaseBtn = purchaseBtn;
     this.infoBtn = infoBtn;
-    this.listenBtn = listenBtn;
   }
 }
