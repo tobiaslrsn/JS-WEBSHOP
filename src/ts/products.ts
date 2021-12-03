@@ -8,6 +8,8 @@ hur ska man göra för att något dyker upp i en ny html-fil? local storage?
 Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
 till en annan html fil så landar dem på plats direkt?
 
+få in t.ex font awesome på knappen nedan?
+
 fråga till gruppen:
 */
 
@@ -30,7 +32,8 @@ let product001: productObjects.Article = new productObjects.Article(
   "Electronic",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  1
 );
 let product002: productObjects.Article = new productObjects.Article(
   image002,
@@ -42,7 +45,8 @@ let product002: productObjects.Article = new productObjects.Article(
   "rock",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  2
 );
 let product003: productObjects.Article = new productObjects.Article(
   image003,
@@ -54,7 +58,8 @@ let product003: productObjects.Article = new productObjects.Article(
   "rock",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  3
 );
 let product004: productObjects.Article = new productObjects.Article(
   image004,
@@ -66,7 +71,8 @@ let product004: productObjects.Article = new productObjects.Article(
   "Electronic",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  4
 );
 let product005: productObjects.Article = new productObjects.Article(
   image005,
@@ -78,7 +84,8 @@ let product005: productObjects.Article = new productObjects.Article(
   "Electronic",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  5
 );
 let product006: productObjects.Article = new productObjects.Article(
   image006,
@@ -90,7 +97,8 @@ let product006: productObjects.Article = new productObjects.Article(
   "rock",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  6
 );
 let product007: productObjects.Article = new productObjects.Article(
   image007,
@@ -102,7 +110,8 @@ let product007: productObjects.Article = new productObjects.Article(
   "rock",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  7
 );
 let product008: productObjects.Article = new productObjects.Article(
   image008,
@@ -114,7 +123,8 @@ let product008: productObjects.Article = new productObjects.Article(
   "rock",
   "purchase",
   "more info",
-  "spotify"
+  "spotify",
+  8
 );
 
 let products = [
@@ -130,6 +140,7 @@ let products = [
 
 window.onload = function () {
   productsToPage();
+
   // cartNumbers();
 };
 

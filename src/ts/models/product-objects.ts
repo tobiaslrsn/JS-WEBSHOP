@@ -9,6 +9,7 @@ export class Article {
   purchaseBtn: string;
   infoBtn: string;
   listenBtn: string;
+  id: number;
 
   constructor(
     photo: string,
@@ -20,7 +21,8 @@ export class Article {
     genre: string,
     purchaseBtn: string,
     infoBtn: string,
-    listenBtn: string
+    listenBtn: string,
+    id: number
   ) {
     this.photo = photo;
     this.artist = artist;
@@ -32,5 +34,6 @@ export class Article {
     this.purchaseBtn = purchaseBtn;
     this.infoBtn = infoBtn;
     this.listenBtn = listenBtn;
+    this.id = id;
   }
 }
