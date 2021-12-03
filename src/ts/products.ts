@@ -1,9 +1,14 @@
-import { Article } from "./models/product-objects";
+import * as productObjects from "./models/product-objects";
 
 /* FRÅGOR:
 flera html-filer = ny mapp?
 ny scss för ny html fil, kamn man importera t.ex header och footer till den?
 hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
+
+Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
+till en annan html fil så landar dem på plats direkt?
+
+fråga till gruppen:
 */
 
 let image001: string = "1.b18e163d.jpg";
@@ -15,7 +20,7 @@ let image006: string = "6.692c53f5.jpg";
 let image007: string = "7.318e1685.jpg";
 let image008: string = "8.14acd5c6.jpg";
 
-let product001: Article = new Article(
+let product001: productObjects.Article = new productObjects.Article(
   image001,
   "Daft Punk",
   "Homework",
@@ -24,9 +29,10 @@ let product001: Article = new Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product002: Article = new Article(
+let product002: productObjects.Article = new productObjects.Article(
   image002,
   "DIO",
   "Holy diver",
@@ -35,9 +41,10 @@ let product002: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product003: Article = new Article(
+let product003: productObjects.Article = new productObjects.Article(
   image003,
   "Queen",
   "New of the world",
@@ -46,9 +53,10 @@ let product003: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product004: Article = new Article(
+let product004: productObjects.Article = new productObjects.Article(
   image004,
   "Calvin Harris",
   "I created disco",
@@ -57,9 +65,10 @@ let product004: Article = new Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product005: Article = new Article(
+let product005: productObjects.Article = new productObjects.Article(
   image005,
   "Avicii",
   "True",
@@ -68,9 +77,10 @@ let product005: Article = new Article(
   "DESCRIPTION",
   "Electronic",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product006: Article = new Article(
+let product006: productObjects.Article = new productObjects.Article(
   image006,
   "The Stone Roses",
   "the stone roses",
@@ -79,9 +89,10 @@ let product006: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product007: Article = new Article(
+let product007: productObjects.Article = new productObjects.Article(
   image007,
   "Destroyer",
   "Kaputt",
@@ -90,9 +101,10 @@ let product007: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
-let product008: Article = new Article(
+let product008: productObjects.Article = new productObjects.Article(
   image008,
   "Bob Dylan",
   "Infidels",
@@ -101,7 +113,8 @@ let product008: Article = new Article(
   "DESCRIPTION",
   "rock",
   "purchase",
-  "more info"
+  "more info",
+  "spotify"
 );
 
 let products = [
@@ -117,6 +130,7 @@ let products = [
 
 window.onload = function () {
   productsToPage();
+  // cartNumbers();
 };
 
 function productsToPage() {
@@ -164,6 +178,10 @@ function productsToPage() {
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
 
+    let listenBtn: HTMLButtonElement = document.createElement("button");
+    listenBtn.className = "listen-button";
+    listenBtn.innerHTML = products[i].listenBtn;
+
     productOneSection.appendChild(productImage);
     productOneSection.appendChild(productArtist);
     productOneSection.appendChild(productAlbum);
@@ -173,8 +191,21 @@ function productsToPage() {
     productOneSection.appendChild(productGenre);
     productOneSection.appendChild(purchaseBtn);
     productOneSection.appendChild(infoBtn);
+    productOneSection.appendChild(listenBtn);
     productContaier.appendChild(productOneSection);
+    // cartNumbers();
   }
-
   console.log(products);
 }
+/* 
+let carts = document.getElementsByClassName("add-cart");
+
+for (let i = 0; i < carts.length; i++) {
+  carts[i].addEventListener("click", () => {
+    cartNumbers();
+  });
+}
+function cartNumbers() {
+  localStorage.setItem("cartNumbers", product007);
+}
+ */

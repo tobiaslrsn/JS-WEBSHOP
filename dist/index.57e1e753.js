@@ -464,6 +464,11 @@ var _productObjects = require("./models/product-objects");
 flera html-filer = ny mapp?
 ny scss för ny html fil, kamn man importera t.ex header och footer till den?
 hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
+
+Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
+till en annan html fil så landar dem på plats direkt?
+
+fråga till gruppen:
 */ let image001 = "1.b18e163d.jpg";
 let image002 = "2.0fe79b40.jpg";
 let image003 = "3.4e0a3919.jpg";
@@ -472,14 +477,14 @@ let image005 = "5.ad46c5a6.jpg";
 let image006 = "6.692c53f5.jpg";
 let image007 = "7.318e1685.jpg";
 let image008 = "8.14acd5c6.jpg";
-let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product003 = new _productObjects.Article(image003, "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product004 = new _productObjects.Article(image004, "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product005 = new _productObjects.Article(image005, "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product006 = new _productObjects.Article(image006, "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product007 = new _productObjects.Article(image007, "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product008 = new _productObjects.Article(image008, "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
+let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify");
+let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
+let product003 = new _productObjects.Article(image003, "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
+let product004 = new _productObjects.Article(image004, "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify");
+let product005 = new _productObjects.Article(image005, "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify");
+let product006 = new _productObjects.Article(image006, "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
+let product007 = new _productObjects.Article(image007, "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
+let product008 = new _productObjects.Article(image008, "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
 let products = [
     product001,
     product002,
@@ -492,6 +497,7 @@ let products = [
 ];
 window.onload = function() {
     productsToPage();
+// cartNumbers();
 };
 function productsToPage() {
     let productContaier = document.getElementById("products");
@@ -525,6 +531,9 @@ function productsToPage() {
         let infoBtn = document.createElement("button");
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
+        let listenBtn = document.createElement("button");
+        listenBtn.className = "listen-button";
+        listenBtn.innerHTML = products[i].listenBtn;
         productOneSection.appendChild(productImage);
         productOneSection.appendChild(productArtist);
         productOneSection.appendChild(productAlbum);
@@ -534,10 +543,23 @@ function productsToPage() {
         productOneSection.appendChild(productGenre);
         productOneSection.appendChild(purchaseBtn);
         productOneSection.appendChild(infoBtn);
+        productOneSection.appendChild(listenBtn);
         productContaier.appendChild(productOneSection);
+    // cartNumbers();
     }
     console.log(products);
+} /* 
+let carts = document.getElementsByClassName("add-cart");
+
+for (let i = 0; i < carts.length; i++) {
+  carts[i].addEventListener("click", () => {
+    cartNumbers();
+  });
 }
+function cartNumbers() {
+  localStorage.setItem("cartNumbers", product007);
+}
+ */ 
 
 },{"./models/product-objects":"d5Ism"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
@@ -545,7 +567,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
 );
 class Article {
-    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn){
+    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn, listenBtn){
         this.photo = photo;
         this.artist = artist;
         this.album = album;
@@ -555,6 +577,7 @@ class Article {
         this.genre = genre;
         this.purchaseBtn = purchaseBtn;
         this.infoBtn = infoBtn;
+        this.listenBtn = listenBtn;
     }
 }
 
