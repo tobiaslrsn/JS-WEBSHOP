@@ -140,12 +140,12 @@
       this[globalName] = mainExports;
     }
   }
-})({"1QJRq":[function(require,module,exports) {
+})({"e4k7L":[function(require,module,exports) {
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "4a236f9275d0a351";
-module.bundle.HMR_BUNDLE_ID = "acbb1e2157e1e753";
+module.bundle.HMR_BUNDLE_ID = "088b4c0858ba51d9";
 "use strict";
 function _createForOfIteratorHelper(o, allowArrayLike) {
     var it;
@@ -458,173 +458,11 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"9WuRb":[function(require,module,exports) {
-var _productObjects = require("./models/product-objects");
-<<<<<<< HEAD
-/* 
-let image001 = "src/assets/product-feed-img/1.jpg";
-let image002 = "src/assets/product-feed-img/2.jpg";
- */ let product001 = new _productObjects.Article("1.b18e163d.jpg", "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info");
-let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info");
-let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info");
-=======
-/* FRÅGOR:
-flera html-filer = ny mapp?
-ny scss för ny html fil, kamn man importera t.ex header och footer till den?
-hur ska man göra för att något dyker upp i en ny html-fil? local storage? 
-
-Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
-till en annan html fil så landar dem på plats direkt?
-
-fråga till gruppen:
-*/ let image001 = "1.b18e163d.jpg";
-let image002 = "2.0fe79b40.jpg";
-let image003 = "3.4e0a3919.jpg";
-let image004 = "4.a09afae4.jpg";
-let image005 = "5.ad46c5a6.jpg";
-let image006 = "6.692c53f5.jpg";
-let image007 = "7.318e1685.jpg";
-let image008 = "8.14acd5c6.jpg";
-let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify");
-let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
-let product003 = new _productObjects.Article(image003, "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
-let product004 = new _productObjects.Article(image004, "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify");
-let product005 = new _productObjects.Article(image005, "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify");
-let product006 = new _productObjects.Article(image006, "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
-let product007 = new _productObjects.Article(image007, "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
-let product008 = new _productObjects.Article(image008, "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify");
->>>>>>> feature/product-objects
-let products = [
-    product001,
-    product002,
-    product003,
-    product004,
-    product005,
-    product006,
-    product007,
-    product008, 
-];
+},{}],"7BLcd":[function(require,module,exports) {
 window.onload = function() {
-    productsToPage();
-// cartNumbers();
-};
-function productsToPage() {
-    let productContaier = document.getElementById("products");
-    for(let i = 0; i < products.length; i++){
-        let productOneSection = document.createElement("div");
-        productOneSection.className = "product";
-        let productImage = document.createElement("img");
-        productImage.className = "product-image";
-        productImage.src = products[i].photo;
-        let productArtist = document.createElement("p");
-        productArtist.className = "artist";
-        productArtist.innerHTML = products[i].artist;
-        let productAlbum = document.createElement("p");
-        productAlbum.className = "album";
-        productAlbum.innerHTML = products[i].album;
-        let productYear = document.createElement("p");
-        productYear.className = "year";
-        productYear.innerHTML = "year: " + products[i].year;
-        let productPrice = document.createElement("p");
-        productPrice.className = "price";
-        productPrice.innerHTML = "price: " + products[i].price + " SEK";
-        let productDesc = document.createElement("span");
-        productDesc.className = "description";
-        productDesc.innerHTML = "Description: " + products[i].description;
-        let productGenre = document.createElement("p");
-        productGenre.className = "genre";
-        productGenre.innerHTML = "Genre: " + products[i].genre;
-        let purchaseBtn = document.createElement("button");
-        purchaseBtn.className = "purchase-button";
-        purchaseBtn.innerHTML = products[i].purchaseBtn;
-        let infoBtn = document.createElement("button");
-        infoBtn.className = "info-button";
-        infoBtn.innerHTML = products[i].infoBtn;
-        let listenBtn = document.createElement("button");
-        listenBtn.className = "listen-button";
-        listenBtn.innerHTML = products[i].listenBtn;
-        productOneSection.appendChild(productImage);
-        productOneSection.appendChild(productArtist);
-        productOneSection.appendChild(productAlbum);
-        productOneSection.appendChild(productYear);
-        productOneSection.appendChild(productPrice);
-        productOneSection.appendChild(productDesc);
-        productOneSection.appendChild(productGenre);
-        productOneSection.appendChild(purchaseBtn);
-        productOneSection.appendChild(infoBtn);
-        productOneSection.appendChild(listenBtn);
-        productContaier.appendChild(productOneSection);
-    // cartNumbers();
-    }
-    console.log(products);
-} /* 
-let carts = document.getElementsByClassName("add-cart");
-
-for (let i = 0; i < carts.length; i++) {
-  carts[i].addEventListener("click", () => {
-    cartNumbers();
-  });
-}
-function cartNumbers() {
-  localStorage.setItem("cartNumbers", product007);
-}
- */ 
-
-},{"./models/product-objects":"d5Ism"}],"d5Ism":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Article", ()=>Article
-);
-class Article {
-    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn, listenBtn){
-        this.photo = photo;
-        this.artist = artist;
-        this.album = album;
-        this.year = year;
-        this.price = price;
-        this.description = description;
-        this.genre = genre;
-        this.purchaseBtn = purchaseBtn;
-        this.infoBtn = infoBtn;
-        this.listenBtn = listenBtn;
-    }
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
+    console.log("HEJ");
 };
 
-},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
+},{}]},["e4k7L","7BLcd"], "7BLcd", "parcelRequire1848")
 
-//# sourceMappingURL=index.57e1e753.js.map
+//# sourceMappingURL=index.58ba51d9.js.map

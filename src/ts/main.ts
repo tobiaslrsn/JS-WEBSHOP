@@ -1,3 +1,4 @@
 window.onload = function () {
-  console.log("working");
+  console.log("HEJ");
 };
+//varför fungerar inte denna ts-fil?
