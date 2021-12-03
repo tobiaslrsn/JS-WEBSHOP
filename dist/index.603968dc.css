@@ -43,13 +43,12 @@ main {
   padding-bottom: 70px;
 }
 
-.products {
+#products {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
-  margin-right: 2rem;
-  margin-left: 2rem;
+  padding: 1.9rem;
 }
 
 h2 {
@@ -60,24 +59,20 @@ h2 {
 }
 
 .product {
-  margin-bottom: 10px;
+  margin: 2rem;
   display: inline-block;
   width: 300px;
-}
-
-.product > img {
-  max-width: 300px;
-  max-height: 300px;
 }
 
 .artist,
 .album,
 .description,
-.price {
+.price,
+.year,
+.genre {
   justify-content: space-evenly;
   align-items: center;
   line-height: 0.4;
-<<<<<<< HEAD
   text-align: left;
   padding-left: 1rem;
 }
@@ -125,8 +120,6 @@ h2 {
 .artist {
   font-size: 15pt;
   font-weight: 700;
-=======
->>>>>>> 6e055e74b8d28c830636802b55db0f4d2fdebc93
 }
 
 footer {
