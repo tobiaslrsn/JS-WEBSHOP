@@ -19,18 +19,29 @@ header {
     width: 35px;
     margin-right: 25px;
   }
-
-  ul {
-    list-style-type: none;
-    li {
-      display: inline;
-      justify-content: space-between;
-      a {
-        color: black;
-      }
-    }
-  }
 }
 
 @media screen and (min-width: 1200px) {
+  #hamnav {
+    width: 100%;
+    background: #000;
+    #hamitems {
+      display: flex;
+    }
+    #hamitems a {
+      flex-grow: 1;
+      flex-basis: 0;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+    }
+  }
+  #hamitems a:hover {
+    background-color: gray;
+  }
+  #hamnav label,
+  #hamburger {
+    display: none;
+  }
 }
