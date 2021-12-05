@@ -1,12 +1,19 @@
 footer {
-  height: 15rem;
+  height: 16rem;
   width: 100%;
   background-color: yellow;
-  display: flex;
-  flex-direction: row;
-  font-size: 16px;
-  justify-content: space-around;
-  align-items: center;
+
+  .news-container {
+    display: flex;
+    justify-content: center;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+  }
 
   ul {
     list-style-type: none;
