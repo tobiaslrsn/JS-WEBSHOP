@@ -480,7 +480,7 @@ let image006 = "6.692c53f5.jpg";
 let image007 = "7.318e1685.jpg";
 let image008 = "8.14acd5c6.jpg";
 let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 1);
-let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2);
+let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2);
 let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 3);
 let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 4);
 let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 5);
@@ -497,6 +497,16 @@ let products = [
     product007,
     product008, 
 ];
+//var och en ska skickas till lokal storage vid knapptryck(purchase, info)
+//för att sedan kunna hämtas dem andra htmlfilerna och presenteras på skärmen
+window.localStorage.setItem("product001", JSON.stringify(product001));
+window.localStorage.setItem("product002", JSON.stringify(product002));
+window.localStorage.setItem("product003", JSON.stringify(product003));
+window.localStorage.setItem("product004", JSON.stringify(product004));
+window.localStorage.setItem("product005", JSON.stringify(product005));
+window.localStorage.setItem("product006", JSON.stringify(product006));
+window.localStorage.setItem("product007", JSON.stringify(product007));
+window.localStorage.setItem("product008", JSON.stringify(product008));
 window.onload = function() {
     productsToPage();
 // cartNumbers();

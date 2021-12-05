@@ -1,11 +1,39 @@
 main {
   width: 100vw;
-  height: 100vh;
-  background-color: orange;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description-container {
+  padding-top: 10rem;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  align-items: center;
+  width: 90vw;
+  flex-wrap: wrap;
 }
 
 .product-image {
-  height: 20rem;
-  width: 20rem;
-  margin-top: 200px;
+  width: 30rem;
+  height: 30rem;
+}
+
+span {
+  width: 30vw;
+  margin-left: 5rem;
+}
+span > ul {
+  list-style: none;
+}
+.product-information {
+  margin-top: -3rem;
+  margin-left: 2.5rem;
+  color: gray;
+  font-size: 1rem;
+}
+.product-information > ul {
+  list-style: none;
 }

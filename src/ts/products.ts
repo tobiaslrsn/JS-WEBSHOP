@@ -37,7 +37,7 @@ let product001: productObjects.Article = new productObjects.Article(
   1
 );
 let product002: Article = new Article(
-  "2.0fe79b40.jpg",
+  image002,
   "DIO",
   "Holy diver",
   1983,
@@ -138,6 +138,17 @@ let products = [
   product007,
   product008,
 ];
+
+//var och en ska skickas till lokal storage vid knapptryck(purchase, info)
+//för att sedan kunna hämtas dem andra htmlfilerna och presenteras på skärmen
+window.localStorage.setItem("product001", JSON.stringify(product001));
+window.localStorage.setItem("product002", JSON.stringify(product002));
+window.localStorage.setItem("product003", JSON.stringify(product003));
+window.localStorage.setItem("product004", JSON.stringify(product004));
+window.localStorage.setItem("product005", JSON.stringify(product005));
+window.localStorage.setItem("product006", JSON.stringify(product006));
+window.localStorage.setItem("product007", JSON.stringify(product007));
+window.localStorage.setItem("product008", JSON.stringify(product008));
 
 window.onload = function () {
   productsToPage();
