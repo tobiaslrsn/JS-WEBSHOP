@@ -550,10 +550,17 @@ function productsToPage() {
         let listenBtn = document.createElement("button");
         listenBtn.className = "listen-button";
         listenBtn.innerHTML = products[i].listenBtn;
+        //CREATE SPOTIFYLOGO
         let spotifyLogo = document.createElement("i");
         spotifyLogo.className = "fa fa-spotify";
+        //ADD ALBUM URL TO BUTTON
         let spotifyUrl = document.createElement("a");
+        spotifyUrl.className = "spotify-redirect";
         spotifyUrl.href = products[i].spotifyUrl;
+        //CLICK TO OPEN SPOTIFY
+        listenBtn.addEventListener("click", ()=>{
+            window.open(spotifyUrl.href);
+        });
         productOneSection.appendChild(productImage);
         productOneSection.appendChild(productArtist);
         productOneSection.appendChild(productAlbum);

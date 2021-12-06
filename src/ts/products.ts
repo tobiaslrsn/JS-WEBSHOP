@@ -221,13 +221,21 @@ export function productsToPage() {
     listenBtn.className = "listen-button";
     listenBtn.innerHTML = products[i].listenBtn;
 
+    //CREATE SPOTIFYLOGO
     let spotifyLogo = document.createElement("i");
     spotifyLogo.className = "fa fa-spotify";
 
+    //ADD ALBUM URL TO BUTTON
     let spotifyUrl: HTMLAnchorElement = document.createElement(
       "a"
     ) as HTMLAnchorElement;
+    spotifyUrl.className = "spotify-redirect";
     spotifyUrl.href = products[i].spotifyUrl;
+
+    //CLICK TO OPEN SPOTIFY
+    listenBtn.addEventListener("click", () => {
+      window.open(spotifyUrl.href);
+    });
 
     productOneSection.appendChild(productImage);
     productOneSection.appendChild(productArtist);
