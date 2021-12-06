@@ -464,6 +464,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
 );
 var _productObjects = require("./models/product-objects");
+// RAD 238 LOCALSTORAGE FRÅGA
 /* FRÅGOR:
 flera html-filer = ny mapp?
 ny scss för ny html fil, kamn man importera t.ex header och footer till den?
@@ -502,7 +503,8 @@ let products = [
 ];
 //var och en ska skickas till lokal storage vid knapptryck(purchase, info)
 //för att sedan kunna hämtas dem andra htmlfilerna och presenteras på skärmen
-window.localStorage.setItem("product002", JSON.stringify(products));
+window.localStorage.setItem("product001", JSON.stringify(product001));
+window.localStorage.setItem("product002", JSON.stringify(product002));
 window.localStorage.setItem("product003", JSON.stringify(product003));
 window.localStorage.setItem("product004", JSON.stringify(product004));
 window.localStorage.setItem("product005", JSON.stringify(product005));
@@ -513,15 +515,20 @@ window.onload = function() {
     productsToPage();
 };
 function productsToPage() {
-    let productContaier = document.getElementById("products");
+    let productContainer = document.getElementById("products");
     for(let i = 0; i < products.length; i++){
-        // let productContainer = document.getElementsByTagName("main");
-        let productOneSection = document.createElement("div");
-        productOneSection.className = "product";
+        let productFeed = document.createElement("div");
+        productFeed.className = "product";
         let productImage = document.createElement("img");
         productImage.className = "product-image";
         productImage.src = products[i].photo;
-        // productImage.innerHTML = "image: " + products[i].photo;
+        //ADD DESCRIPTION.HTML ANCHORTAG TO PHOTO
+        let photoRedirect = document.createElement("a");
+        photoRedirect.href = "../description.html";
+        //CLICK PHOTO TO REDIRECT
+        productImage.addEventListener("click", ()=>{
+            window.open(photoRedirect.href); // GÖRA SÅ DEN ÖPPNAS I SAMMA FÖNSTER
+        });
         let productArtist = document.createElement("p");
         productArtist.className = "artist";
         productArtist.innerHTML = products[i].artist;
@@ -542,7 +549,6 @@ function productsToPage() {
         productGenre.innerHTML = "Genre: " + products[i].genre;
         //CREATE ADD TO CART BUTTON
         let addToCart = document.createElement("button");
-        document.getElementsByClassName("redirect");
         addToCart.className = "purchase-button";
         addToCart.innerHTML = products[i].addToCart;
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
@@ -550,12 +556,13 @@ function productsToPage() {
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
         //ADD DESCRIPTION.HTML ANCHORTAG
-        let descriptionRedirect = document.createElement("a");
-        descriptionRedirect.href = "../description.html";
-        //CLICK TO REDIRECT
+        let infoRedirect = document.createElement("a");
+        infoRedirect.href = "../description.html";
+        //CLICK TO REDIRECT (VILL INTE HA I NY FLIK)
         infoBtn.addEventListener("click", ()=>{
-            window.open(descriptionRedirect.href);
-            window.localStorage.getItem("product004");
+            window.open(infoRedirect.href);
+            //LOCAL STORAGE
+            window.localStorage.setItem("product", JSON.stringify(product002)); //något sånt?
         });
         //CREATE SPOTIFY-BUTTON
         let listenBtn = document.createElement("button");
@@ -572,20 +579,20 @@ function productsToPage() {
         listenBtn.addEventListener("click", ()=>{
             window.open(spotifyUrl.href);
         });
-        productOneSection.appendChild(productImage);
-        productOneSection.appendChild(productArtist);
-        productOneSection.appendChild(productAlbum);
-        productOneSection.appendChild(productYear);
-        productOneSection.appendChild(productPrice);
-        productOneSection.appendChild(productDesc);
-        productOneSection.appendChild(productGenre);
-        productOneSection.appendChild(addToCart);
-        productOneSection.appendChild(infoBtn);
-        infoBtn.appendChild(descriptionRedirect);
-        productOneSection.appendChild(listenBtn);
+        productFeed.appendChild(productImage);
+        productFeed.appendChild(productArtist);
+        productFeed.appendChild(productAlbum);
+        productFeed.appendChild(productYear);
+        productFeed.appendChild(productPrice);
+        productFeed.appendChild(productDesc);
+        productFeed.appendChild(productGenre);
+        productFeed.appendChild(addToCart);
+        productFeed.appendChild(infoBtn);
+        infoBtn.appendChild(infoRedirect);
+        productFeed.appendChild(listenBtn);
         listenBtn.appendChild(spotifyUrl);
         listenBtn.appendChild(spotifyLogo);
-        productContaier.appendChild(productOneSection);
+        productContainer.appendChild(productFeed);
     }
     console.log(products);
 }

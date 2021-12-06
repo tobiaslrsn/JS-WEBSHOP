@@ -6,6 +6,11 @@ main {
   align-items: center;
 }
 
+.artisten {
+  width: 300px;
+  height: 300px;
+}
+
 .description-container {
   padding-top: 8rem;
   display: flex;
@@ -17,6 +22,7 @@ main {
 }
 
 .product-image {
+  margin-top: 20px;
   width: 30rem;
   height: 30rem;
   display: flex;
@@ -31,12 +37,33 @@ span > ul {
   margin-left: -2.5rem;
   padding-top: 10px;
 }
+.return-home {
+  height: 2rem;
+  width: 5rem;
+  font-weight: 700;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+  padding: 0;
+}
+.return-home:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px rgb(124, 121, 121);
+  text-decoration: none;
+}
+a {
+  text-decoration: none;
+  color: black;
+}
 
 //TAB
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   main {
     height: 100vh;
-    padding-bottom: 20%;
+    margin-bottom: 20%;
   }
   .description-container {
     flex-direction: column;
@@ -55,12 +82,12 @@ span > ul {
 
     padding-top: 10px;
   }
-}
+} */
 //MOBILE
 @media screen and (max-width: 768px) {
   main {
     height: 100vh;
-    padding-bottom: 50px;
+    margin-bottom: 30%;
     padding-top: 30px;
   }
   .description-container {

@@ -12,13 +12,21 @@ window.onload = function () {
   document.body.appendChild(productArtist);
   console.log(productArtist);
  */
-  let getobj: string = localStorage.getItem("product007");
+  let getobj: string = localStorage.getItem("product002");
   let obj = JSON.parse(getobj);
 
-  let create = document.createElement("img");
-  create.className = "product-image";
-  create.innerHTML = obj.photo;
+  /*  let photo = document.getElementsByClassName("product-image");
+  photo.src =
+ */
 
-  document.body.appendChild(create);
-  console.log(getobj);
+  let photo = document.createElement("img");
+  photo.className = "artisten";
+  photo.src = obj.photo;
+  document.body.appendChild(photo);
+  /*
+  let artist = document.getElementsByClassName("artist");
+  artist = obj.artist.id; */
+
+  console.log(obj);
+  console.log(obj.artist + obj.id + obj.album);
 };
