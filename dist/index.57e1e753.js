@@ -472,7 +472,6 @@ hur ska man göra för att något dyker upp i en ny html-fil? local storage?
 Skapa nya html-filer och stylea med samma klassnamn som objekten, så att när man lyckas få objekten 
 till en annan html fil så landar dem på plats direkt?
 
-få in t.ex font awesome på knappen nedan?
 
 fråga till gruppen:
 */ let image001 = "1.b18e163d.jpg";
@@ -553,6 +552,8 @@ function productsToPage() {
         listenBtn.innerHTML = products[i].listenBtn;
         let spotifyLogo = document.createElement("i");
         spotifyLogo.className = "fa fa-spotify";
+        let spotifyUrl = document.createElement("a");
+        spotifyUrl.href = products[i].spotifyUrl;
         productOneSection.appendChild(productImage);
         productOneSection.appendChild(productArtist);
         productOneSection.appendChild(productAlbum);
@@ -563,6 +564,7 @@ function productsToPage() {
         productOneSection.appendChild(purchaseBtn);
         productOneSection.appendChild(infoBtn);
         productOneSection.appendChild(listenBtn);
+        listenBtn.appendChild(spotifyUrl);
         listenBtn.appendChild(spotifyLogo);
         productContaier.appendChild(productOneSection);
     }
