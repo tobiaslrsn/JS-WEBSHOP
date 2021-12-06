@@ -459,6 +459,10 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"9WuRb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
+);
 var _productObjects = require("./models/product-objects");
 /* FRÅGOR:
 flera html-filer = ny mapp?
@@ -479,14 +483,14 @@ let image005 = "5.ad46c5a6.jpg";
 let image006 = "6.692c53f5.jpg";
 let image007 = "7.318e1685.jpg";
 let image008 = "8.14acd5c6.jpg";
-let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 1);
-let product002 = new _productObjects.Article("2.0fe79b40.jpg", "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2);
-let product003 = new _productObjects.Article("3.4e0a3919.jpg", "Queen", "New of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 3);
-let product004 = new _productObjects.Article("4.a09afae4.jpg", "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 4);
-let product005 = new _productObjects.Article("5.ad46c5a6.jpg", "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 5);
-let product006 = new _productObjects.Article("6.692c53f5.jpg", "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 6);
-let product007 = new _productObjects.Article("7.318e1685.jpg", "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 7);
-let product008 = new _productObjects.Article("8.14acd5c6.jpg", "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 8);
+let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 1, "https://open.spotify.com/album/5uRdvUR7xCnHmUW8n64n9y?si=43c792ad2c8e4c2d");
+let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 2, "https://open.spotify.com/album/1QJmLRcuIMMjZ49elafR3K?si=57709f0b1eb141be");
+let product003 = new _productObjects.Article(image003, "Queen", "News of the world", 1977, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 3, "https://open.spotify.com/album/7tB40pGzj6Tg0HePj2jWZt?si=d6a22825fe214a3d");
+let product004 = new _productObjects.Article(image004, "Calvin Harris", "I created disco", 1222, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 4, "https://open.spotify.com/album/5gDkjyJBK8VLZjKqqUd79K?si=e13578af3d734b42");
+let product005 = new _productObjects.Article(image005, "Avicii", "True", 2013, 250, "DESCRIPTION", "Electronic", "purchase", "more info", "spotify", 5, "https://open.spotify.com/album/2H6i2CrWgXE1HookLu8Au0?si=70bf68a557754edb");
+let product006 = new _productObjects.Article(image006, "The Stone Roses", "the stone roses", 1989, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 6, "https://open.spotify.com/album/0um9FI6BLBldL5POP4D4Cw?si=b8ebc3dc44a04ff3");
+let product007 = new _productObjects.Article(image007, "Destroyer", "Kaputt", 2011, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 7, "https://open.spotify.com/album/3yy32elu0ZXO6xq2bTuhmU?si=5497dd79effc4e78");
+let product008 = new _productObjects.Article(image008, "Bob Dylan", "Infidels", 1983, 250, "DESCRIPTION", "rock", "purchase", "more info", "spotify", 8, "https://open.spotify.com/album/66zadu7BtUnpbkT4iAkaHy?si=4d6aa4b034384fb2");
 let products = [
     product001,
     product002,
@@ -497,9 +501,17 @@ let products = [
     product007,
     product008, 
 ];
+//var och en ska skickas till lokal storage vid knapptryck(purchase, info)
+//för att sedan kunna hämtas dem andra htmlfilerna och presenteras på skärmen
+window.localStorage.setItem("product002", JSON.stringify(products));
+window.localStorage.setItem("product003", JSON.stringify(product003));
+window.localStorage.setItem("product004", JSON.stringify(product004));
+window.localStorage.setItem("product005", JSON.stringify(product005));
+window.localStorage.setItem("product006", JSON.stringify(product006));
+window.localStorage.setItem("product007", JSON.stringify(product007));
+window.localStorage.setItem("product008", JSON.stringify(product008));
 window.onload = function() {
     productsToPage();
-// cartNumbers();
 };
 function productsToPage() {
     let productContaier = document.getElementById("products");
@@ -530,6 +542,7 @@ function productsToPage() {
         productGenre.className = "genre";
         productGenre.innerHTML = "Genre: " + products[i].genre;
         let purchaseBtn = document.createElement("button");
+        document.getElementsByClassName("redirect");
         purchaseBtn.className = "purchase-button";
         purchaseBtn.innerHTML = products[i].purchaseBtn;
         let infoBtn = document.createElement("button");
@@ -538,6 +551,8 @@ function productsToPage() {
         let listenBtn = document.createElement("button");
         listenBtn.className = "listen-button";
         listenBtn.innerHTML = products[i].listenBtn;
+        let spotifyLogo = document.createElement("i");
+        spotifyLogo.className = "fa fa-spotify";
         productOneSection.appendChild(productImage);
         productOneSection.appendChild(productArtist);
         productOneSection.appendChild(productAlbum);
@@ -548,18 +563,19 @@ function productsToPage() {
         productOneSection.appendChild(purchaseBtn);
         productOneSection.appendChild(infoBtn);
         productOneSection.appendChild(listenBtn);
+        listenBtn.appendChild(spotifyLogo);
         productContaier.appendChild(productOneSection);
     }
     console.log(products);
 }
 
-},{"./models/product-objects":"d5Ism"}],"d5Ism":[function(require,module,exports) {
+},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
 );
 class Article {
-    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn, listenBtn, id){
+    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn, listenBtn, id, spotifyUrl){
         this.photo = photo;
         this.artist = artist;
         this.album = album;
@@ -571,39 +587,10 @@ class Article {
         this.infoBtn = infoBtn;
         this.listenBtn = listenBtn;
         this.id = id;
+        this.spotifyUrl = spotifyUrl;
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
 
 //# sourceMappingURL=index.57e1e753.js.map
