@@ -34,9 +34,10 @@ let product001: productObjects.Article = new productObjects.Article(
   "purchase",
   "more info",
   "spotify",
-  1
+  1,
+  "https://open.spotify.com/album/5uRdvUR7xCnHmUW8n64n9y?si=43c792ad2c8e4c2d"
 );
-let product002: Article = new Article(
+let product002: productObjects.Article = new productObjects.Article(
   image002,
   "DIO",
   "Holy diver",
@@ -47,12 +48,13 @@ let product002: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  2
+  2,
+  "https://open.spotify.com/album/1QJmLRcuIMMjZ49elafR3K?si=57709f0b1eb141be"
 );
-let product003: Article = new Article(
-  "3.4e0a3919.jpg",
+let product003: productObjects.Article = new productObjects.Article(
+  image003,
   "Queen",
-  "New of the world",
+  "News of the world",
   1977,
   250,
   "DESCRIPTION",
@@ -60,10 +62,11 @@ let product003: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  3
+  3,
+  "https://open.spotify.com/album/7tB40pGzj6Tg0HePj2jWZt?si=d6a22825fe214a3d"
 );
-let product004: Article = new Article(
-  "4.a09afae4.jpg",
+let product004: productObjects.Article = new productObjects.Article(
+  image004,
   "Calvin Harris",
   "I created disco",
   1222,
@@ -73,10 +76,11 @@ let product004: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  4
+  4,
+  "https://open.spotify.com/album/5gDkjyJBK8VLZjKqqUd79K?si=e13578af3d734b42"
 );
-let product005: Article = new Article(
-  "5.ad46c5a6.jpg",
+let product005: productObjects.Article = new productObjects.Article(
+  image005,
   "Avicii",
   "True",
   2013,
@@ -86,10 +90,11 @@ let product005: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  5
+  5,
+  "https://open.spotify.com/album/2H6i2CrWgXE1HookLu8Au0?si=70bf68a557754edb"
 );
-let product006: Article = new Article(
-  "6.692c53f5.jpg",
+let product006: productObjects.Article = new productObjects.Article(
+  image006,
   "The Stone Roses",
   "the stone roses",
   1989,
@@ -99,10 +104,11 @@ let product006: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  6
+  6,
+  "https://open.spotify.com/album/0um9FI6BLBldL5POP4D4Cw?si=b8ebc3dc44a04ff3"
 );
-let product007: Article = new Article(
-  "7.318e1685.jpg",
+let product007: productObjects.Article = new productObjects.Article(
+  image007,
   "Destroyer",
   "Kaputt",
   2011,
@@ -112,10 +118,11 @@ let product007: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  7
+  7,
+  "https://open.spotify.com/album/3yy32elu0ZXO6xq2bTuhmU?si=5497dd79effc4e78"
 );
-let product008: Article = new Article(
-  "8.14acd5c6.jpg",
+let product008: productObjects.Article = new productObjects.Article(
+  image008,
   "Bob Dylan",
   "Infidels",
   1983,
@@ -125,7 +132,8 @@ let product008: Article = new Article(
   "purchase",
   "more info",
   "spotify",
-  8
+  8,
+  "https://open.spotify.com/album/66zadu7BtUnpbkT4iAkaHy?si=4d6aa4b034384fb2"
 );
 
 let products = [
@@ -141,8 +149,8 @@ let products = [
 
 //var och en ska skickas till lokal storage vid knapptryck(purchase, info)
 //för att sedan kunna hämtas dem andra htmlfilerna och presenteras på skärmen
-window.localStorage.setItem("product001", JSON.stringify(product001));
-window.localStorage.setItem("product002", JSON.stringify(product002));
+
+window.localStorage.setItem("product002", JSON.stringify(products));
 window.localStorage.setItem("product003", JSON.stringify(product003));
 window.localStorage.setItem("product004", JSON.stringify(product004));
 window.localStorage.setItem("product005", JSON.stringify(product005));
@@ -152,11 +160,9 @@ window.localStorage.setItem("product008", JSON.stringify(product008));
 
 window.onload = function () {
   productsToPage();
-
-  // cartNumbers();
 };
 
-function productsToPage() {
+export function productsToPage() {
   let productContaier: HTMLDivElement = document.getElementById(
     "products"
   ) as HTMLDivElement;
@@ -169,6 +175,7 @@ function productsToPage() {
     let productImage: HTMLImageElement = document.createElement("img");
     productImage.className = "product-image";
     productImage.src = products[i].photo;
+
     // productImage.innerHTML = "image: " + products[i].photo;
 
     let productArtist: HTMLParagraphElement = document.createElement("p");
@@ -195,17 +202,28 @@ function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-    let purchaseBtn = document.createElement("button");
+    let purchaseBtn: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    document.getElementsByClassName("redirect");
+
     purchaseBtn.className = "purchase-button";
     purchaseBtn.innerHTML = products[i].purchaseBtn;
 
-    let infoBtn = document.createElement("button");
+    let infoBtn: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
 
-    let listenBtn = document.createElement("button");
+    let listenBtn: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
     listenBtn.className = "listen-button";
     listenBtn.innerHTML = products[i].listenBtn;
+
+    let spotifyLogo = document.createElement("i");
+    spotifyLogo.className = "fa fa-spotify";
 
     productOneSection.appendChild(productImage);
     productOneSection.appendChild(productArtist);
@@ -217,9 +235,8 @@ function productsToPage() {
     productOneSection.appendChild(purchaseBtn);
     productOneSection.appendChild(infoBtn);
     productOneSection.appendChild(listenBtn);
-
+    listenBtn.appendChild(spotifyLogo);
     productContaier.appendChild(productOneSection);
   }
-
   console.log(products);
 }

@@ -10,6 +10,7 @@ export class Article {
   infoBtn: string;
   listenBtn: string;
   id: number;
+  spotifyUrl: string;
 
   constructor(
     photo: string,
@@ -22,7 +23,8 @@ export class Article {
     purchaseBtn: string,
     infoBtn: string,
     listenBtn: string,
-    id: number
+    id: number,
+    spotifyUrl: string
   ) {
     this.photo = photo;
     this.artist = artist;
@@ -35,5 +37,6 @@ export class Article {
     this.infoBtn = infoBtn;
     this.listenBtn = listenBtn;
     this.id = id;
+    this.spotifyUrl = spotifyUrl;
   }
 }

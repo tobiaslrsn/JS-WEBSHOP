@@ -88,6 +88,13 @@ h2 {
   cursor: pointer;
   border: none;
   border-radius: 2rem;
+  transition: transform 0.2s;
+}
+
+.purchase-button:hover,
+.info-button:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
 }
 
 .listen-button {
@@ -101,6 +108,12 @@ h2 {
   cursor: pointer;
   border: none;
   border-radius: 2rem;
+  transition: transform 0.1s;
+}
+
+.listen-button:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
 }
 
 .product-image {
@@ -119,6 +132,10 @@ h2 {
 .artist {
   font-size: 15pt;
   font-weight: 700;
+}
+
+.fa-spotify {
+  padding: 3px;
 }
 
 footer {
