@@ -540,13 +540,24 @@ function productsToPage() {
         let productGenre = document.createElement("p");
         productGenre.className = "genre";
         productGenre.innerHTML = "Genre: " + products[i].genre;
-        let purchaseBtn = document.createElement("button");
+        //CREATE ADD TO CART BUTTON
+        let addToCart = document.createElement("button");
         document.getElementsByClassName("redirect");
-        purchaseBtn.className = "purchase-button";
-        purchaseBtn.innerHTML = products[i].purchaseBtn;
+        addToCart.className = "purchase-button";
+        addToCart.innerHTML = products[i].addToCart;
+        //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
         let infoBtn = document.createElement("button");
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
+        //ADD DESCRIPTION.HTML ANCHORTAG
+        let descriptionRedirect = document.createElement("a");
+        descriptionRedirect.href = "../description.html";
+        //CLICK TO REDIRECT
+        infoBtn.addEventListener("click", ()=>{
+            window.open(descriptionRedirect.href);
+            window.localStorage.getItem("product004");
+        });
+        //CREATE SPOTIFY-BUTTON
         let listenBtn = document.createElement("button");
         listenBtn.className = "listen-button";
         listenBtn.innerHTML = products[i].listenBtn;
@@ -568,8 +579,9 @@ function productsToPage() {
         productOneSection.appendChild(productPrice);
         productOneSection.appendChild(productDesc);
         productOneSection.appendChild(productGenre);
-        productOneSection.appendChild(purchaseBtn);
+        productOneSection.appendChild(addToCart);
         productOneSection.appendChild(infoBtn);
+        infoBtn.appendChild(descriptionRedirect);
         productOneSection.appendChild(listenBtn);
         listenBtn.appendChild(spotifyUrl);
         listenBtn.appendChild(spotifyLogo);
@@ -584,7 +596,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
 );
 class Article {
-    constructor(photo, artist, album, year, price, description, genre, purchaseBtn, infoBtn, listenBtn, id, spotifyUrl){
+    constructor(photo, artist, album, year, price, description, genre, addToCart, infoBtn, listenBtn, id, spotifyUrl){
         this.photo = photo;
         this.artist = artist;
         this.album = album;
@@ -592,7 +604,7 @@ class Article {
         this.price = price;
         this.description = description;
         this.genre = genre;
-        this.purchaseBtn = purchaseBtn;
+        this.addToCart = addToCart;
         this.infoBtn = infoBtn;
         this.listenBtn = listenBtn;
         this.id = id;

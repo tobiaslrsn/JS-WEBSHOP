@@ -201,20 +201,37 @@ export function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-    let purchaseBtn: HTMLButtonElement = document.createElement(
+    //CREATE ADD TO CART BUTTON
+    let addToCart: HTMLButtonElement = document.createElement(
       "button"
     ) as HTMLButtonElement;
     document.getElementsByClassName("redirect");
 
-    purchaseBtn.className = "purchase-button";
-    purchaseBtn.innerHTML = products[i].purchaseBtn;
+    addToCart.className = "purchase-button";
+    addToCart.innerHTML = products[i].addToCart;
 
+    //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
     let infoBtn: HTMLButtonElement = document.createElement(
       "button"
     ) as HTMLButtonElement;
     infoBtn.className = "info-button";
     infoBtn.innerHTML = products[i].infoBtn;
 
+    //ADD DESCRIPTION.HTML ANCHORTAG
+    let descriptionRedirect: HTMLAnchorElement = document.createElement(
+      "a"
+    ) as HTMLAnchorElement;
+    descriptionRedirect.href = "../description.html";
+
+    //CLICK TO REDIRECT
+
+    infoBtn.addEventListener("click", () => {
+      window.open(descriptionRedirect.href);
+
+      window.localStorage.getItem("product004");
+    });
+
+    //CREATE SPOTIFY-BUTTON
     let listenBtn: HTMLButtonElement = document.createElement(
       "button"
     ) as HTMLButtonElement;
@@ -244,8 +261,9 @@ export function productsToPage() {
     productOneSection.appendChild(productPrice);
     productOneSection.appendChild(productDesc);
     productOneSection.appendChild(productGenre);
-    productOneSection.appendChild(purchaseBtn);
+    productOneSection.appendChild(addToCart);
     productOneSection.appendChild(infoBtn);
+    infoBtn.appendChild(descriptionRedirect);
     productOneSection.appendChild(listenBtn);
     listenBtn.appendChild(spotifyUrl);
     listenBtn.appendChild(spotifyLogo);

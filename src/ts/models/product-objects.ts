@@ -6,7 +6,7 @@ export class Article {
   price: number;
   description: string;
   genre: string;
-  purchaseBtn: string;
+  addToCart: string;
   infoBtn: string;
   listenBtn: string;
   id: number;
@@ -20,7 +20,7 @@ export class Article {
     price: number,
     description: string,
     genre: string,
-    purchaseBtn: string,
+    addToCart: string,
     infoBtn: string,
     listenBtn: string,
     id: number,
@@ -33,7 +33,7 @@ export class Article {
     this.price = price;
     this.description = description;
     this.genre = genre;
-    this.purchaseBtn = purchaseBtn;
+    this.addToCart = addToCart;
     this.infoBtn = infoBtn;
     this.listenBtn = listenBtn;
     this.id = id;
