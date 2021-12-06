@@ -130,6 +130,13 @@ footer {
 footer .news-container {
   display: flex;
   justify-content: center;
+  flex-direction: column;
+}
+footer .news-container #subscribe {
+  background-color: black;
+  color: white;
+  width: 125px;
+  height: 50px;
 }
 footer .info {
   display: flex;
@@ -146,6 +153,20 @@ footer li {
   padding: 10px;
 }
 
+@media screen and (min-width: 1200px) {
+  .news-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

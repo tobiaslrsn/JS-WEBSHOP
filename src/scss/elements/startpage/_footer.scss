@@ -6,6 +6,7 @@ footer {
   .news-container {
     display: flex;
     justify-content: center;
+    flex-direction: column;
   }
   .info {
     display: flex;
@@ -22,5 +23,19 @@ footer {
   li {
     list-style-type: none;
     padding: 10px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .news-container {
+    display: flex;
+    justify-content: center;
+  }
+  .info {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
   }
 }
