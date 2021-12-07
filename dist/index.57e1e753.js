@@ -459,6 +459,10 @@ function hmrAcceptRun(bundle, id) {
 }
 
 },{}],"9WuRb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
+);
 var _productObjects = require("./models/product-objects");
 /* FRÅGOR:
 flera html-filer = ny mapp?
@@ -532,6 +536,9 @@ function productsToPage() {
         let purchaseBtn = document.createElement("button");
         purchaseBtn.className = "purchase-button";
         purchaseBtn.innerHTML = products[i].purchaseBtn;
+        purchaseBtn.addEventListener("click", ()=>{
+            test();
+        });
         let infoBtn = document.createElement("button");
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
@@ -552,8 +559,28 @@ function productsToPage() {
     }
     console.log(products);
 }
+function test() {
+    console.log("Det funkar");
+    let purchaseBtnMalcolm = document.querySelectorAll(".purchase-button");
+    let cartAdding = document.getElementById("cartCount");
+    if (purchaseBtnMalcolm) {
+        console.log('click');
+        // Kollar så element finns
+        if (cartAdding) {
+            // CartCount är antingen odefinierat eller ett nummer
+            // Om det är undifined faller det tillbaka till 0. Konvertera
+            // till int eftersom value från innerText
+            // returnerar en string;
+            let cartCount = Number(cartAdding.innerText || 0);
+            // Ökar med ett efter varje click
+            cartAdding.innerText = String(cartCount + 1);
+            //Gör att amount kommer upp
+            cartAdding.style.visibility = "visible";
+        }
+    }
+}
 
-},{"./models/product-objects":"d5Ism"}],"d5Ism":[function(require,module,exports) {
+},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
@@ -574,36 +601,6 @@ class Article {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
 
 //# sourceMappingURL=index.57e1e753.js.map

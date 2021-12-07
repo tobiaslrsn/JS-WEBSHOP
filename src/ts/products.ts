@@ -145,7 +145,7 @@ window.onload = function () {
   // cartNumbers();
 };
 
-function productsToPage() {
+export function productsToPage() {
   let productContaier: HTMLDivElement = document.getElementById(
     "products"
   ) as HTMLDivElement;
@@ -187,6 +187,9 @@ function productsToPage() {
     let purchaseBtn = document.createElement("button");
     purchaseBtn.className = "purchase-button";
     purchaseBtn.innerHTML = products[i].purchaseBtn;
+    purchaseBtn.addEventListener("click", ()=>{
+      test()
+    })
 
     let infoBtn = document.createElement("button");
     infoBtn.className = "info-button";
@@ -211,4 +214,29 @@ function productsToPage() {
   }
 
   console.log(products);
+}
+
+function test(){
+  console.log("Det funkar")
+    let purchaseBtnMalcolm = document.querySelectorAll(".purchase-button")
+    let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
+
+
+    if (purchaseBtnMalcolm) {
+          console.log('click');
+          // Kollar så element finns
+          if (cartAdding) {
+            // CartCount är antingen odefinierat eller ett nummer
+            // Om det är undifined faller det tillbaka till 0. Konvertera
+            // till int eftersom value från innerText
+            // returnerar en string;
+            let cartCount = Number(cartAdding.innerText || 0);
+      
+            // Ökar med ett efter varje click
+            cartAdding.innerText = String(cartCount + 1);
+            //Gör att amount kommer upp
+            cartAdding.style.visibility ="visible"
+        }
+        
+    }
 }
