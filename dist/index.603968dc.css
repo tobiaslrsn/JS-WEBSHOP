@@ -20,6 +20,7 @@ header .cart {
 }
 header #hamnav {
   width: 100%;
+  position: absolute;
 }
 header #hamitems a {
   box-sizing: border-box;
@@ -55,15 +56,24 @@ header #hamburger {
 }
 
 @media screen and (min-width: 1200px) {
-  #hamnav {
+  header {
+    height: 5rem;
+    width: 100%;
+    position: fixed;
+    background-color: #f2f2f2;
+    border-bottom: 2px solid yellow;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 100;
+  }
+  header #hamnav {
     width: 75%;
   }
-
-  #hamitems {
+  header #hamitems {
     display: flex;
   }
-
-  #hamitems a {
+  header #hamitems a {
     flex-grow: 1;
     flex-basis: 0;
     padding: 10px;
@@ -71,13 +81,11 @@ header #hamburger {
     text-decoration: none;
     text-align: center;
   }
-
-  #hamitems a:hover {
+  header #hamitems a:hover {
     background-color: gray;
   }
-
-  #hamnav label,
-#hamburger {
+  header #hamnav label,
+header #hamburger {
     display: none;
   }
 }
