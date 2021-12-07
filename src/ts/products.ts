@@ -189,6 +189,7 @@ export function productsToPage() {
     purchaseBtn.innerHTML = products[i].purchaseBtn;
     purchaseBtn.addEventListener("click", ()=>{
       test()
+      
     })
 
     let infoBtn = document.createElement("button");
