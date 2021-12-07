@@ -4,6 +4,8 @@ export class Article {
   album: string;
   year: number;
   price: number;
+  article: string;
+
   description: string;
   genre: string;
   addToCart: string;
@@ -18,6 +20,7 @@ export class Article {
     album: string,
     year: number,
     price: number,
+    article: string,
     description: string,
     genre: string,
     addToCart: string,
@@ -31,6 +34,7 @@ export class Article {
     this.album = album;
     this.year = year;
     this.price = price;
+    this.article = article;
     this.description = description;
     this.genre = genre;
     this.addToCart = addToCart;
