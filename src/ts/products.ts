@@ -174,11 +174,7 @@ window.onload = function () {
 };
 
 export function productsToPage() {
-<<<<<<< HEAD
-  let productContaier: HTMLDivElement = document.getElementById(
-=======
   let productContainer: HTMLDivElement = document.getElementById(
->>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697
     "products"
   ) as HTMLDivElement;
 
@@ -236,18 +232,6 @@ export function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-<<<<<<< HEAD
-    let purchaseBtn = document.createElement("button");
-    purchaseBtn.className = "purchase-button";
-    purchaseBtn.innerHTML = products[i].purchaseBtn;
-    purchaseBtn.addEventListener("click", () => {
-      shoppingCart.push(products[i]);
-      window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-
-      console.log(shoppingCart);
-      // addToCart();
-    });
-=======
     //PURCHASE BUTTON
     let addToCart: HTMLButtonElement = document.createElement(
       "button"
@@ -259,7 +243,6 @@ export function productsToPage() {
     addToCart.addEventListener("click", () => {
       shoppingCart.push(products[i]);
       window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
->>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697
 
       console.log(shoppingCart);
       cartProductCount(); //CART COUNT
@@ -325,9 +308,6 @@ export function productsToPage() {
   console.log(products);
 }
 
-<<<<<<< HEAD
-function sendToLocalStorage() {}
-=======
 function cartProductCount() {
   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
   let cartAdding: HTMLButtonElement = document.getElementById(
@@ -342,4 +322,3 @@ function cartProductCount() {
     }
   }
 }
->>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697

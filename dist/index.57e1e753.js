@@ -529,17 +529,6 @@ function productsToPage() {
         let productGenre = document.createElement("p");
         productGenre.className = "genre";
         productGenre.innerHTML = "Genre: " + products[i].genre;
-<<<<<<< HEAD
-        let purchaseBtn = document.createElement("button");
-        purchaseBtn.className = "purchase-button";
-        purchaseBtn.innerHTML = products[i].purchaseBtn;
-        purchaseBtn.addEventListener("click", ()=>{
-            shoppingCart.push(products[i]);
-            window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-            console.log(shoppingCart);
-        // addToCart();
-        });
-=======
         //PURCHASE BUTTON
         let addToCart = document.createElement("button");
         addToCart.className = "purchase-button";
@@ -552,7 +541,6 @@ function productsToPage() {
             cartProductCount(); //CART COUNT
         });
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
->>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697
         let infoBtn = document.createElement("button");
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
@@ -595,9 +583,6 @@ function productsToPage() {
     }
     console.log(products);
 }
-<<<<<<< HEAD
-function sendToLocalStorage() {
-=======
 function cartProductCount() {
     let purchaseBtnCount = document.querySelectorAll(".purchase-button");
     let cartAdding = document.getElementById("cartCount");
@@ -608,7 +593,6 @@ function cartProductCount() {
             cartAdding.style.visibility = "visible";
         }
     }
->>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697
 }
 
 },{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
