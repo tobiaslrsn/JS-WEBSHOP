@@ -4,35 +4,25 @@ import create from "core-js/fn/object/create";
 
 window.onload = function () {
   descriptionToPage();
-  /*   let heyhey = localStorage.getItem("product001");
-  let hey: string = localStorage.getItem("product002");
- */
-  /*   let productArtist: HTMLParagraphElement = document.createElement("p");
-  productArtist.className = "artist";
-  productArtist.innerHTML = localStorage.getItem("product006"); //this.album
-
-  document.body.appendChild(productArtist);
-  console.log(productArtist);
- */
-
-  /*  let photo = document.getElementsByClassName("product-image");
-  photo.src =
- */
 };
 
 let getObject: string = localStorage.getItem("product");
-let productObject = JSON.parse(getObject);
+let productObject: any = JSON.parse(getObject);
 
 function descriptionToPage() {
   let descriptionContainer: HTMLDivElement = document.getElementById(
     "description-container"
   ) as HTMLDivElement;
 
-  let photo = document.createElement("img");
+  let photo: HTMLImageElement = document.createElement(
+    "img"
+  ) as HTMLImageElement;
   photo.className = "product-image";
   photo.src = productObject.photo;
 
-  let description = document.createElement("span");
+  let description: HTMLSpanElement = document.createElement(
+    "span"
+  ) as HTMLSpanElement;
   description.className = "description";
   description.innerHTML = productObject.description;
 
@@ -40,29 +30,33 @@ function descriptionToPage() {
     "ul"
   ) as HTMLUListElement;
 
-  let artist = document.createElement("li");
+  let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
   artist.className = "artist";
   artist.innerHTML = "ARTIST: " + productObject.artist;
-  let album = document.createElement("li");
+
+  let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
   album.className = "album";
   album.innerHTML = "ALBUM: " + productObject.album;
-  let article = document.createElement("li");
+
+  let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
   article.className = "article";
   article.innerHTML = "ART.NR: " + productObject.article;
-  let genre = document.createElement("li");
+
+  let genre: HTMLLIElement = document.createElement("li") as HTMLLIElement;
   genre.className = "genre";
   genre.innerHTML = "GENRE: " + productObject.genre;
-  let year = document.createElement("li");
+
+  let year: HTMLLIElement = document.createElement("li") as HTMLLIElement;
   year.className = "year";
   year.innerHTML = "YEAR: " + productObject.year;
-  let price = document.createElement("li");
+
+  let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
   price.className = "price";
   price.innerHTML = "PRICE: " + productObject.price + " SEK";
 
   descriptionContainer.appendChild(photo);
   descriptionContainer.appendChild(description);
   description.appendChild(descriptionUnorderedList);
-  //UL_>LI
   descriptionUnorderedList.appendChild(artist);
   descriptionUnorderedList.appendChild(album);
   descriptionUnorderedList.appendChild(article);
@@ -70,10 +64,5 @@ function descriptionToPage() {
   descriptionUnorderedList.appendChild(year);
   descriptionUnorderedList.appendChild(price);
 
-  /*
-let artist = document.getElementsByClassName("artist");
-artist = obj.artist.id; */
-
   console.log(productObject);
-  console.log(productObject.artist + productObject.id + productObject.album);
 }

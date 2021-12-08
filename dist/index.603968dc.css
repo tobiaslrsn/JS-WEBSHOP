@@ -82,7 +82,7 @@ h2 {
   font-weight: 700;
   margin: 5px;
   margin-bottom: 20px;
-  background-color: yellow;
+  background-color: linear-gradient(152deg, rgba(221, 195, 0, 0.3379726891) 11%, rgba(0, 0, 0, 0.0690651261) 49%, rgba(106, 106, 106, 0.5074404762) 76%, rgba(174, 163, 177, 0.8169642857) 99%);
   color: black;
   cursor: pointer;
   border: none;
