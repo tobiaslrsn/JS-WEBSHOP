@@ -494,6 +494,7 @@ let products = [
     product008,
     product009, 
 ];
+let shoppingCart = [];
 window.onload = function() {
     productsToPage();
 };
@@ -532,8 +533,12 @@ function productsToPage() {
         let addToCart = document.createElement("button");
         addToCart.className = "purchase-button";
         addToCart.innerHTML = products[i].addToCart;
+        //ADD PRODUCT TO LOCAL STORAGE
         addToCart.addEventListener("click", ()=>{
-            test();
+            shoppingCart.push(products[i]);
+            window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+            console.log(shoppingCart);
+            cartProductCount(); //CART COUNT
         });
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
         let infoBtn = document.createElement("button");
@@ -578,12 +583,10 @@ function productsToPage() {
     }
     console.log(products);
 }
-function test() {
-    console.log("Det funkar");
+function cartProductCount() {
     let purchaseBtnCount = document.querySelectorAll(".purchase-button");
     let cartAdding = document.getElementById("cartCount");
     if (purchaseBtnCount) {
-        console.log("click");
         if (cartAdding) {
             let cartCount = Number(cartAdding.innerText || 0);
             cartAdding.innerText = String(cartCount + 1);

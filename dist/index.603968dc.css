@@ -28,6 +28,7 @@ header ul li a {
 }
 #karusell {
   height: 100vh;
+  width: 100vw;
   background-image: url(Vinylrecords.87d283f1.png);
   background-size: cover;
   background-position: center;
