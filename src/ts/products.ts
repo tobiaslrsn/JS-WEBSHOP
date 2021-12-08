@@ -139,13 +139,15 @@ let products = [
   product008,
 ];
 
+let shoppingCart = [];
+
 window.onload = function () {
   productsToPage();
 
   // cartNumbers();
 };
 
-function productsToPage() {
+export function productsToPage() {
   let productContaier: HTMLDivElement = document.getElementById(
     "products"
   ) as HTMLDivElement;
@@ -187,6 +189,13 @@ function productsToPage() {
     let purchaseBtn = document.createElement("button");
     purchaseBtn.className = "purchase-button";
     purchaseBtn.innerHTML = products[i].purchaseBtn;
+    purchaseBtn.addEventListener("click", () => {
+      shoppingCart.push(products[i]);
+      window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+
+      console.log(shoppingCart);
+      // addToCart();
+    });
 
     let infoBtn = document.createElement("button");
     infoBtn.className = "info-button";
@@ -212,3 +221,5 @@ function productsToPage() {
 
   console.log(products);
 }
+
+function sendToLocalStorage() {}
