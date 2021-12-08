@@ -172,11 +172,7 @@ window.onload = function () {
 };
 
 export function productsToPage() {
-<<<<<<< HEAD
-  let productContaier: HTMLDivElement = document.getElementById(
-=======
   let productContainer: HTMLDivElement = document.getElementById(
->>>>>>> e2cd71f7d4740c2983a57b4dc38b92ba11ed316c
     "products"
   ) as HTMLDivElement;
 
@@ -234,13 +230,15 @@ export function productsToPage() {
     productGenre.className = "genre";
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
-    let purchaseBtn = document.createElement("button");
-    purchaseBtn.className = "purchase-button";
-    purchaseBtn.innerHTML = products[i].purchaseBtn;
-    purchaseBtn.addEventListener("click", ()=>{
-      test()
-      
-    })
+    //PURCHASE BUTTON
+    let addToCart: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    addToCart.className = "purchase-button";
+    addToCart.innerHTML = products[i].addToCart;
+    addToCart.addEventListener("click", () => {
+      test();
+    });
 
     //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
     let infoBtn: HTMLButtonElement = document.createElement(
@@ -302,18 +300,19 @@ export function productsToPage() {
   console.log(products);
 }
 
-function test(){
-  console.log("Det funkar")
-    let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-    let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
+function test() {
+  console.log("Det funkar");
+  let purchaseBtnCount = document.querySelectorAll(".purchase-button");
+  let cartAdding: HTMLButtonElement = document.getElementById(
+    "cartCount"
+  ) as HTMLButtonElement;
 
-    if (purchaseBtnCount) {
-          console.log('click');
-          if (cartAdding) {
-            let cartCount = Number(cartAdding.innerText || 0);
-            cartAdding.innerText = String(cartCount + 1);
-            cartAdding.style.visibility ="visible"
-        }
-        
+  if (purchaseBtnCount) {
+    console.log("click");
+    if (cartAdding) {
+      let cartCount = Number(cartAdding.innerText || 0);
+      cartAdding.innerText = String(cartCount + 1);
+      cartAdding.style.visibility = "visible";
     }
+  }
 }

@@ -528,20 +528,14 @@ function productsToPage() {
         let productGenre = document.createElement("p");
         productGenre.className = "genre";
         productGenre.innerHTML = "Genre: " + products[i].genre;
-<<<<<<< HEAD
-        let purchaseBtn = document.createElement("button");
-        purchaseBtn.className = "purchase-button";
-        purchaseBtn.innerHTML = products[i].purchaseBtn;
-        purchaseBtn.addEventListener("click", ()=>{
-            test();
-        });
-=======
         //PURCHASE BUTTON
         let addToCart = document.createElement("button");
         addToCart.className = "purchase-button";
         addToCart.innerHTML = products[i].addToCart;
+        addToCart.addEventListener("click", ()=>{
+            test();
+        });
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
->>>>>>> e2cd71f7d4740c2983a57b4dc38b92ba11ed316c
         let infoBtn = document.createElement("button");
         infoBtn.className = "info-button";
         infoBtn.innerHTML = products[i].infoBtn;
@@ -589,7 +583,7 @@ function test() {
     let purchaseBtnCount = document.querySelectorAll(".purchase-button");
     let cartAdding = document.getElementById("cartCount");
     if (purchaseBtnCount) {
-        console.log('click');
+        console.log("click");
         if (cartAdding) {
             let cartCount = Number(cartAdding.innerText || 0);
             cartAdding.innerText = String(cartCount + 1);
