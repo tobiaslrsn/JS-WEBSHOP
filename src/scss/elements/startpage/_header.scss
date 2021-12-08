@@ -4,7 +4,7 @@ header {
   position: fixed;
   background-color: #f2f2f2;
   border-bottom: 2px solid yellow;
-  z-index: 100;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,6 +22,7 @@ header {
 }
 
 #hamnav {
+  position: relative;
   width: 100%;
 }
 #hamitems a {
@@ -47,6 +48,7 @@ header {
 }
 
 #hamitems {
+  position: absolute;
   display: none;
   background-color: #f2f2f2;
 }
@@ -68,6 +70,7 @@ header {
 
   #hamitems {
     display: flex;
+    position: initial;
   }
 
   #hamitems a {
