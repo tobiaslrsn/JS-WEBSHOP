@@ -1,21 +1,3 @@
 #karusell {
   height: 100vh;
-  width: 100%;
-  background-color: white;
-  color: white;
-  border-bottom: 2px solid yellow;
-}
-
-.corousel, .corousel-inner, .corousel-item, img{
-  width: 100%;
-  height: 500px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel{
-  width: 100%;
-  max-width: 600px;
-  height: auto;
 }
