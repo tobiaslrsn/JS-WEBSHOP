@@ -583,6 +583,7 @@ function productsToPage() {
     }
     console.log(products);
 }
+//Adding product cart counting
 function cartProductCount() {
     let purchaseBtnCount = document.querySelectorAll(".purchase-button");
     let cartAdding = document.getElementById("cartCount");

@@ -307,18 +307,19 @@ export function productsToPage() {
   }
   console.log(products);
 }
-
+//Adding product cart counting
 function cartProductCount() {
   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-  let cartAdding: HTMLButtonElement = document.getElementById(
-    "cartCount"
-  ) as HTMLButtonElement;
-
+  let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
+  
   if (purchaseBtnCount) {
     if (cartAdding) {
       let cartCount = Number(cartAdding.innerText || 0);
       cartAdding.innerText = String(cartCount + 1);
       cartAdding.style.visibility = "visible";
+
+      
+
     }
   }
 }
