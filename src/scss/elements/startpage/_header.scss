@@ -4,6 +4,7 @@ header {
   position: fixed;
   background-color: #f2f2f2;
   border-bottom: 2px solid yellow;
+  z-index: 100;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -18,18 +19,72 @@ header {
     width: 35px;
     margin-right: 25px;
   }
+}
 
-  ul {
-    list-style-type: none;
-    li {
-      display: inline;
-      justify-content: space-between;
-      a {
-        color: black;
-      }
-    }
-  }
+#hamnav {
+  width: 100%;
+}
+#hamitems a {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  padding: 50px;
+}
+
+#hamnav label {
+  display: inline-block;
+  color: black;
+  font-style: normal;
+  font-size: 1.2em;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+#hamitems {
+  display: none;
+  background-color: #f2f2f2;
+}
+#hamitems a:hover {
+  background-color: gray;
+}
+#hamnav input:checked ~ #hamitems {
+  display: block;
+}
+
+#hamburger {
+  display: none;
 }
 
 @media screen and (min-width: 1200px) {
+  #hamnav {
+    width: 75%;
+  }
+
+  #hamitems {
+    display: flex;
+  }
+
+  #hamitems a {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+  }
+
+  #hamitems a:hover {
+    background-color: gray;
+  }
+
+  #hamnav label,
+  #hamburger {
+    display: none;
+  }
 }
