@@ -3,7 +3,6 @@ header {
   width: 100%;
   position: fixed;
   background-color: #f2f2f2;
-  border-bottom: 2px solid yellow;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,22 +26,18 @@ header ul li {
 header ul li a {
   color: black;
 }
-
 #karusell {
   height: 100vh;
-  width: 100%;
-  background-color: white;
-  color: white;
-  border-bottom: 2px solid yellow;
+  width: 100vw;
+  background-image: url(Vinylrecords.87d283f1.png);
+  background-size: cover;
+  background-position: center;
 }
-
 main {
   width: 100%;
   background-color: white;
-  border-bottom: 2px solid yellow;
   padding-bottom: 70px;
 }
-
 #products {
   display: flex;
   flex-wrap: wrap;
@@ -50,20 +45,17 @@ main {
   align-items: center;
   padding: 1.9rem;
 }
-
 h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
   padding-top: 3rem;
 }
-
 .product {
   margin: 2rem;
   display: inline-block;
   width: 300px;
 }
-
 .artist,
 .album,
 .description,
@@ -76,7 +68,6 @@ h2 {
   text-align: left;
   padding-left: 1rem;
 }
-
 .purchase-button,
 .info-button {
   height: 2rem;
@@ -89,8 +80,13 @@ h2 {
   cursor: pointer;
   border: none;
   border-radius: 2rem;
+  transition: transform 0.2s;
 }
-
+.purchase-button:hover,
+.info-button:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
+}
 .listen-button {
   height: 2rem;
   width: 5rem;
@@ -102,8 +98,12 @@ h2 {
   cursor: pointer;
   border: none;
   border-radius: 2rem;
+  transition: transform 0.1s;
 }
-
+.listen-button:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
+}
 .product-image {
   max-width: 300px;
   max-height: 300px;
@@ -112,29 +112,33 @@ h2 {
   transition: transform 0.2s;
   cursor: pointer;
 }
-
 .product-image:hover {
   transform: scale(1.03);
 }
-
 .artist {
   font-size: 15pt;
   font-weight: 700;
 }
-
+.fa-spotify {
+  padding: 3px;
+}
 footer {
   height: 15rem;
   width: 100%;
   background-color: yellow;
 }
-
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-
 body {
   margin: 0;
   padding: 0;
+}
+#cartCount {
+  border: none;
+  border-radius: 50%;
+  background-color: #f3e249;
+  visibility: hidden;
 }
 /*# sourceMappingURL=index.603968dc.css.map */

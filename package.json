@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+<<<<<<< HEAD
     "parcel": "parcel src/index.html --no-cache",
+=======
+    "parcel": "parcel src/index.html src/description.html ",
+>>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697
     "cypress": "cypress open"
   },
   "author": "Tobias-Malcolm-Jesper",

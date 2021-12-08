@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./scss/main.scss" />
+<<<<<<< HEAD
     <script src="/src/ts/main.ts" type="module"></script>
+=======
+>>>>>>> cfd2ba4e90a7c4b16a84b87fec87cf078d06a697
 
+    <script src="/src/ts/main.ts" type="module"></script>
+    <script src="/src/ts/description.ts" type="module"></script>
     <script src="/src/ts/products.ts" type="module"></script>
-    <script src="ts/header.ts"></script>
+
     <script
-    src="https://kit.fontawesome.com/7c490574c4.js"
-    crossorigin="anonymous"
-  ></script>
+      src="https://kit.fontawesome.com/7c490574c4.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="shortcut icon" href="./assets/favicon.ico" />
     <title>Document</title>
   </head>
   <body>
@@ -30,14 +41,17 @@
    </button>
     </div>
         <img class="cart" src="assets/Shopping-bag-icon.png">
+        <button id="cartCount">0</button>
       
     </header>
-    <div id="karusell">KARUSELL</div>
+    <div id="karusell"></div>
 
     <main>
       <div class="product-container">
         <div class="category-one">
           <h2>OUR PRODUCTS</h2>
+          <a class="redirect" href="./description.html"></a>
+
           <div id="products"></div>
         </div>
       </div>
