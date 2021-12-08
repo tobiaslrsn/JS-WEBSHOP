@@ -127,6 +127,9 @@ footer {
   width: 100%;
   background-color: yellow;
 }
+body {
+  background-color: orange;
+}
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
