@@ -224,7 +224,7 @@ export function productsToPage() {
       "p"
     ) as HTMLParagraphElement;
     productPrice.className = "price";
-    productPrice.innerHTML = "price: " + products[i].price + " DOLLARZ";
+    productPrice.innerHTML = "price: " + products[i].price + " SEK";
 
     let productGenre: HTMLParagraphElement = document.createElement(
       "p"

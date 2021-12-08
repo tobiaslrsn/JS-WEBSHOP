@@ -525,7 +525,7 @@ function productsToPage() {
         productYear.innerHTML = "year: " + products[i].year;
         let productPrice = document.createElement("p");
         productPrice.className = "price";
-        productPrice.innerHTML = "price: " + products[i].price + " DOLLARZ";
+        productPrice.innerHTML = "price: " + products[i].price + " SEK";
         let productGenre = document.createElement("p");
         productGenre.className = "genre";
         productGenre.innerHTML = "Genre: " + products[i].genre;
