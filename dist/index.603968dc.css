@@ -3,7 +3,6 @@ header {
   width: 100%;
   position: fixed;
   background-color: #f2f2f2;
-  border-bottom: 2px solid yellow;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -39,7 +38,6 @@ header ul li a {
 main {
   width: 100%;
   background-color: white;
-  border-bottom: 2px solid yellow;
   padding-bottom: 70px;
 }
 
@@ -84,11 +82,18 @@ h2 {
   font-weight: 700;
   margin: 5px;
   margin-bottom: 20px;
-  background-color: yellow;
+  background-color: linear-gradient(152deg, rgba(221, 195, 0, 0.3379726891) 11%, rgba(0, 0, 0, 0.0690651261) 49%, rgba(106, 106, 106, 0.5074404762) 76%, rgba(174, 163, 177, 0.8169642857) 99%);
   color: black;
   cursor: pointer;
   border: none;
   border-radius: 2rem;
+  transition: transform 0.2s;
+}
+
+.purchase-button:hover,
+.info-button:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
 }
 
 .listen-button {
@@ -102,6 +107,12 @@ h2 {
   cursor: pointer;
   border: none;
   border-radius: 2rem;
+  transition: transform 0.1s;
+}
+
+.listen-button:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
 }
 
 .product-image {
@@ -120,6 +131,10 @@ h2 {
 .artist {
   font-size: 15pt;
   font-weight: 700;
+}
+
+.fa-spotify {
+  padding: 3px;
 }
 
 footer {

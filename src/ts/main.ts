@@ -1,3 +1,2 @@
-window.onload = function () {
-  console.log("working");
-};
+import { productsToPage } from "./products";
+import { Article } from "./models/product-objects";
