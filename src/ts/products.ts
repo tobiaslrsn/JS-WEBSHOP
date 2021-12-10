@@ -1,8 +1,6 @@
 import * as productObjects from "./models/product-objects";
 import { CartList } from "./models/Isomething";
 
-let hejhej = new CartList();
-
 let image001: string = "1.b18e163d.jpg";
 let image002: string = "2.0fe79b40.jpg";
 let image003: string = "11.cdc2b607.jpg";

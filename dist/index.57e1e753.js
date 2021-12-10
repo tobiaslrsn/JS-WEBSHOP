@@ -464,8 +464,6 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
 );
 var _productObjects = require("./models/product-objects");
-var _isomething = require("./models/Isomething");
-let hejhej = new _isomething.CartList();
 let image001 = "1.b18e163d.jpg";
 let image002 = "2.0fe79b40.jpg";
 let image003 = "11.cdc2b607.jpg";
@@ -637,7 +635,7 @@ function offcanvasCart() {
     }
 } //BACKUP
 
-},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./models/Isomething":"brPZg"}],"d5Ism":[function(require,module,exports) {
+},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
@@ -690,21 +688,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"brPZg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CartList", ()=>CartList
-);
-class CartList {
-    constructor(){
-        this.cartListList = JSON.parse(localStorage.getItem("product")) || [];
-    }
-    addToCart() {
-        let getCart = localStorage.getItem("addToCart");
-        let cartObject = JSON.parse(getCart);
-    }
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
+},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
 
 //# sourceMappingURL=index.57e1e753.js.map
