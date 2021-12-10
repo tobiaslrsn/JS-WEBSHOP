@@ -635,7 +635,30 @@ function offcanvasCart() {
     }
 }
 
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./models/product-objects":"d5Ism"}],"ciiiV":[function(require,module,exports) {
+},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "Article", ()=>Article
+);
+class Article {
+    constructor(photo, artist, album, year, price, article, description, genre, addToCart, infoBtn, listenBtn, id, spotifyUrl){
+        this.photo = photo;
+        this.artist = artist;
+        this.album = album;
+        this.year = year;
+        this.price = price;
+        this.article = article;
+        this.description = description;
+        this.genre = genre;
+        this.addToCart = addToCart;
+        this.infoBtn = infoBtn;
+        this.listenBtn = listenBtn;
+        this.id = id;
+        this.spotifyUrl = spotifyUrl;
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
 exports.interopDefault = function(a) {
     return a && a.__esModule ? a : {
         default: a
@@ -665,29 +688,6 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}],"d5Ism":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "Article", ()=>Article
-);
-class Article {
-    constructor(photo, artist, album, year, price, article, description, genre, addToCart, infoBtn, listenBtn, id, spotifyUrl){
-        this.photo = photo;
-        this.artist = artist;
-        this.album = album;
-        this.year = year;
-        this.price = price;
-        this.article = article;
-        this.description = description;
-        this.genre = genre;
-        this.addToCart = addToCart;
-        this.infoBtn = infoBtn;
-        this.listenBtn = listenBtn;
-        this.id = id;
-        this.spotifyUrl = spotifyUrl;
-    }
-}
-
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
+},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
 
 //# sourceMappingURL=index.57e1e753.js.map
