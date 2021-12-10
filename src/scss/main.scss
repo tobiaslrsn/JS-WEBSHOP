@@ -2,6 +2,7 @@
 @use "./elements/startpage/carousell";
 @use "./elements/startpage/feed";
 @use "./elements/startpage/footer";
+@use "./elements/checkout/checkout.scss";
 
 // @import "mixins";
 html {
@@ -13,7 +14,7 @@ body {
   padding: 0;
 }
 
-#cartCount{
+#cartCount {
   border: none;
   border-radius: 50%;
   background-color: rgb(243, 226, 73);
