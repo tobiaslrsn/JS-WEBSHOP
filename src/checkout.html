@@ -4,17 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./scss/elements/checkout/checkout.scss" />
-    <script src="/src/ts/checkout.ts"></script>
-    <script src="/src/ts/main.ts" type="module"></script>
-    <script src="/src/ts/description.ts" type="module"></script>
-    <script src="/src/ts/products.ts" type="module"></script>
+    <link rel="stylesheet" href="./scss/main.scss" />
+
+    <script src="./ts/checkout.ts" type="module"></script>
+
     <title>Document</title>
   </head>
   <body>
-    <div id="cart-container">
-      <div id="shopping-cart"></div>
-      <div id="customer-form"></div>
+    <div id="return-to-start">
+      <a href="./index.html">index</a>
     </div>
+    <main>
+      <h2>CART</h2>
+      <div id="checkout-container">
+        <div id="shopping-cart"></div>
+
+        <h2>PLACE ORDER</h2>
+        <div id="customer-form">
+          <form></form>
+        </div>
+      </div>
+    </main>
   </body>
 </html>
