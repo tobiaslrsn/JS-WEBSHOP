@@ -57,6 +57,97 @@ a {
   text-decoration: none;
   color: black;
 }
+#shopping-cart-offcanvas {
+  //cart-container
+}
+.overflow-auto {
+  height: auto;
+}
+.offcanvas-end {
+  height: 100vh;
+  display: flex;
+}
+
+.cart-item-offcanvas {
+  //cart-product-container
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  border-bottom: 1px solid gray;
+}
+.product-image-offcanvas {
+  width: 51px;
+  height: 50px;
+}
+.artist-offcanvas {
+  width: 70%;
+  background-color: red;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.album-offcanvas {
+  height: 10%;
+  width: 70%;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+}
+.article-offcanvas {
+  width: 70%;
+  background-color: gray;
+  font-size: 0.6rem;
+}
+.price-offcanvas {
+  width: 70%;
+  background-color: orange;
+  padding: 0;
+}
+.remove-from-offcanvas {
+  height: 2rem;
+  width: 5rem;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+}
+.remove-from-offcanvas:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px rgb(124, 121, 121);
+}
+.purchase-button-offcanvas {
+  height: 2rem;
+  width: 90%;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+  justify-content: center;
+  align-items: center;
+}
+.purchase-button-offcanvas:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px rgb(124, 121, 121);
+}
+.redirect {
+  text-decoration: none;
+  color: black;
+}
+#return-to-start {
+}
 
 //TAB
 /* @media screen and (max-width: 1024px) {

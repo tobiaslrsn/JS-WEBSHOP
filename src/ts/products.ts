@@ -1,5 +1,7 @@
 import * as productObjects from "./models/product-objects";
-import { Article } from "./models/product-objects";
+import { CartList } from "./models/Isomething";
+
+let hejhej = new CartList();
 
 let image001: string = "1.b18e163d.jpg";
 let image002: string = "2.0fe79b40.jpg";
@@ -171,7 +173,7 @@ let shoppingCart = [];
 
 window.onload = function () {
   productsToPage();
-  offcanvasCart();
+  offcanvasCart(); //BACKUP
 };
 
 export function productsToPage() {
@@ -240,19 +242,19 @@ export function productsToPage() {
     addToCart.className = "purchase-button";
     addToCart.innerHTML = products[i].addToCart;
 
-    //ADD PRODUCT TO LOCAL STORAGE
+    //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
     addToCart.addEventListener("click", () => {
       shoppingCart.push(products[i]);
       window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
 
-      if(typeof(Storage) !== "undefined") {
+      if (typeof Storage !== "undefined") {
         if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount)+1;
+          localStorage.clickcount = Number(localStorage.clickcount) + 1;
         } else {
           localStorage.clickcount = 1;
         }
       }
-    
+
       console.log(shoppingCart);
       cartProductCount(); //CART COUNT
     });
@@ -319,23 +321,22 @@ export function productsToPage() {
 //Adding product cart counting
 function cartProductCount() {
   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-  let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
-  
+  let cartAdding: HTMLButtonElement = document.getElementById(
+    "cartCount"
+  ) as HTMLButtonElement;
+
   if (purchaseBtnCount) {
     if (cartAdding) {
       let cartCount = Number(cartAdding.innerText || 0);
       cartAdding.innerText = String(cartCount + 1);
       cartAdding.style.visibility = "visible";
-
-      
-
     }
   }
 }
 
 function offcanvasCart() {
   let getCart: string = localStorage.getItem("addToCart");
-  let cartObject: any = JSON.parse(getCart);
+  let cartObject: any = JSON.parse(getCart); //BACKUP
 
   let cartContainer: HTMLDivElement = document.getElementById(
     "shopping-cart-offcanvas"
@@ -383,4 +384,4 @@ function offcanvasCart() {
     cartContainer.appendChild(cartItem);
     cartItem.appendChild(removeItem);
   }
-}
+} //BACKUP
