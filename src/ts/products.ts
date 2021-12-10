@@ -245,6 +245,14 @@ export function productsToPage() {
       shoppingCart.push(products[i]);
       window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
 
+      if(typeof(Storage) !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount)+1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+      }
+    
       console.log(shoppingCart);
       cartProductCount(); //CART COUNT
     });
@@ -308,18 +316,19 @@ export function productsToPage() {
   }
   console.log(products);
 }
-
+//Adding product cart counting
 function cartProductCount() {
   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-  let cartAdding: HTMLButtonElement = document.getElementById(
-    "cartCount"
-  ) as HTMLButtonElement;
-
+  let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
+  
   if (purchaseBtnCount) {
     if (cartAdding) {
       let cartCount = Number(cartAdding.innerText || 0);
       cartAdding.innerText = String(cartCount + 1);
       cartAdding.style.visibility = "visible";
+
+      
+
     }
   }
 }

@@ -1,3 +1,5 @@
+<<<<<<< HEAD
+=======
 window.onload = function () {
   cartToPage();
 };
@@ -53,3 +55,4 @@ function cartToPage() {
     cartItem.appendChild(removeItem);
   }
 }
+>>>>>>> 8d9d8672bd455a159f9a0ad775ecfa7831b007aa

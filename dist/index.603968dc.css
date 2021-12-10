@@ -191,6 +191,8 @@ footer {
   width: 100%;
   background-color: yellow;
 }
+<<<<<<< HEAD
+=======
 footer .news-container {
   display: flex;
   justify-content: center;
@@ -370,6 +372,7 @@ footer li {
   text-decoration: none;
   color: black;
 }
+>>>>>>> 8d9d8672bd455a159f9a0ad775ecfa7831b007aa
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
