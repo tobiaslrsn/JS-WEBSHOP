@@ -252,7 +252,6 @@ export function productsToPage() {
         }
       }
     
-
       console.log(shoppingCart);
       cartProductCount(); //CART COUNT
     });
