@@ -3,11 +3,8 @@ header {
   width: 100%;
   position: fixed;
   background-color: #f2f2f2;
-<<<<<<< HEAD
-=======
   border-bottom: 2px solid yellow;
   z-index: 1;
->>>>>>> feature/header
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -21,12 +18,10 @@ header .cart {
   width: 35px;
   margin-right: 25px;
 }
-
 #hamnav {
   position: relative;
   width: 100%;
 }
-
 #hamitems a {
   box-sizing: border-box;
   display: block;
@@ -38,7 +33,6 @@ header .cart {
   justify-content: center;
   padding: 50px;
 }
-
 #hamnav label {
   display: inline-block;
   color: black;
@@ -48,27 +42,20 @@ header .cart {
   display: flex;
   justify-content: center;
 }
-
 #hamitems {
   position: absolute;
   display: none;
   background-color: #f2f2f2;
 }
-
 #hamitems a:hover {
   background-color: gray;
 }
-<<<<<<< HEAD
-=======
-
 #hamnav input:checked ~ #hamitems {
   display: block;
 }
-
 #hamburger {
   display: none;
 }
-
 @media screen and (min-width: 1200px) {
   #hamnav {
     width: 75%;
@@ -97,9 +84,8 @@ header .cart {
     display: none;
   }
 }
->>>>>>> feature/header
 #karusell {
-  height: 100vh;
+  height: 99.9vh;
   margin: 0;
   background-image: url(Vinylrecords.87d283f1.png);
   background-size: cover;
@@ -205,10 +191,39 @@ footer {
   width: 100%;
   background-color: yellow;
 }
-<<<<<<< HEAD
-<<<<<<< HEAD
-body {
-=======
+footer .news-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .info {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  justify-content: space-around;
+  align-items: center;
+}
+footer ul {
+  list-style-type: none;
+}
+footer li {
+  list-style-type: none;
+  padding: 10px;
+}
+@media screen and (min-width: 1200px) {
+  .news-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
 #checkout-container {
   display: flex;
   flex-wrap: wrap;
@@ -239,49 +254,7 @@ body {
 .artist-cart {
   width: 100%;
   height: 100%;
->>>>>>> feature/get-cartproducts-from-storage-to-checkout-html
   background-color: orange;
-=======
-footer .news-container {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-footer .news-container #subscribe {
-  background-color: black;
-  color: white;
-  width: 125px;
-  height: 50px;
-}
-footer .info {
-  display: flex;
-  flex-direction: row;
-  font-size: 16px;
-  justify-content: space-around;
-  align-items: center;
-}
-footer ul {
-  list-style-type: none;
-}
-footer li {
-  list-style-type: none;
-  padding: 10px;
-}
-
-@media screen and (min-width: 1200px) {
-  .news-container {
-    display: flex;
-    justify-content: center;
-  }
-
-  .info {
-    display: flex;
-    flex-direction: row;
-    font-size: 16px;
-    justify-content: space-around;
-    align-items: center;
-  }
->>>>>>> feature/footer
 }
 .album-cart {
   width: 100%;
