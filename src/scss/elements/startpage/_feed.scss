@@ -2,6 +2,7 @@ main {
   width: 100%;
   background-color: white;
   padding-bottom: 70px;
+  z-index: -10;
 }
 
 #products {
@@ -43,6 +44,7 @@ h2 {
   height: 2rem;
   width: 5rem;
   font-weight: 700;
+  font-size: 10pt;
   margin: 5px;
   margin-bottom: 20px;
   background-color: yellow;
@@ -62,6 +64,7 @@ h2 {
   height: 2rem;
   width: 5rem;
   font-weight: 700;
+  font-size: 10pt;
   margin: 5px;
   margin-bottom: 20px;
   background-color: black;
@@ -77,8 +80,8 @@ h2 {
   box-shadow: 1px 1px 4px rgb(124, 121, 121);
 }
 .product-image {
-  max-width: 300px;
-  max-height: 300px;
+  max-width: 21rem;
+  margin-bottom: 0.8rem;
   justify-content: space-evenly;
   align-items: center;
   transition: transform 0.2s;
@@ -95,17 +98,7 @@ h2 {
 .fa-spotify {
   padding: 3px;
 }
-.album {
-}
-.year {
-}
-.price {
-}
-.description {
-}
-.genre {
-}
-.purchase-button {
-}
-.info-button {
+
+.button-offcanvas {
+  border: none;
 }

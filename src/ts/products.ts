@@ -63,7 +63,7 @@ let product004: productObjects.Article = new productObjects.Article(
   image004,
   "Calvin Harris",
   "I created disco",
-  1222,
+  2007,
   250,
   "MJT004R",
   "I Created Disco is the debut studio album by Scottish singer-musician Calvin Harris. <br/>It was released on 15 June 2007 by Columbia Records.<br/><br/> It was preceded by the singles 'Acceptable in the 80s' and 'The Girls', which reached numbers 10 and three on the UK Singles Chart, respectively. <br/><br/>The album debuted at number eight on the UK Albums Chart with first-week sales of 16,121 copies. <br/><br/>On 23 May 2008, it was certified gold by the British Phonographic Industry (BPI). I Created Disco had sold 223,845 copies in the United Kingdom by November 2014.",
@@ -171,6 +171,7 @@ let shoppingCart = [];
 
 window.onload = function () {
   productsToPage();
+  offcanvasCart();
 };
 
 export function productsToPage() {
@@ -329,5 +330,57 @@ function cartProductCount() {
       
 
     }
+  }
+}
+
+function offcanvasCart() {
+  let getCart: string = localStorage.getItem("addToCart");
+  let cartObject: any = JSON.parse(getCart);
+
+  let cartContainer: HTMLDivElement = document.getElementById(
+    "shopping-cart-offcanvas"
+  ) as HTMLDivElement;
+
+  for (let i = 0; i < cartObject.length; i++) {
+    let cartItem: HTMLUListElement = document.createElement(
+      "ul"
+    ) as HTMLUListElement;
+    cartItem.className = "cart-item-offcanvas";
+
+    let photo: HTMLImageElement = document.createElement(
+      "img"
+    ) as HTMLImageElement;
+    photo.className = "product-image-offcanvas";
+    photo.src = cartObject[i].photo;
+
+    let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    artist.className = "artist-offcanvas";
+    artist.innerHTML = cartObject[i].artist;
+
+    let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    album.className = "album-offcanvas";
+    album.innerHTML = "'" + cartObject[i].album + "'";
+
+    let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    article.className = "article-offcanvas";
+    article.innerHTML = cartObject[i].article;
+
+    let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    price.className = "price-offcanvas";
+    price.innerHTML = cartObject[i].price + " SEK";
+
+    let removeItem: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    removeItem.className = "remove-from-offcanvas";
+    removeItem.innerHTML = "REMOVE";
+
+    cartItem.appendChild(photo);
+    cartItem.appendChild(artist);
+    cartItem.appendChild(album);
+    cartItem.appendChild(article);
+    cartItem.appendChild(price);
+    cartContainer.appendChild(cartItem);
+    cartItem.appendChild(removeItem);
   }
 }
