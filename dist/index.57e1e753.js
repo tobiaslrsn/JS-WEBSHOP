@@ -537,6 +537,10 @@ function productsToPage() {
         addToCart.addEventListener("click", ()=>{
             shoppingCart.push(products[i]);
             window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+            if (typeof Storage !== "undefined") {
+                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                else localStorage.clickcount = 1;
+            }
             console.log(shoppingCart);
             cartProductCount(); //CART COUNT
         });
