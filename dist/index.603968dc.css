@@ -195,12 +195,54 @@ h2 {
   padding: 3px;
 }
 footer {
-  height: 15rem;
+  height: 16rem;
   width: 100%;
   background-color: yellow;
 }
+<<<<<<< HEAD
 body {
   background-color: orange;
+=======
+footer .news-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+footer .news-container #subscribe {
+  background-color: black;
+  color: white;
+  width: 125px;
+  height: 50px;
+}
+footer .info {
+  display: flex;
+  flex-direction: row;
+  font-size: 16px;
+  justify-content: space-around;
+  align-items: center;
+}
+footer ul {
+  list-style-type: none;
+}
+footer li {
+  list-style-type: none;
+  padding: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .news-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: row;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+  }
+>>>>>>> feature/footer
 }
 html {
   scroll-behavior: smooth;
