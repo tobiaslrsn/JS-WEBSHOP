@@ -495,7 +495,8 @@ let products = [
     product008,
     product009, 
 ];
-let shoppingCart = [];
+// let shoppingCart = [];
+// document.getElementById("our-products").innerHTML = "";
 window.onload = function() {
     productsToPage();
     offcanvasCart(); //BACKUP
@@ -540,15 +541,13 @@ function productsToPage() {
         addToCart.addEventListener("click", ()=>{
             cart.addToCart(products[i]);
             offcanvasCart();
-        // shoppingCart.push(products[i]);
-        // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-        // if (typeof Storage !== "undefined") {
-        //   if (localStorage.clickcount) {
-        //     localStorage.clickcount = Number(localStorage.clickcount) + 1;
-        //   } else {
-        //     localStorage.clickcount = 1;
-        //   }
-        // }
+            //BEHÅLLARE TÖMMAS
+            // shoppingCart.push(products[i]);
+            // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+            if (typeof Storage !== "undefined") {
+                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                else localStorage.clickcount = 1;
+            }
         // console.log(shoppingCart);
         // cartProductCount(); //CART COUNT
         });
@@ -608,27 +607,28 @@ function cartProductCount() {
     }
 }
 function offcanvasCart() {
+    document.getElementById("shopping-cart-offcanvas").innerHTML = "";
     let getCart = localStorage.getItem("addToCart");
-    let cartObject = JSON.parse(getCart); //BACKUP
+    // let cartObject: any = JSON.parse(getCart); //BACKUP
     let cartContainer = document.getElementById("shopping-cart-offcanvas");
-    for(let i = 0; i < cart.cartListList.length; i++){
+    for(let i = 0; i < cart.getCart.length; i++){
         let cartItem = document.createElement("ul");
         cartItem.className = "cart-item-offcanvas";
         let photo = document.createElement("img");
         photo.className = "product-image-offcanvas";
-        photo.src = cart.cartListList[i].photo;
+        photo.src = cart.getCart[i].photo;
         let artist = document.createElement("li");
         artist.className = "artist-offcanvas";
-        artist.innerHTML = cart.cartListList[i].artist;
+        artist.innerHTML = cart.getCart[i].artist;
         let album = document.createElement("li");
         album.className = "album-offcanvas";
-        album.innerHTML = "'" + cart.cartListList[i].album + "'";
+        album.innerHTML = "'" + cart.getCart[i].album + "'";
         let article = document.createElement("li");
         article.className = "article-offcanvas";
-        article.innerHTML = cart.cartListList[i].article;
+        article.innerHTML = cart.getCart[i].article;
         let price = document.createElement("li");
         price.className = "price-offcanvas";
-        price.innerHTML = cart.cartListList[i].price + " SEK";
+        price.innerHTML = cart.getCart[i].price + " SEK";
         let removeItem = document.createElement("button");
         removeItem.className = "remove-from-offcanvas";
         removeItem.innerHTML = "REMOVE";

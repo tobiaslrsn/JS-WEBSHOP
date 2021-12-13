@@ -167,8 +167,8 @@ let products = [
   product009,
 ];
 
-let shoppingCart = [];
-
+// let shoppingCart = [];
+// document.getElementById("our-products").innerHTML = "";
 window.onload = function () {
   productsToPage();
   offcanvasCart(); //BACKUP
@@ -243,19 +243,21 @@ export function productsToPage() {
     addToCart.innerHTML = products[i].addToCart;
 
     //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
+
     addToCart.addEventListener("click", () => {
       cart.addToCart(products[i]);
       offcanvasCart();
+      //BEHÅLLARE TÖMMAS
       // shoppingCart.push(products[i]);
       // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
 
-      // if (typeof Storage !== "undefined") {
-      //   if (localStorage.clickcount) {
-      //     localStorage.clickcount = Number(localStorage.clickcount) + 1;
-      //   } else {
-      //     localStorage.clickcount = 1;
-      //   }
-      // }
+      if (typeof Storage !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {
+          localStorage.clickcount = 1;
+        }
+      }
 
       // console.log(shoppingCart);
       // cartProductCount(); //CART COUNT
@@ -337,14 +339,15 @@ function cartProductCount() {
 }
 
 function offcanvasCart() {
+  document.getElementById("shopping-cart-offcanvas").innerHTML = "";
   let getCart: string = localStorage.getItem("addToCart");
-  let cartObject: any = JSON.parse(getCart); //BACKUP
+  // let cartObject: any = JSON.parse(getCart); //BACKUP
 
   let cartContainer: HTMLDivElement = document.getElementById(
     "shopping-cart-offcanvas"
   ) as HTMLDivElement;
 
-  for (let i = 0; i < cart.cartListList.length; i++) {
+  for (let i = 0; i < cart.getCart.length; i++) {
     let cartItem: HTMLUListElement = document.createElement(
       "ul"
     ) as HTMLUListElement;
@@ -354,23 +357,23 @@ function offcanvasCart() {
       "img"
     ) as HTMLImageElement;
     photo.className = "product-image-offcanvas";
-    photo.src = cart.cartListList[i].photo;
+    photo.src = cart.getCart[i].photo;
 
     let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     artist.className = "artist-offcanvas";
-    artist.innerHTML = cart.cartListList[i].artist;
+    artist.innerHTML = cart.getCart[i].artist;
 
     let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     album.className = "album-offcanvas";
-    album.innerHTML = "'" + cart.cartListList[i].album + "'";
+    album.innerHTML = "'" + cart.getCart[i].album + "'";
 
     let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     article.className = "article-offcanvas";
-    article.innerHTML = cart.cartListList[i].article;
+    article.innerHTML = cart.getCart[i].article;
 
     let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     price.className = "price-offcanvas";
-    price.innerHTML = cart.cartListList[i].price + " SEK";
+    price.innerHTML = cart.getCart[i].price + " SEK";
 
     let removeItem: HTMLButtonElement = document.createElement(
       "button"
