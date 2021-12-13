@@ -2,15 +2,14 @@ window.onload = function () {
   cartToPage();
 };
 
-let getCart: string = localStorage.getItem("addToCart");
-let cartObject: any = JSON.parse(getCart);
+let cart = new cartToPage();
 
-function cartToPage() {
+export function cartToPage() {
   let cartContainer: HTMLDivElement = document.getElementById(
     "shopping-cart"
   ) as HTMLDivElement;
 
-  for (let i = 0; i < cartObject.length; i++) {
+  for (let i = 0; i < cart.getCart.length; i++) {
     let cartItem: HTMLUListElement = document.createElement(
       "ul"
     ) as HTMLUListElement;
@@ -20,23 +19,23 @@ function cartToPage() {
       "img"
     ) as HTMLImageElement;
     photo.className = "product-image-cart";
-    photo.src = cartObject[i].photo;
+    photo.src = cart.getCart[i].photo;
 
     let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     artist.className = "artist-cart";
-    artist.innerHTML = cartObject[i].artist;
+    artist.innerHTML = cart.getCart[i].artist;
 
     let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     album.className = "album-cart";
-    album.innerHTML = "'" + cartObject[i].album + "'";
+    album.innerHTML = "'" + cart.getCart[i].album + "'";
 
     let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     article.className = "article-cart";
-    article.innerHTML = cartObject[i].article;
+    article.innerHTML = cart.getCart[i].article;
 
     let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     price.className = "price-cart";
-    price.innerHTML = cartObject[i].price + " SEK";
+    price.innerHTML = cart.getCart[i].price + " SEK";
 
     let removeItem: HTMLButtonElement = document.createElement(
       "button"

@@ -1,14 +1,23 @@
 import { Article } from "./product-objects";
+import { offcanvasCart } from "../products";
+
+import { cartToPage } from "../checkout";
 
 export class CartList {
-  cartListList: Article[];
+  getCart: Article[];
   constructor() {
-    this.cartListList = JSON.parse(localStorage.getItem("cart")) || [];
+    this.getCart = JSON.parse(localStorage.getItem("cart")) || [];
   }
+
   addToCart(thingToAdd: Article) {
-    this.cartListList.push(thingToAdd);
+    this.getCart.push(thingToAdd);
     //let getCart: string = localStorage.getItem("addToCart");
     //let cartObject: any = JSON.parse(getCart);
-    localStorage.setItem("cart", JSON.stringify(this.cartListList));
+    localStorage.setItem("cart", JSON.stringify(this.getCart));
+  }
+
+  cartToPage(thingToAdd: Article) {
+    this.getCart.push(thingToAdd);
+    localStorage.setItem("cart", JSON.stringify(this.getCart));
   }
 }
