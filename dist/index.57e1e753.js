@@ -464,6 +464,7 @@ parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
 );
 var _productObjects = require("./models/product-objects");
+var _isomething = require("./models/Isomething");
 let image001 = "1.b18e163d.jpg";
 let image002 = "2.0fe79b40.jpg";
 let image003 = "11.cdc2b607.jpg";
@@ -499,6 +500,7 @@ window.onload = function() {
     productsToPage();
     offcanvasCart(); //BACKUP
 };
+let cart = new _isomething.CartList();
 function productsToPage() {
     let productContainer = document.getElementById("products");
     for(let i = 0; i < products.length; i++){
@@ -536,14 +538,19 @@ function productsToPage() {
         addToCart.innerHTML = products[i].addToCart;
         //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
         addToCart.addEventListener("click", ()=>{
-            shoppingCart.push(products[i]);
-            window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-            if (typeof Storage !== "undefined") {
-                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
-                else localStorage.clickcount = 1;
-            }
-            console.log(shoppingCart);
-            cartProductCount(); //CART COUNT
+            cart.addToCart(products[i]);
+            offcanvasCart();
+        // shoppingCart.push(products[i]);
+        // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+        // if (typeof Storage !== "undefined") {
+        //   if (localStorage.clickcount) {
+        //     localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        //   } else {
+        //     localStorage.clickcount = 1;
+        //   }
+        // }
+        // console.log(shoppingCart);
+        // cartProductCount(); //CART COUNT
         });
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
         let infoBtn = document.createElement("button");
@@ -604,24 +611,24 @@ function offcanvasCart() {
     let getCart = localStorage.getItem("addToCart");
     let cartObject = JSON.parse(getCart); //BACKUP
     let cartContainer = document.getElementById("shopping-cart-offcanvas");
-    for(let i = 0; i < cartObject.length; i++){
+    for(let i = 0; i < cart.cartListList.length; i++){
         let cartItem = document.createElement("ul");
         cartItem.className = "cart-item-offcanvas";
         let photo = document.createElement("img");
         photo.className = "product-image-offcanvas";
-        photo.src = cartObject[i].photo;
+        photo.src = cart.cartListList[i].photo;
         let artist = document.createElement("li");
         artist.className = "artist-offcanvas";
-        artist.innerHTML = cartObject[i].artist;
+        artist.innerHTML = cart.cartListList[i].artist;
         let album = document.createElement("li");
         album.className = "album-offcanvas";
-        album.innerHTML = "'" + cartObject[i].album + "'";
+        album.innerHTML = "'" + cart.cartListList[i].album + "'";
         let article = document.createElement("li");
         article.className = "article-offcanvas";
-        article.innerHTML = cartObject[i].article;
+        article.innerHTML = cart.cartListList[i].article;
         let price = document.createElement("li");
         price.className = "price-offcanvas";
-        price.innerHTML = cartObject[i].price + " SEK";
+        price.innerHTML = cart.cartListList[i].price + " SEK";
         let removeItem = document.createElement("button");
         removeItem.className = "remove-from-offcanvas";
         removeItem.innerHTML = "REMOVE";
@@ -635,7 +642,7 @@ function offcanvasCart() {
     }
 } //BACKUP
 
-},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
+},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./models/Isomething":"brPZg"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
@@ -688,6 +695,23 @@ exports.export = function(dest, destName, get) {
     });
 };
 
-},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
+},{}],"brPZg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "CartList", ()=>CartList
+);
+class CartList {
+    constructor(){
+        this.cartListList = JSON.parse(localStorage.getItem("cart")) || [];
+    }
+    addToCart(thingToAdd) {
+        this.cartListList.push(thingToAdd);
+        //let getCart: string = localStorage.getItem("addToCart");
+        //let cartObject: any = JSON.parse(getCart);
+        localStorage.setItem("cart", JSON.stringify(this.cartListList));
+    }
+}
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
 
 //# sourceMappingURL=index.57e1e753.js.map
