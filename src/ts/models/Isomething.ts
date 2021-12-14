@@ -4,7 +4,11 @@ export class CartList {
   getCart: Article[];
   constructor() {
     this.getCart = JSON.parse(localStorage.getItem("cart")) || [];
+    document.getElementById("cartCount").innerHTML = "" + this.getCart.length;
+    console.log(this.getCart.length);
   }
+
+
   addToCart(thingToAdd: Article) {
     this.getCart.push(thingToAdd);
 
@@ -55,6 +59,15 @@ export class CartList {
       ) as HTMLButtonElement;
       removeItem.className = "remove-from-offcanvas";
       removeItem.innerHTML = "REMOVE";
+      removeItem.addEventListener("click", () => {
+
+        this.getCart.splice(i, 1);
+        
+        this.offcanvasCart();
+        
+        localStorage.setItem("cart", JSON.stringify(this.getCart));
+        
+        });
 
       cartItem.appendChild(photo);
       cartItem.appendChild(artist);
