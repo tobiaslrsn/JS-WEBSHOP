@@ -462,36 +462,20 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
-<<<<<<< HEAD
-) //Adding product cart counting
- // function cartProductCount() {
- //   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
- //   let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
- //   if (purchaseBtnCount) {
- //     if (cartAdding) {
- //       let cartCount = Number(cartAdding.innerText || 0);
- //       cartAdding.innerText = String(cartCount + 1);
- //       cartAdding.style.visibility = "visible";
- //     }
- //   }
- // }
-=======
 );
 parcelHelpers.export(exports, "offcanvasCart", ()=>offcanvasCart
-) //BACKUP
->>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab
-;
+);
 var _productObjects = require("./models/product-objects");
 var _isomething = require("./models/Isomething");
 let image001 = "/assets/product-feed-img/1.jpg";
-let image002 = "2.0fe79b40.jpg";
-let image003 = "11.cdc2b607.jpg";
-let image004 = "4.a09afae4.jpg";
-let image005 = "5.ad46c5a6.jpg";
-let image006 = "6.692c53f5.jpg";
-let image007 = "7.318e1685.jpg";
-let image008 = "8.14acd5c6.jpg";
-let image009 = "13.2d4597af.jpg";
+let image002 = "/assets/product-feed-img/2.jpg";
+let image003 = "/assets/product-feed-img/11.jpg";
+let image004 = "/assets/product-feed-img/4.jpg";
+let image005 = "/assets/product-feed-img/5.jpg";
+let image006 = "/assets/product-feed-img/6.jpg";
+let image007 = "/assets/product-feed-img/7.jpg";
+let image008 = "/assets/product-feed-img/8.jpg";
+let image009 = "/assets/product-feed-img/13.jpg";
 let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "MJT001R", "Homework is the debut studio album by the French electronic music duo Daft Punk, released on 20 January 1997 by Virgin Records and Soma Quality Recordings.<br/><br/> The duo produced the tracks without plans to release an album. After working on projects that were intended to be separate singles over five months, they considered the material good enough for an album.", "Electronic", "purchase", "more info", "spotify", 1, "https://open.spotify.com/album/5uRdvUR7xCnHmUW8n64n9y?si=43c792ad2c8e4c2d" //SPOTIFY-URL
 );
 let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "MJT002R", "Holy Diver is the debut studio album by the American heavy metal band Dio, released in 1983. <br/> Vocalist Ronnie James Dio had just finished his first tenure in Black Sabbath, whose drummer, Vinny Appice, he took with him to put together his own band. <br/><br/>The roster was completed by his former bandmate from Rainbow, Jimmy Bain, on bass and by the young guitarist Vivian Campbell, coming from the new wave of British heavy metal band Sweet Savage. <br/>The album was acclaimed by the music press and is the band's most successful effort.", "rock", "purchase", "more info", "spotify", 2, "https://open.spotify.com/album/1QJmLRcuIMMjZ49elafR3K?si=57709f0b1eb141be");
@@ -516,9 +500,12 @@ let products = [
 // let shoppingCart = [];
 window.onload = function() {
     productsToPage();
-    offcanvasCart(); //BACKUP
+    // cartProductCount();
+    offcanvasCart();
 };
 let cart = new _isomething.CartList();
+document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
+console.log(cart.getCart.length);
 function productsToPage() {
     let productContainer = document.getElementById("products");
     for(let i = 0; i < products.length; i++){
@@ -554,64 +541,11 @@ function productsToPage() {
         let addToCart = document.createElement("button");
         addToCart.className = "purchase-button";
         addToCart.innerHTML = products[i].addToCart;
-        //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
         addToCart.addEventListener("click", ()=>{
-<<<<<<< HEAD
-            shoppingCart.push(products[i]);
-            window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-            let countingButton = document.getElementById("cartCount");
-            let count = "localStorageCount";
-            let localStorageKey = (data)=>{
-                window.localStorage.setItem(count, JSON.stringify(data));
-            };
-            //Hämtar vårat sparade state som det var sparat
-            let getFromLocalStorage = ()=>{
-                let saved = window.localStorage.getItem(count);
-                //Om det ej är något sparat localstorage får man tillbaka null
-                if (!saved) return null;
-                return JSON.parse(saved);
-            };
-            //Gör så att elementet existerar
-            if (addToCart && countingButton) {
-                //Får det sparade state
-                let savedNumber = getFromLocalStorage();
-                //Gör så savedNumber existerar, om inte skippar vi detta.
-                if (savedNumber) countingButton.innerText = savedNumber.cartCounting;
-                //CartCounting är antingen odefinerat eller ett number
-                //om det är odefinerat så få faller vi tillbaka på 0.
-                //Konvertera till int eftersom value från innertext ger
-                //tillbaka en string
-                let cartCounting = Number(countingButton.innerText || 0) + 1;
-                let state = {
-                    cartCounting
-                };
-                //På varje klick sprar vi till local storage
-                localStorageKey(state);
-                //Ökar cartCounting med 1 för varje klick.
-                countingButton.innerText = String(cartCounting);
-                // if(typeof(Storage) !== "undefined") {
-                //   if (localStorage.clickcount) {
-                //     localStorage.clickcount = Number(localStorage.clickcount)+1;
-                //   } else {
-                //     localStorage.clickcount = 1;
-                //   }
-                // }
-                console.log(shoppingCart);
-            // cartProductCount(); //CART COUNT
-            }
-=======
             cart.addToCart(products[i]);
             offcanvasCart();
-            //BEHÅLLARE TÖMMAS
-            // shoppingCart.push(products[i]);
-            // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-            if (typeof Storage !== "undefined") {
-                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
-                else localStorage.clickcount = 1;
-            }
-        // console.log(shoppingCart);
-        // cartProductCount(); //CART COUNT
->>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab
+            document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
+            console.log(cart.getCart.length);
         });
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
         let infoBtn = document.createElement("button");
@@ -656,24 +590,12 @@ function productsToPage() {
     }
     console.log(products);
 }
-<<<<<<< HEAD
-=======
-//Adding product cart counting
-function cartProductCount() {
-    let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-    let cartAdding = document.getElementById("cartCount");
-    if (purchaseBtnCount) {
-        if (cartAdding) {
-            let cartCount = Number(cartAdding.innerText || 0);
-            cartAdding.innerText = String(cartCount + 1);
-            cartAdding.style.visibility = "visible";
-        }
-    }
-}
 function offcanvasCart() {
+    console.log(cart);
     // let getCart: string = localStorage.getItem("addToCart");
     // let cartObject: any = JSON.parse(getCart); //BACKUP
     let cartContainer = document.getElementById("shopping-cart-offcanvas");
+    cartContainer.innerHTML = "";
     for(let i = 0; i < cart.getCart.length; i++){
         let cartItem = document.createElement("ul");
         cartItem.className = "cart-item-offcanvas";
@@ -702,9 +624,9 @@ function offcanvasCart() {
         cartItem.appendChild(price);
         cartContainer.appendChild(cartItem);
         cartItem.appendChild(removeItem);
+        console.log("funktion5");
     }
 }
->>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab
 
 },{"./models/product-objects":"d5Ism","./models/Isomething":"brPZg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
