@@ -9,6 +9,8 @@ window.onload = function () {
 };
 
 let cart = new CartList();
+
+document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
 console.log(cart.getCart.length);
 
 export function productsToPage() {
@@ -81,14 +83,8 @@ export function productsToPage() {
       cart.addToCart(products[i]);
       cart.offcanvasCart();
 
-      if (typeof Storage !== "undefined") {
-        if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount) + 1;
-        } else {
-          localStorage.clickcount = 1;
-        }
-      }
-      // cartProductCount(); //CART COUNT
+      document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
+      console.log(cart.getCart.length);
     });
 
     //CREATE INFOBUTTON (PRODUCTDESCRIPTION)

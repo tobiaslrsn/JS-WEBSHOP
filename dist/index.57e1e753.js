@@ -471,6 +471,7 @@ window.onload = function() {
     cart.offcanvasCart();
 };
 let cart = new _isomething.CartList();
+document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
 console.log(cart.getCart.length);
 function productsToPage() {
     let productContainer = document.getElementById("products");
@@ -510,11 +511,8 @@ function productsToPage() {
         addToCart.addEventListener("click", ()=>{
             cart.addToCart(_header.products[i]);
             cart.offcanvasCart();
-            if (typeof Storage !== "undefined") {
-                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
-                else localStorage.clickcount = 1;
-            }
-        // cartProductCount(); //CART COUNT
+            document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
+            console.log(cart.getCart.length);
         });
         //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
         let infoBtn = document.createElement("button");
