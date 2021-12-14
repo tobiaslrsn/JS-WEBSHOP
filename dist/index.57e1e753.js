@@ -461,6 +461,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"9WuRb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// console.log(cart.getCart.length);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
 );
 parcelHelpers.export(exports, "offcanvasCart", ()=>offcanvasCart
@@ -473,8 +474,11 @@ window.onload = function() {
     cart.offcanvasCart();
 };
 let cart = new _isomething.CartList();
+<<<<<<< HEAD
 document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
 console.log(cart.getCart.length);
+=======
+>>>>>>> feature/deleteItem
 function productsToPage() {
     let productContainer = document.getElementById("products");
     for(let i = 0; i < _header.products.length; i++){
@@ -557,7 +561,7 @@ function productsToPage() {
         listenBtn.appendChild(spotifyLogo);
         productContainer.appendChild(productFeed);
     }
-    console.log(_header.products);
+// console.log(products);
 }
 function offcanvasCart() {
     console.log(cart);

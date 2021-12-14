@@ -1,3 +1,4 @@
+import { products } from "../header";
 import { Article } from "./product-objects";
 
 export class CartList {
@@ -9,11 +10,11 @@ export class CartList {
     this.getCart.push(thingToAdd);
 
     localStorage.setItem("cart", JSON.stringify(this.getCart));
-    console.log("function 1");
+    // console.log("function 1");
   }
 
   offcanvasCart() {
-    console.log(this.getCart);
+    // console.log(this.getCart);
 
     let cartContainer: HTMLDivElement = document.getElementById(
       "shopping-cart-offcanvas"
@@ -55,6 +56,11 @@ export class CartList {
       ) as HTMLButtonElement;
       removeItem.className = "remove-from-offcanvas";
       removeItem.innerHTML = "REMOVE";
+      removeItem.addEventListener("click", () => {
+        this.getCart.splice(i, 1);
+        this.offcanvasCart();
+        localStorage.setItem("cart", JSON.stringify(this.getCart));
+      });
 
       cartItem.appendChild(photo);
       cartItem.appendChild(artist);
@@ -64,7 +70,7 @@ export class CartList {
       cartContainer.appendChild(cartItem);
       cartItem.appendChild(removeItem);
 
-      console.log("funktion5");
+      // console.log("funktion5");
     }
   }
 }
