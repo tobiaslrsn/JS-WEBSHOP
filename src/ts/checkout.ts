@@ -1,13 +1,16 @@
+import { CartList } from "./models/Isomething";
+
 window.onload = function () {
   cartToPage();
 };
 
-let cart = new cartToPage();
+let cart = new CartList();
 
 export function cartToPage() {
   let cartContainer: HTMLDivElement = document.getElementById(
     "shopping-cart"
   ) as HTMLDivElement;
+  cartContainer.innerHTML = "";
 
   for (let i = 0; i < cart.getCart.length; i++) {
     let cartItem: HTMLUListElement = document.createElement(

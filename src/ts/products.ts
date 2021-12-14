@@ -1,6 +1,5 @@
 import * as productObjects from "./models/product-objects";
 import { CartList } from "./models/Isomething";
-import { cartToPage } from "./checkout";
 
 let image001: string = "/assets/product-feed-img/1.jpg";
 let image002: string = "2.0fe79b40.jpg";
@@ -167,14 +166,15 @@ let products = [
   product008,
   product009,
 ];
-let cart = new CartList();
 
-let shoppingCart = [];
-document.getElementById("our-products").innerHTML = "";
+// let shoppingCart = [];
+
 window.onload = function () {
   productsToPage();
   offcanvasCart(); //BACKUP
 };
+
+let cart = new CartList();
 
 export function productsToPage() {
   let productContainer: HTMLDivElement = document.getElementById(
@@ -236,7 +236,6 @@ export function productsToPage() {
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
     //PURCHASE BUTTON
-
     let addToCart: HTMLButtonElement = document.createElement(
       "button"
     ) as HTMLButtonElement;
@@ -244,17 +243,13 @@ export function productsToPage() {
     addToCart.innerHTML = products[i].addToCart;
 
     //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
-
     addToCart.addEventListener("click", () => {
       cart.addToCart(products[i]);
-
       offcanvasCart();
-      cartToPage;
       //BEHÅLLARE TÖMMAS
       // shoppingCart.push(products[i]);
       // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
 
-      /*  MALCOLMS RÄKNARE
       if (typeof Storage !== "undefined") {
         if (localStorage.clickcount) {
           localStorage.clickcount = Number(localStorage.clickcount) + 1;
@@ -262,7 +257,7 @@ export function productsToPage() {
           localStorage.clickcount = 1;
         }
       }
- */
+
       // console.log(shoppingCart);
       // cartProductCount(); //CART COUNT
     });
@@ -327,7 +322,7 @@ export function productsToPage() {
   console.log(products);
 }
 //Adding product cart counting
-/* function cartProductCount() {
+function cartProductCount() {
   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
   let cartAdding: HTMLButtonElement = document.getElementById(
     "cartCount"
@@ -340,12 +335,15 @@ export function productsToPage() {
       cartAdding.style.visibility = "visible";
     }
   }
-} */
+}
 
 export function offcanvasCart() {
-  // document.getElementById("shopping-cart-offcanvas").innerHTML = "";
   // let getCart: string = localStorage.getItem("addToCart");
   // let cartObject: any = JSON.parse(getCart); //BACKUP
+
+  let cartContainer: HTMLDivElement = document.getElementById(
+    "shopping-cart-offcanvas"
+  ) as HTMLDivElement;
 
   for (let i = 0; i < cart.getCart.length; i++) {
     let cartItem: HTMLUListElement = document.createElement(
@@ -386,7 +384,7 @@ export function offcanvasCart() {
     cartItem.appendChild(album);
     cartItem.appendChild(article);
     cartItem.appendChild(price);
-    // cartContainer.appendChild(cartItem);
+    cartContainer.appendChild(cartItem);
     cartItem.appendChild(removeItem);
   }
 } //BACKUP

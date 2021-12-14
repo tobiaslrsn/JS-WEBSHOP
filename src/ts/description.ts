@@ -1,9 +1,13 @@
+import { CartList } from "./models/Isomething";
+
 window.onload = function () {
   descriptionToPage();
 };
 
 let getObject: string = localStorage.getItem("product");
 let productObject: any = JSON.parse(getObject);
+
+let cart = new CartList();
 
 function descriptionToPage() {
   let descriptionContainer: HTMLDivElement = document.getElementById(

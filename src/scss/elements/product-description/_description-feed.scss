@@ -1,4 +1,4 @@
-main {
+.main-description {
   background-color: white;
   display: flex;
   height: 100vh;
@@ -173,7 +173,7 @@ a {
 } */
 //MOBILE
 @media screen and (max-width: 768px) {
-  main {
+  .main-description {
     height: 100vh;
     margin-bottom: 30%;
     padding-top: 30px;
