@@ -5,10 +5,7 @@ export class CartList {
   getCart: Article[];
   constructor() {
     this.getCart = JSON.parse(localStorage.getItem("cart")) || [];
-    document.getElementById("cartCount").innerHTML = "" + this.getCart.length;
-    console.log(this.getCart.length);
   }
-
 
   addToCart(thingToAdd: Article) {
     this.getCart.push(thingToAdd);
@@ -19,6 +16,8 @@ export class CartList {
 
   offcanvasCart() {
     // console.log(this.getCart);
+    document.getElementById("cartCount").innerHTML = "" + this.getCart.length;
+    console.log(this.getCart.length);
 
     let cartContainer: HTMLDivElement = document.getElementById(
       "shopping-cart-offcanvas"

@@ -557,7 +557,7 @@ function productsToPage() {
         listenBtn.appendChild(spotifyLogo);
         productContainer.appendChild(productFeed);
     }
-    console.log(_header.products);
+// console.log(products);
 }
 function offcanvasCart() {
     console.log(cart);
