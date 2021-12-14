@@ -4,51 +4,130 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./scss/productsection.scss" />
-
-    <script src="/src/ts/main.ts" type="module"></script>
-    <script src="./ts/description.ts" type="module"></script>
-
-    <script
-      src="https://kit.fontawesome.com/7c490574c4.js"
+    <!-- BOOTSTRAP CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
-    ></script>
+    />
+
+    <link rel="stylesheet" href="./scss/main.scss" />
+
+    <!-- <script src="./js/bootstrap.js"></script> -->
+    <script src="/src/ts/products.ts" type="module"></script>
+    <script src="/src/ts/description.ts" type="module"></script>
+    <!-- <script src="./ts/checkout.ts" type="module"></script> -->
+    <!-- lägger man till type="module" fungerar off canvas + varukorgen, men product-feed försvinner -->
+
+    <script>
+      src = "https://kit.fontawesome.com/7c490574c4.js";
+      crossorigin = "anonymous";
+    </script>
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+
     <link rel="shortcut icon" href="./assets/favicon.ico" />
     <title>Document</title>
   </head>
   <body>
     <header>
-      <img
+      <a href="./index.html#mjt-records"><img
         class="logo"
         src="assets/Logos/MJT-Logo-Darkversion transparent.png"
-      />
-      <ul id="menu">
-        <li><a id="menuItem" href="./index.html">Home</a></li>
-        <li><a id="menuItem2" href="#">About</a></li>
-        <li><a id="menuItem3" href="#">Products</a></li>
-        <li>
-          <a id="menuItem3" href="./description.html">description.html</a>
-        </li>
-      </ul>
-      <button class="hamburger">
-        <i class="fas fa-bars"></i>
-        <i class="fas fa-window-close"></i>
+      /></a>
+      <nav id="hamnav">
+        <label for="hamburger">&#9776;</label>
+        <input type="checkbox" id="hamburger" />
+        <div id="hamitems">
+          <a href="./index.html#mjt-records">HOME</a>
+          <a href="./index.html#our-products">PRODUCTS</a>
+          <a href="#faq">FAQ</a>
+          <a class="redirect" href="./checkout.html"
+          >CHECKOUT</a
+        >
+        </div>
+      </nav>
+
+      <button id="cartCount">0</button>
+
+      <!-- OFFCANVAS BOOTSTRAP -->
+      <button
+        class="button-offcanvas"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      >
+        <img class="cart" src="assets/Shopping-bag-icon.png" />
       </button>
-      <img class="cart" src="assets/Shopping-bag-icon.png" />
+
+      <div
+        class="offcanvas offcanvas-end"
+        tabindex="-1"
+        id="offcanvasRight"
+        aria-labelledby="offcanvasRightLabel"
+      >
+        <div class="offcanvas-header">
+          <h5 id="offcanvasRightLabel">CART</h5>
+          <button
+            type="button"
+            class="btn-close text-reset"
+            data-bs-dismiss="offcanvas"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="overflow-auto">
+          <div id="shopping-cart-offcanvas"></div>
+          <div class="offcanvas-body">
+            <a class="redirect" href="././checkout.html">
+              <button class="purchase-button-offcanvas">CHECKOUT</button>
+            </a>
+          </div>
+        </div>
+      </div>
     </header>
 
-    <main>
+    <main class="main-description">
       <div id="description-container">
         <button class="return-home">
-          <a href="./index.html"><i class="fa fa-arrow-left"></i></a>
+          <a href="./index.html#our-products"><i class="fa fa-arrow-left"></i></a>
         </button>
       </div>
     </main>
-    <footer>FOOTER</footer>
+    <footer>
+      <a id="faq"></a><div class="news-container"></a>
+        <p>Subscribe to our newsletter for new releases!</p>
+        <input type="email" id="newsletter" placeholder="email@example.com" />
+        <button id="subscribe">Subscribe</button>
+      </div>
+      <div class="info">
+        <div class="footer-column">
+          <ul>
+            <li>MJT Records</li>
+            <li>Gustavlundsvägen 151 D</li>
+            <li>167 51 Bromma</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li>mjtrecords@gmail.com</li>
+            <li>073-875-572</li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <li><i class="fab fa-facebook-square"></i> Facebook<br /></li>
+          <li><i class="fab fa-instagram-square"></i> Instagram<br /></li>
+          <li><i class="fab fa-twitter-square"></i> Twitter<br /></li>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>

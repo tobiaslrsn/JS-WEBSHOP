@@ -1,7 +1,7 @@
 import * as productObjects from "./models/product-objects";
-import { Article } from "./models/product-objects";
+import { CartList } from "./models/Isomething";
 
-let image001: string = "1.b18e163d.jpg";
+let image001: string = "/assets/product-feed-img/1.jpg";
 let image002: string = "2.0fe79b40.jpg";
 let image003: string = "11.cdc2b607.jpg";
 let image004: string = "4.a09afae4.jpg";
@@ -63,7 +63,7 @@ let product004: productObjects.Article = new productObjects.Article(
   image004,
   "Calvin Harris",
   "I created disco",
-  1222,
+  2007,
   250,
   "MJT004R",
   "I Created Disco is the debut studio album by Scottish singer-musician Calvin Harris. <br/>It was released on 15 June 2007 by Columbia Records.<br/><br/> It was preceded by the singles 'Acceptable in the 80s' and 'The Girls', which reached numbers 10 and three on the UK Singles Chart, respectively. <br/><br/>The album debuted at number eight on the UK Albums Chart with first-week sales of 16,121 copies. <br/><br/>On 23 May 2008, it was certified gold by the British Phonographic Industry (BPI). I Created Disco had sold 223,845 copies in the United Kingdom by November 2014.",
@@ -167,11 +167,14 @@ let products = [
   product009,
 ];
 
-let shoppingCart = [];
+// let shoppingCart = [];
 
 window.onload = function () {
   productsToPage();
+  offcanvasCart(); //BACKUP
 };
+
+let cart = new CartList();
 
 export function productsToPage() {
   let productContainer: HTMLDivElement = document.getElementById(
@@ -239,6 +242,7 @@ export function productsToPage() {
     addToCart.className = "purchase-button";
     addToCart.innerHTML = products[i].addToCart;
 
+<<<<<<< HEAD
 
 
     //ADD PRODUCT TO LOCAL STORAGE
@@ -261,10 +265,26 @@ export function productsToPage() {
         //Om det ej är något sparat localstorage får man tillbaka null
         if(!saved){ 
           return null;
+=======
+    //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
+    addToCart.addEventListener("click", () => {
+      cart.addToCart(products[i]);
+      offcanvasCart();
+      //BEHÅLLARE TÖMMAS
+      // shoppingCart.push(products[i]);
+      // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+
+      if (typeof Storage !== "undefined") {
+        if (localStorage.clickcount) {
+          localStorage.clickcount = Number(localStorage.clickcount) + 1;
+        } else {
+          localStorage.clickcount = 1;
+>>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab
         }
     
         return JSON.parse(saved);
       }
+<<<<<<< HEAD
       //Gör så att elementet existerar
       if(addToCart && countingButton){
         //Får det sparade state
@@ -298,6 +318,11 @@ export function productsToPage() {
       console.log(shoppingCart);
       // cartProductCount(); //CART COUNT
     }
+=======
+
+      // console.log(shoppingCart);
+      // cartProductCount(); //CART COUNT
+>>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab
     });
   
 
@@ -361,6 +386,7 @@ export function productsToPage() {
   console.log(products);
 }
 //Adding product cart counting
+<<<<<<< HEAD
 // function cartProductCount() {
 //   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
 //   let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
@@ -377,3 +403,71 @@ export function productsToPage() {
 //   }
 
 // }
+=======
+function cartProductCount() {
+  let purchaseBtnCount = document.querySelectorAll(".purchase-button");
+  let cartAdding: HTMLButtonElement = document.getElementById(
+    "cartCount"
+  ) as HTMLButtonElement;
+
+  if (purchaseBtnCount) {
+    if (cartAdding) {
+      let cartCount = Number(cartAdding.innerText || 0);
+      cartAdding.innerText = String(cartCount + 1);
+      cartAdding.style.visibility = "visible";
+    }
+  }
+}
+
+export function offcanvasCart() {
+  // let getCart: string = localStorage.getItem("addToCart");
+  // let cartObject: any = JSON.parse(getCart); //BACKUP
+
+  let cartContainer: HTMLDivElement = document.getElementById(
+    "shopping-cart-offcanvas"
+  ) as HTMLDivElement;
+
+  for (let i = 0; i < cart.getCart.length; i++) {
+    let cartItem: HTMLUListElement = document.createElement(
+      "ul"
+    ) as HTMLUListElement;
+    cartItem.className = "cart-item-offcanvas";
+
+    let photo: HTMLImageElement = document.createElement(
+      "img"
+    ) as HTMLImageElement;
+    photo.className = "product-image-offcanvas";
+    photo.src = cart.getCart[i].photo;
+
+    let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    artist.className = "artist-offcanvas";
+    artist.innerHTML = cart.getCart[i].artist;
+
+    let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    album.className = "album-offcanvas";
+    album.innerHTML = "'" + cart.getCart[i].album + "'";
+
+    let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    article.className = "article-offcanvas";
+    article.innerHTML = cart.getCart[i].article;
+
+    let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    price.className = "price-offcanvas";
+    price.innerHTML = cart.getCart[i].price + " SEK";
+
+    let removeItem: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    removeItem.className = "remove-from-offcanvas";
+    removeItem.innerHTML = "REMOVE";
+
+    cartItem.appendChild(photo);
+    cartItem.appendChild(artist);
+    cartItem.appendChild(album);
+    cartItem.appendChild(article);
+    cartItem.appendChild(price);
+    cartContainer.appendChild(cartItem);
+    cartItem.appendChild(removeItem);
+  }
+} //BACKUP
+>>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab

@@ -2,8 +2,9 @@
 @use "./elements/startpage/carousell";
 @use "./elements/startpage/feed";
 @use "./elements/startpage/footer";
-
-// @import "mixins";
+@use "./elements/checkout/checkout.scss";
+@use "./elements/product-description/description-feed"; // @import "mixins";
+// @use "./elements/startpage/cart-offcanvas";
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -13,9 +14,18 @@ body {
   padding: 0;
 }
 
+<<<<<<< HEAD
 // #cartCount{
 //   border: none;
 //   border-radius: 50%;
 //   background-color: rgb(243, 226, 73);
 //   visibility: hidden;
 // }
+=======
+#cartCount {
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(243, 226, 73);
+  visibility: hidden;
+}
+>>>>>>> 8172f90e66afe5b9332e9de7bda42ffeab78e3ab

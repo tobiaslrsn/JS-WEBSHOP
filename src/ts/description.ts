@@ -1,6 +1,4 @@
-import { productsToPage } from "./products";
-import { Article } from "./models/product-objects";
-import create from "core-js/fn/object/create";
+import { CartList } from "./models/Isomething";
 
 window.onload = function () {
   descriptionToPage();
@@ -8,6 +6,8 @@ window.onload = function () {
 
 let getObject: string = localStorage.getItem("product");
 let productObject: any = JSON.parse(getObject);
+
+let cart = new CartList();
 
 function descriptionToPage() {
   let descriptionContainer: HTMLDivElement = document.getElementById(
@@ -17,13 +17,13 @@ function descriptionToPage() {
   let photo: HTMLImageElement = document.createElement(
     "img"
   ) as HTMLImageElement;
-  photo.className = "product-image";
+  photo.className = "product-image-description";
   photo.src = productObject.photo;
 
   let description: HTMLSpanElement = document.createElement(
     "span"
   ) as HTMLSpanElement;
-  description.className = "description";
+  description.className = "description-description";
   description.innerHTML = productObject.description;
 
   let descriptionUnorderedList: HTMLUListElement = document.createElement(
@@ -31,28 +31,34 @@ function descriptionToPage() {
   ) as HTMLUListElement;
 
   let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  artist.className = "artist";
+  artist.className = "artist-description";
   artist.innerHTML = "ARTIST: " + productObject.artist;
 
   let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  album.className = "album";
+  album.className = "album-description";
   album.innerHTML = "ALBUM: " + productObject.album;
 
   let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  article.className = "article";
+  article.className = "article-description";
   article.innerHTML = "ART.NR: " + productObject.article;
 
   let genre: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  genre.className = "genre";
+  genre.className = "genre-description";
   genre.innerHTML = "GENRE: " + productObject.genre;
 
   let year: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  year.className = "year";
+  year.className = "year-description";
   year.innerHTML = "YEAR: " + productObject.year;
 
   let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  price.className = "price";
+  price.className = "price-description";
   price.innerHTML = "PRICE: " + productObject.price + " SEK";
+
+  let addToCart: HTMLButtonElement = document.createElement(
+    "button"
+  ) as HTMLButtonElement;
+  addToCart.className = "purchase-button";
+  addToCart.innerHTML = productObject.addToCart;
 
   descriptionContainer.appendChild(photo);
   descriptionContainer.appendChild(description);

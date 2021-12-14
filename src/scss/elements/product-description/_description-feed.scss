@@ -1,14 +1,9 @@
-main {
+.main-description {
   background-color: white;
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-}
-
-.artisten {
-  width: 300px;
-  height: 300px;
 }
 
 #description-container {
@@ -21,49 +16,135 @@ main {
   flex-shrink: 10px;
 }
 
-.product-image {
+.product-image-description {
   margin-top: 20px;
-  width: 30rem;
-  height: 30rem;
+  width: 25rem;
+
   display: flex;
 }
 
-.description-container {
-  width: 30vw;
-}
-.description {
+.description-description {
   margin-left: 5rem;
 }
 
-.description > ul {
+.description-description > ul {
   list-style: none;
-  color: gray;
+  color: darkgray;
   width: 30vw;
   margin-left: -2.5rem;
   padding-top: 10px;
   gap: 10;
 }
 .return-home {
-  height: 5rem;
-  width: 5rem;
   font-weight: 700;
   color: black;
-  background-color: none;
+  background-color: white;
   cursor: pointer;
   border: none;
-  border-radius: 100%;
-  transition: transform 0.2s;
   padding: 0;
   margin-right: 10px;
 }
-.return-home:hover {
-  transform: scale(1.01);
-  box-shadow: 1px 1px 4px rgb(124, 121, 121);
-  text-decoration: none;
+.fa-arrow-left {
+  background-color: white;
 }
+.fa-arrow-left:hover {
+  color: gray;
+}
+
 a {
   text-decoration: none;
   color: black;
+}
+#shopping-cart-offcanvas {
+  //cart-container
+}
+.overflow-auto {
+  height: auto;
+}
+.offcanvas-end {
+  height: 100vh;
+  display: flex;
+}
+
+.cart-item-offcanvas {
+  //cart-product-container
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  border-bottom: 1px solid gray;
+}
+.product-image-offcanvas {
+  width: 51px;
+  height: 50px;
+}
+.artist-offcanvas {
+  width: 70%;
+  background-color: red;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.album-offcanvas {
+  height: 10%;
+  width: 70%;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+}
+.article-offcanvas {
+  width: 70%;
+  background-color: gray;
+  font-size: 0.6rem;
+}
+.price-offcanvas {
+  width: 70%;
+  background-color: orange;
+  padding: 0;
+}
+.remove-from-offcanvas {
+  height: 2rem;
+  width: 5rem;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+}
+.remove-from-offcanvas:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px rgb(124, 121, 121);
+}
+.purchase-button-offcanvas {
+  height: 2rem;
+  width: 90%;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+  justify-content: center;
+  align-items: center;
+}
+.purchase-button-offcanvas:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px rgb(124, 121, 121);
+}
+.redirect {
+  text-decoration: none;
+  color: black;
+}
+#return-to-start {
 }
 
 //TAB
@@ -92,7 +173,7 @@ a {
 } */
 //MOBILE
 @media screen and (max-width: 768px) {
-  main {
+  .main-description {
     height: 100vh;
     margin-bottom: 30%;
     padding-top: 30px;
@@ -104,7 +185,7 @@ a {
     height: 100vh;
     width: 100vw;
   }
-  .product-image {
+  .product-image-description {
     width: 20rem;
     height: 20rem;
   }
