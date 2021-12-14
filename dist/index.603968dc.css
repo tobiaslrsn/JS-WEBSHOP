@@ -188,22 +188,43 @@ h2 {
   border: none;
 }
 footer {
-  height: 16rem;
+  height: 100%;
   width: 100%;
-  background-color: yellow;
+  background-color: black;
+  color: white;
+}
+footer .subscribe-paragraph {
+  text-align: center;
+  padding-top: 2rem;
 }
 footer .news-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  width: 100vw;
+  height: 2.5rem;
+  margin-bottom: 3rem;
+}
+footer #newsletter {
+  width: 50vw;
+  border: none;
+}
+footer #subscribe {
+  width: 20vw;
+  border: none;
 }
 footer .info {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   font-size: 16px;
-  justify-content: space-around;
   align-items: center;
+}
+footer .contact-links {
+  color: white;
+  cursor: pointer;
 }
 footer ul {
   list-style-type: none;
