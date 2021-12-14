@@ -13,6 +13,9 @@ let cart = new CartList();
 document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
 console.log(cart.getCart.length);
 
+document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
+console.log(cart.getCart.length);
+
 export function productsToPage() {
   let productContainer: HTMLDivElement = document.getElementById(
     "products"
@@ -145,4 +148,59 @@ export function productsToPage() {
     productContainer.appendChild(productFeed);
   }
   console.log(products);
+}
+
+export function offcanvasCart() {
+  console.log(cart);
+  // let getCart: string = localStorage.getItem("addToCart");
+  // let cartObject: any = JSON.parse(getCart); //BACKUP
+  let cartContainer: HTMLDivElement = document.getElementById(
+    "shopping-cart-offcanvas"
+  ) as HTMLDivElement;
+  cartContainer.innerHTML = "";
+
+  for (let i = 0; i < cart.getCart.length; i++) {
+    let cartItem: HTMLUListElement = document.createElement(
+      "ul"
+    ) as HTMLUListElement;
+    cartItem.className = "cart-item-offcanvas";
+
+    let photo: HTMLImageElement = document.createElement(
+      "img"
+    ) as HTMLImageElement;
+    photo.className = "product-image-offcanvas";
+    photo.src = cart.getCart[i].photo;
+
+    let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    artist.className = "artist-offcanvas";
+    artist.innerHTML = cart.getCart[i].artist;
+
+    let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    album.className = "album-offcanvas";
+    album.innerHTML = "'" + cart.getCart[i].album + "'";
+
+    let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    article.className = "article-offcanvas";
+    article.innerHTML = cart.getCart[i].article;
+
+    let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
+    price.className = "price-offcanvas";
+    price.innerHTML = cart.getCart[i].price + " SEK";
+
+    let removeItem: HTMLButtonElement = document.createElement(
+      "button"
+    ) as HTMLButtonElement;
+    removeItem.className = "remove-from-offcanvas";
+    removeItem.innerHTML = "REMOVE";
+
+    cartItem.appendChild(photo);
+    cartItem.appendChild(artist);
+    cartItem.appendChild(album);
+    cartItem.appendChild(article);
+    cartItem.appendChild(price);
+    cartContainer.appendChild(cartItem);
+    cartItem.appendChild(removeItem);
+
+    console.log("funktion5");
+  }
 }
