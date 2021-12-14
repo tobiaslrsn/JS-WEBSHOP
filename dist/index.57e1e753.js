@@ -463,20 +463,118 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
 );
-parcelHelpers.export(exports, "offcanvasCart", ()=>offcanvasCart
-) //BACKUP
-;
-var _productObjects = require("./models/product-objects");
 var _isomething = require("./models/Isomething");
+var _header = require("./header");
+window.onload = function() {
+    productsToPage();
+    // cartProductCount();
+    cart.offcanvasCart();
+};
+let cart = new _isomething.CartList();
+console.log(cart.getCart.length);
+function productsToPage() {
+    let productContainer = document.getElementById("products");
+    for(let i = 0; i < _header.products.length; i++){
+        let productFeed = document.createElement("div");
+        productFeed.className = "product";
+        let productImage = document.createElement("img");
+        productImage.className = "product-image";
+        productImage.src = _header.products[i].photo;
+        //ADD DESCRIPTION.HTML ANCHORTAG TO PHOTO
+        let photoRedirect = document.createElement("a");
+        photoRedirect.href = "../description.html";
+        //CLICK PHOTO TO REDIRECT
+        productImage.addEventListener("click", ()=>{
+            window.localStorage.setItem("product", JSON.stringify(_header.products[i]));
+            location.href = photoRedirect.href;
+        });
+        let productArtist = document.createElement("p");
+        productArtist.className = "artist";
+        productArtist.innerHTML = _header.products[i].artist;
+        let productAlbum = document.createElement("p");
+        productAlbum.className = "album";
+        productAlbum.innerHTML = _header.products[i].album;
+        let productYear = document.createElement("p");
+        productYear.className = "year";
+        productYear.innerHTML = "year: " + _header.products[i].year;
+        let productPrice = document.createElement("p");
+        productPrice.className = "price";
+        productPrice.innerHTML = "price: " + _header.products[i].price + " SEK";
+        let productGenre = document.createElement("p");
+        productGenre.className = "genre";
+        productGenre.innerHTML = "Genre: " + _header.products[i].genre;
+        //PURCHASE BUTTON
+        let addToCart = document.createElement("button");
+        addToCart.className = "purchase-button";
+        addToCart.innerHTML = _header.products[i].addToCart;
+        addToCart.addEventListener("click", ()=>{
+            cart.addToCart(_header.products[i]);
+            cart.offcanvasCart();
+            if (typeof Storage !== "undefined") {
+                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                else localStorage.clickcount = 1;
+            }
+        // cartProductCount(); //CART COUNT
+        });
+        //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
+        let infoBtn = document.createElement("button");
+        infoBtn.className = "info-button";
+        infoBtn.innerHTML = _header.products[i].infoBtn;
+        //ADD DESCRIPTION.HTML ANCHORTAG
+        let infoRedirect = document.createElement("a");
+        infoRedirect.href = "../description.html";
+        //CLICK TO REDIRECT
+        infoBtn.addEventListener("click", ()=>{
+            window.localStorage.setItem("product", JSON.stringify(_header.products[i]));
+            location.href = infoRedirect.href;
+        });
+        //CREATE SPOTIFY-BUTTON
+        let listenBtn = document.createElement("button");
+        listenBtn.className = "listen-button";
+        listenBtn.innerHTML = _header.products[i].listenBtn;
+        //CREATE SPOTIFYLOGO
+        let spotifyLogo = document.createElement("i");
+        spotifyLogo.className = "fa fa-spotify";
+        //ADD ALBUM URL TO BUTTON
+        let spotifyUrl = document.createElement("a");
+        spotifyUrl.className = "spotify-redirect";
+        spotifyUrl.href = _header.products[i].spotifyUrl;
+        //CLICK TO OPEN SPOTIFY
+        listenBtn.addEventListener("click", ()=>{
+            location.href = spotifyUrl.href;
+        });
+        productFeed.appendChild(productImage);
+        productFeed.appendChild(productArtist);
+        productFeed.appendChild(productAlbum);
+        productFeed.appendChild(productYear);
+        productFeed.appendChild(productPrice);
+        productFeed.appendChild(productGenre);
+        productFeed.appendChild(addToCart);
+        productFeed.appendChild(infoBtn);
+        infoBtn.appendChild(infoRedirect);
+        productFeed.appendChild(listenBtn);
+        listenBtn.appendChild(spotifyUrl);
+        listenBtn.appendChild(spotifyLogo);
+        productContainer.appendChild(productFeed);
+    }
+    console.log(_header.products);
+}
+
+},{"./models/Isomething":"brPZg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./header":"7gBgG"}],"7gBgG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "products", ()=>products
+);
+var _productObjects = require("./models/product-objects");
 let image001 = "/assets/product-feed-img/1.jpg";
-let image002 = "2.0fe79b40.jpg";
-let image003 = "11.cdc2b607.jpg";
-let image004 = "4.a09afae4.jpg";
-let image005 = "5.ad46c5a6.jpg";
-let image006 = "6.692c53f5.jpg";
-let image007 = "7.318e1685.jpg";
-let image008 = "8.14acd5c6.jpg";
-let image009 = "13.2d4597af.jpg";
+let image002 = "/assets/product-feed-img/2.jpg";
+let image003 = "/assets/product-feed-img/11.jpg";
+let image004 = "/assets/product-feed-img/4.jpg";
+let image005 = "/assets/product-feed-img/5.jpg";
+let image006 = "/assets/product-feed-img/6.jpg";
+let image007 = "/assets/product-feed-img/7.jpg";
+let image008 = "/assets/product-feed-img/8.jpg";
+let image009 = "/assets/product-feed-img/13.jpg";
 let product001 = new _productObjects.Article(image001, "Daft Punk", "Homework", 1997, 250, "MJT001R", "Homework is the debut studio album by the French electronic music duo Daft Punk, released on 20 January 1997 by Virgin Records and Soma Quality Recordings.<br/><br/> The duo produced the tracks without plans to release an album. After working on projects that were intended to be separate singles over five months, they considered the material good enough for an album.", "Electronic", "purchase", "more info", "spotify", 1, "https://open.spotify.com/album/5uRdvUR7xCnHmUW8n64n9y?si=43c792ad2c8e4c2d" //SPOTIFY-URL
 );
 let product002 = new _productObjects.Article(image002, "DIO", "Holy diver", 1983, 250, "MJT002R", "Holy Diver is the debut studio album by the American heavy metal band Dio, released in 1983. <br/> Vocalist Ronnie James Dio had just finished his first tenure in Black Sabbath, whose drummer, Vinny Appice, he took with him to put together his own band. <br/><br/>The roster was completed by his former bandmate from Rainbow, Jimmy Bain, on bass and by the young guitarist Vivian Campbell, coming from the new wave of British heavy metal band Sweet Savage. <br/>The album was acclaimed by the music press and is the band's most successful effort.", "rock", "purchase", "more info", "spotify", 2, "https://open.spotify.com/album/1QJmLRcuIMMjZ49elafR3K?si=57709f0b1eb141be");
@@ -498,152 +596,8 @@ let products = [
     product008,
     product009, 
 ];
-// let shoppingCart = [];
-window.onload = function() {
-    productsToPage();
-    offcanvasCart(); //BACKUP
-};
-let cart = new _isomething.CartList();
-function productsToPage() {
-    let productContainer = document.getElementById("products");
-    for(let i = 0; i < products.length; i++){
-        let productFeed = document.createElement("div");
-        productFeed.className = "product";
-        let productImage = document.createElement("img");
-        productImage.className = "product-image";
-        productImage.src = products[i].photo;
-        //ADD DESCRIPTION.HTML ANCHORTAG TO PHOTO
-        let photoRedirect = document.createElement("a");
-        photoRedirect.href = "../description.html";
-        //CLICK PHOTO TO REDIRECT
-        productImage.addEventListener("click", ()=>{
-            window.localStorage.setItem("product", JSON.stringify(products[i]));
-            location.href = photoRedirect.href;
-        });
-        let productArtist = document.createElement("p");
-        productArtist.className = "artist";
-        productArtist.innerHTML = products[i].artist;
-        let productAlbum = document.createElement("p");
-        productAlbum.className = "album";
-        productAlbum.innerHTML = products[i].album;
-        let productYear = document.createElement("p");
-        productYear.className = "year";
-        productYear.innerHTML = "year: " + products[i].year;
-        let productPrice = document.createElement("p");
-        productPrice.className = "price";
-        productPrice.innerHTML = "price: " + products[i].price + " SEK";
-        let productGenre = document.createElement("p");
-        productGenre.className = "genre";
-        productGenre.innerHTML = "Genre: " + products[i].genre;
-        //PURCHASE BUTTON
-        let addToCart = document.createElement("button");
-        addToCart.className = "purchase-button";
-        addToCart.innerHTML = products[i].addToCart;
-        //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
-        addToCart.addEventListener("click", ()=>{
-            cart.addToCart(products[i]);
-            offcanvasCart();
-            //BEHÅLLARE TÖMMAS
-            // shoppingCart.push(products[i]);
-            // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
-            if (typeof Storage !== "undefined") {
-                if (localStorage.clickcount) localStorage.clickcount = Number(localStorage.clickcount) + 1;
-                else localStorage.clickcount = 1;
-            }
-        // console.log(shoppingCart);
-        // cartProductCount(); //CART COUNT
-        });
-        //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
-        let infoBtn = document.createElement("button");
-        infoBtn.className = "info-button";
-        infoBtn.innerHTML = products[i].infoBtn;
-        //ADD DESCRIPTION.HTML ANCHORTAG
-        let infoRedirect = document.createElement("a");
-        infoRedirect.href = "../description.html";
-        //CLICK TO REDIRECT
-        infoBtn.addEventListener("click", ()=>{
-            window.localStorage.setItem("product", JSON.stringify(products[i]));
-            location.href = infoRedirect.href;
-        });
-        //CREATE SPOTIFY-BUTTON
-        let listenBtn = document.createElement("button");
-        listenBtn.className = "listen-button";
-        listenBtn.innerHTML = products[i].listenBtn;
-        //CREATE SPOTIFYLOGO
-        let spotifyLogo = document.createElement("i");
-        spotifyLogo.className = "fa fa-spotify";
-        //ADD ALBUM URL TO BUTTON
-        let spotifyUrl = document.createElement("a");
-        spotifyUrl.className = "spotify-redirect";
-        spotifyUrl.href = products[i].spotifyUrl;
-        //CLICK TO OPEN SPOTIFY
-        listenBtn.addEventListener("click", ()=>{
-            location.href = spotifyUrl.href;
-        });
-        productFeed.appendChild(productImage);
-        productFeed.appendChild(productArtist);
-        productFeed.appendChild(productAlbum);
-        productFeed.appendChild(productYear);
-        productFeed.appendChild(productPrice);
-        productFeed.appendChild(productGenre);
-        productFeed.appendChild(addToCart);
-        productFeed.appendChild(infoBtn);
-        infoBtn.appendChild(infoRedirect);
-        productFeed.appendChild(listenBtn);
-        listenBtn.appendChild(spotifyUrl);
-        listenBtn.appendChild(spotifyLogo);
-        productContainer.appendChild(productFeed);
-    }
-    console.log(products);
-}
-//Adding product cart counting
-function cartProductCount() {
-    let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-    let cartAdding = document.getElementById("cartCount");
-    if (purchaseBtnCount) {
-        if (cartAdding) {
-            let cartCount = Number(cartAdding.innerText || 0);
-            cartAdding.innerText = String(cartCount + 1);
-            cartAdding.style.visibility = "visible";
-        }
-    }
-}
-function offcanvasCart() {
-    // let getCart: string = localStorage.getItem("addToCart");
-    // let cartObject: any = JSON.parse(getCart); //BACKUP
-    let cartContainer = document.getElementById("shopping-cart-offcanvas");
-    for(let i = 0; i < cart.getCart.length; i++){
-        let cartItem = document.createElement("ul");
-        cartItem.className = "cart-item-offcanvas";
-        let photo = document.createElement("img");
-        photo.className = "product-image-offcanvas";
-        photo.src = cart.getCart[i].photo;
-        let artist = document.createElement("li");
-        artist.className = "artist-offcanvas";
-        artist.innerHTML = cart.getCart[i].artist;
-        let album = document.createElement("li");
-        album.className = "album-offcanvas";
-        album.innerHTML = "'" + cart.getCart[i].album + "'";
-        let article = document.createElement("li");
-        article.className = "article-offcanvas";
-        article.innerHTML = cart.getCart[i].article;
-        let price = document.createElement("li");
-        price.className = "price-offcanvas";
-        price.innerHTML = cart.getCart[i].price + " SEK";
-        let removeItem = document.createElement("button");
-        removeItem.className = "remove-from-offcanvas";
-        removeItem.innerHTML = "REMOVE";
-        cartItem.appendChild(photo);
-        cartItem.appendChild(artist);
-        cartItem.appendChild(album);
-        cartItem.appendChild(article);
-        cartItem.appendChild(price);
-        cartContainer.appendChild(cartItem);
-        cartItem.appendChild(removeItem);
-    }
-}
 
-},{"./models/product-objects":"d5Ism","./models/Isomething":"brPZg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
+},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
