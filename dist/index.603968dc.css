@@ -424,8 +424,6 @@ a {
   text-decoration: none;
   color: black;
 }
-<<<<<<< HEAD
-=======
 /* @media screen and (max-width: 1024px) {
   main {
     height: 100vh;
@@ -482,97 +480,6 @@ a {
     padding-top: 10px;
   }
 }
-<<<<<<< HEAD
-.overflow-auto {
-  height: auto;
-}
-.offcanvas-end {
-  height: 100vh;
-  display: flex;
-}
-.cart-item-offcanvas {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-start;
-  list-style: none;
-  border-bottom: 1px solid gray;
-}
-.product-image-offcanvas {
-  width: 51px;
-  height: 50px;
-}
-.artist-offcanvas {
-  width: 70%;
-  background-color: red;
-  font-weight: 700;
-  font-size: 0.8rem;
-}
-.album-offcanvas {
-  height: 10%;
-  width: 70%;
-  background-color: greenyellow;
-  font-size: 0.8rem;
-}
-.article-offcanvas {
-  width: 70%;
-  background-color: gray;
-  font-size: 0.6rem;
-}
-.price-offcanvas {
-  width: 70%;
-  background-color: orange;
-  padding: 0;
-}
-.remove-from-offcanvas {
-  height: 2rem;
-  width: 5rem;
-  font-weight: 700;
-  font-size: 10pt;
-  margin: 5px;
-  margin-bottom: 20px;
-  background-color: yellow;
-  color: black;
-  cursor: pointer;
-  border: none;
-  border-radius: 2rem;
-  transition: transform 0.2s;
-}
-.remove-from-offcanvas:hover {
-  transform: scale(1.01);
-  box-shadow: 1px 1px 4px #7c7979;
-}
-.purchase-button-offcanvas {
-  height: 2rem;
-  width: 90%;
-  font-weight: 700;
-  font-size: 10pt;
-  margin: 5px;
-  margin-bottom: 20px;
-  background-color: yellow;
-  color: black;
-  cursor: pointer;
-  border: none;
-  border-radius: 2rem;
-  transition: transform 0.2s;
-  justify-content: center;
-  align-items: center;
-}
-.purchase-button-offcanvas:hover {
-  transform: scale(1.01);
-  box-shadow: 1px 1px 4px #7c7979;
-}
-.redirect {
-  text-decoration: none;
-  color: black;
-}
-.button-offcanvas {
-  background-color: white;
-}
->>>>>>> 0a7e94ae03d3fcd35417dea14f27c679d17ba4e5
-=======
->>>>>>> feature/cart-bug-fixes
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;

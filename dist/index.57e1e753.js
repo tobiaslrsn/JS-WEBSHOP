@@ -633,6 +633,12 @@ function offcanvasCart() {
         let removeItem = document.createElement("button");
         removeItem.className = "remove-from-offcanvas";
         removeItem.innerHTML = "REMOVE";
+        console.log(cart.getCart);
+        removeItem.addEventListener("click", ()=>{
+            cart.getCart.splice(i, 1);
+            console.log(cart.getCart);
+            offcanvasCart();
+        });
         cartItem.appendChild(photo);
         cartItem.appendChild(artist);
         cartItem.appendChild(album);
@@ -643,15 +649,7 @@ function offcanvasCart() {
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
-=======
-},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./checkout":"fFAhY","./models/Isomething":"brPZg"}],"d5Ism":[function(require,module,exports) {
->>>>>>> 0a7e94ae03d3fcd35417dea14f27c679d17ba4e5
-=======
-},{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV","./models/Isomething":"brPZg"}],"d5Ism":[function(require,module,exports) {
->>>>>>> feature/cart-bug-fixes
+},{"./models/product-objects":"d5Ism","./models/Isomething":"brPZg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
@@ -674,64 +672,6 @@ class Article {
     }
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"ciiiV":[function(require,module,exports) {
-exports.interopDefault = function(a) {
-    return a && a.__esModule ? a : {
-        default: a
-    };
-};
-exports.defineInteropFlag = function(a) {
-    Object.defineProperty(a, '__esModule', {
-        value: true
-    });
-};
-exports.exportAll = function(source, dest) {
-    Object.keys(source).forEach(function(key) {
-        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
-        Object.defineProperty(dest, key, {
-            enumerable: true,
-            get: function() {
-                return source[key];
-            }
-        });
-    });
-    return dest;
-};
-exports.export = function(dest, destName, get) {
-    Object.defineProperty(dest, destName, {
-        enumerable: true,
-        get: get
-    });
-};
-
-},{}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
-=======
-},{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"brPZg":[function(require,module,exports) {
-var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
-parcelHelpers.defineInteropFlag(exports);
-parcelHelpers.export(exports, "CartList", ()=>CartList
-);
-class CartList {
-    constructor(){
-        this.getCart = JSON.parse(localStorage.getItem("cart")) || [];
-    }
-    addToCart(thingToAdd) {
-        this.getCart.push(thingToAdd);
-        //let getCart: string = localStorage.getItem("addToCart");
-        //let cartObject: any = JSON.parse(getCart);
-        localStorage.setItem("cart", JSON.stringify(this.getCart));
-    }
-    cartToPage(thingToAdd1) {
-        this.getCart.push(thingToAdd1);
-        localStorage.setItem("cart", JSON.stringify(this.getCart));
-    }
-}
-
-=======
->>>>>>> feature/cart-bug-fixes
 },{"@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}]},["1QJRq","9WuRb"], "9WuRb", "parcelRequire1848")
->>>>>>> 0a7e94ae03d3fcd35417dea14f27c679d17ba4e5
 
 //# sourceMappingURL=index.57e1e753.js.map
