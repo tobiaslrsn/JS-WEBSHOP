@@ -144,7 +144,7 @@ export function productsToPage() {
     listenBtn.appendChild(spotifyLogo);
     productContainer.appendChild(productFeed);
   }
-  console.log(products);
+  // console.log(products);
 }
 
 export function offcanvasCart() {
