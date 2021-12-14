@@ -473,14 +473,7 @@ window.onload = function() {
     cart.offcanvasCart();
 };
 let cart = new _isomething.CartList();
-<<<<<<< HEAD
 document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
-console.log(cart.getCart.length);
-document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
-=======
-console.log(cart.getCart.length);
-document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
->>>>>>> 8c6a223094da493909b60fb0c04c7de108516824
 console.log(cart.getCart.length);
 function productsToPage() {
     let productContainer = document.getElementById("products");
@@ -519,11 +512,7 @@ function productsToPage() {
         addToCart.innerHTML = _header.products[i].addToCart;
         addToCart.addEventListener("click", ()=>{
             cart.addToCart(_header.products[i]);
-<<<<<<< HEAD
             cart.offcanvasCart();
-=======
-            offcanvasCart();
->>>>>>> 8c6a223094da493909b60fb0c04c7de108516824
             document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
             console.log(cart.getCart.length);
         });

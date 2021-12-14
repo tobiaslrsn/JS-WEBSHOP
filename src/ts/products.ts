@@ -9,14 +9,6 @@ window.onload = function () {
 };
 
 let cart = new CartList();
-<<<<<<< HEAD
-
-console.log(cart.getCart.length);
-=======
->>>>>>> fbdcc69a4f62297c790f3f9fd9ecc4f69b232d0f
-
-document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
-console.log(cart.getCart.length);
 
 document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
 console.log(cart.getCart.length);
