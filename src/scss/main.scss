@@ -3,7 +3,8 @@
 @use "./elements/startpage/feed";
 @use "./elements/startpage/footer";
 @use "./elements/checkout/checkout.scss";
-@use "./elements/product-description/description-feed"; // @import "mixins";
+@use "./elements/product-description/description-feed";
+@use "./elements/startpage/cart-offcanvas"; // @import "mixins";
 // @use "./elements/startpage/cart-offcanvas";
 html {
   scroll-behavior: smooth;

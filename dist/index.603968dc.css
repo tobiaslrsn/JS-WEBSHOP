@@ -115,7 +115,6 @@ h2 {
 .product {
   margin: 2rem;
   display: inline-block;
-  width: 300px;
 }
 .artist,
 .album,
@@ -189,22 +188,43 @@ h2 {
   border: none;
 }
 footer {
-  height: 16rem;
+  height: 100%;
   width: 100%;
-  background-color: yellow;
+  background-color: black;
+  color: white;
+}
+footer .subscribe-paragraph {
+  text-align: center;
+  padding-top: 2rem;
 }
 footer .news-container {
   display: flex;
   justify-content: center;
-  flex-direction: column;
+  flex-direction: row;
+  color: white;
+  background-color: black;
+  width: 100vw;
+  height: 2.5rem;
+  margin-bottom: 3rem;
+}
+footer #newsletter {
+  width: 50vw;
+  border: none;
+}
+footer #subscribe {
+  width: 20vw;
+  border: none;
 }
 footer .info {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   font-size: 16px;
-  justify-content: space-around;
   align-items: center;
+}
+footer .contact-links {
+  color: white;
+  cursor: pointer;
 }
 footer ul {
   list-style-type: none;
@@ -212,6 +232,18 @@ footer ul {
 footer li {
   list-style-type: none;
   padding: 10px;
+}
+.fa-linkedin-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+.fa-github-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+.fa-envelope-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
 }
 @media screen and (min-width: 601px) {
   .news-container {
@@ -329,6 +361,8 @@ footer li {
   border: none;
   padding: 0;
   margin-right: 10px;
+  font-size: 2.3rem;
+  margin-left: -1.5rem;
 }
 .fa-arrow-left {
   background-color: white;
@@ -479,6 +513,96 @@ a {
     width: 90vw;
     padding-top: 10px;
   }
+}
+.overflow-auto {
+  height: auto;
+}
+.offcanvas-end {
+  height: 100vh;
+  display: flex;
+}
+.cart-item-offcanvas {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+  list-style: none;
+  border-bottom: 1px solid gray;
+}
+.product-image-offcanvas {
+  width: 51px;
+  height: 50px;
+}
+.button-offcanvas {
+  background-color: white;
+}
+.artist-offcanvas {
+  width: 70%;
+  background-color: red;
+  font-weight: 700;
+  font-size: 0.8rem;
+}
+.album-offcanvas {
+  height: 10%;
+  width: 70%;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+}
+.article-offcanvas {
+  width: 70%;
+  background-color: gray;
+  font-size: 0.6rem;
+}
+.price-offcanvas {
+  width: 70%;
+  background-color: orange;
+  padding: 0;
+}
+.remove-from-offcanvas {
+  height: 2rem;
+  width: 5rem;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+}
+.remove-from-offcanvas:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
+}
+.purchase-button-offcanvas {
+  height: 2rem;
+  width: 90%;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+  justify-content: center;
+  align-items: center;
+}
+.purchase-button-offcanvas:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px #7c7979;
+}
+.redirect {
+  text-decoration: none;
+  color: black;
+}
+.button-offcanvas {
+  background-color: white;
 }
 html {
   scroll-behavior: smooth;

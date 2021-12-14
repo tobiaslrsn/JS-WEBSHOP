@@ -1,20 +1,42 @@
 footer {
-  height: 16rem;
+  height: 100%;
   width: 100%;
-  background-color: yellow;
+  background-color: black;
+  color: white;
 
+  .subscribe-paragraph {
+    text-align: center;
+    padding-top: 2rem;
+  }
   .news-container {
     display: flex;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
+    color: white;
+    background-color: black;
+    width: 100vw;
+    height: 2.5rem;
+    margin-bottom: 3rem;
+  }
+  #newsletter {
+    width: 50vw;
+    border: none;
+  }
+  #subscribe {
+    width: 20vw;
+    border: none;
   }
   .info {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     font-size: 16px;
-    justify-content: space-around;
+    // justify-content: center;
     align-items: center;
+  }
+  .contact-links {
+    color: white;
+    cursor: pointer;
   }
 
   ul {
@@ -26,7 +48,19 @@ footer {
     padding: 10px;
   }
 }
+.fa-linkedin-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
 
+.fa-github-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+.fa-envelope-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
 @media screen and (min-width: 601px) {
   .news-container {
     display: flex;
