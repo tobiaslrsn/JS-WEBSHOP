@@ -473,7 +473,6 @@ window.onload = function() {
     cart.offcanvasCart();
 };
 let cart = new _isomething.CartList();
-console.log(cart.getCart.length);
 document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
 console.log(cart.getCart.length);
 function productsToPage() {
@@ -513,7 +512,7 @@ function productsToPage() {
         addToCart.innerHTML = _header.products[i].addToCart;
         addToCart.addEventListener("click", ()=>{
             cart.addToCart(_header.products[i]);
-            offcanvasCart();
+            cart.offcanvasCart();
             document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
             console.log(cart.getCart.length);
         });
