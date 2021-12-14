@@ -7,8 +7,8 @@ let image003: string = "/assets/product-feed-img/11.jpg";
 let image004: string = "/assets/product-feed-img/4.jpg";
 let image005: string = "/assets/product-feed-img/5.jpg";
 let image006: string = "/assets/product-feed-img/6.jpg";
-let image007: string = "/assets/product-feed-img/7.jpg";
-let image008: string = "/assets/product-feed-img/8.jpg";
+let image007: string = "/assets/product-feed-img/18.jpg";
+let image008: string = "/assets/product-feed-img/20.jpg";
 let image009: string = "/assets/product-feed-img/13.jpg";
 
 let product001: productObjects.Article = new productObjects.Article(
@@ -109,34 +109,34 @@ let product006: productObjects.Article = new productObjects.Article(
 
 let product007: productObjects.Article = new productObjects.Article(
   image007,
-  "Destroyer",
-  "Kaputt",
-  2011,
+  "MF DOOM",
+  "MM..FOOD",
+  2004,
   250,
   "MJT007R",
-  "Kaputt is the ninth album by Canadian band Destroyer. It was released on January 25, 2011 by Merge Records and Dead Oceans Records. The album was leaked towards the end of 2010.<br/><br/> The vinyl edition of the album features bonus material on side three written largely by frequent Destroyer collaborator Ted Bois. <br/><br/>This material is also included in the European CD version of the album credited as 'The Laziest River'. The album was named as a shortlisted (one of 10) nominee for the 2011 Polaris Music Prize award. ",
-  "rock",
+  "Mm..Food (stylized in all caps) is the fifth studio album by British-American rapper/producer MF DOOM, released by Rhymesayers in November 2004. <br/> The album peaked at number 17 on Billboard's Independent Albums chart, and number 9 on Heatseekers Albums chart. <br/> The title Mm..Food is an anagram of 'MF DOOM'.",
+  "Hiphop",
   "purchase",
   "more info",
   "spotify",
   7,
-  "https://open.spotify.com/album/3yy32elu0ZXO6xq2bTuhmU?si=5497dd79effc4e78"
+  "https://open.spotify.com/album/1UcS2nqUhxrZjrBZ3tHk2N?si=534irTI3TNWLqmqk_8vqBg"
 );
 
 let product008: productObjects.Article = new productObjects.Article(
   image008,
-  "Bob Dylan",
-  "Infidels",
-  1983,
+  "Miles Davis",
+  "Kind of Blue",
+  1959,
   250,
   "MJT008R",
-  "Infidels is the 22nd studio album by American singer-songwriter Bob Dylan, released on October 27, 1983 by Columbia Records. <br/><br/>Produced by Mark Knopfler and Dylan himself, Infidels is seen as his return to secular music, following a conversion to Christianity, three evangelical records and a subsequent return to a less religious lifestyle.<br/><br/> Though he has never entirely abandoned religious imagery, Infidels gained much attention for its focus on more personal themes of love and loss, in addition to commentary on the environment and geopolitics. <br/><br/>Christopher Connelly of Rolling Stone called those gospel albums just prior to Infidels 'lifeless', and saw Infidels as making Bob Dylan's career viable again",
-  "rock",
+  "Kind of Blue is a studio album by American jazz trumpeter and composer Miles Davis. <br/>It was recorded on March 2 and April 22, 1959, at Columbia's 30th Street Studio in New York City, and released on August 17 of that year by Columbia Records.<br/> <br/> For the recording, Davis led a sextet featuring saxophonists John Coltrane and Julian 'Cannonball' Adderley, pianist Bill Evans, bassist Paul Chambers, and drummer Jimmy Cobb, with new band pianist Wynton Kelly appearing on one track 'Freddie Freeloader' in place of Evans.",
+  "Jazz",
   "purchase",
   "more info",
   "spotify",
   8,
-  "https://open.spotify.com/album/66zadu7BtUnpbkT4iAkaHy?si=4d6aa4b034384fb2"
+  "https://open.spotify.com/album/1weenld61qoidwYuZ1GESA?si=i7OoMZAAQp-ygMOIX31eNQ"
 );
 
 let product009: productObjects.Article = new productObjects.Article(
