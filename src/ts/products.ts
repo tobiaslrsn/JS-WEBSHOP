@@ -239,22 +239,67 @@ export function productsToPage() {
     addToCart.className = "purchase-button";
     addToCart.innerHTML = products[i].addToCart;
 
+
+
     //ADD PRODUCT TO LOCAL STORAGE
     addToCart.addEventListener("click", () => {
       shoppingCart.push(products[i]);
       window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+      
+      let countingButton: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
+      
+      let count = "localStorageCount";
 
-      if(typeof(Storage) !== "undefined") {
-        if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount)+1;
-        } else {
-          localStorage.clickcount = 1;
-        }
+      let localStorageKey = (data) =>{
+        window.localStorage.setItem(count, JSON.stringify(data));
       }
     
+       //Hämtar vårat sparade state som det var sparat
+      let getFromLocalStorage = ()=>{ 
+        let saved = window.localStorage.getItem(count);
+    
+        //Om det ej är något sparat localstorage får man tillbaka null
+        if(!saved){ 
+          return null;
+        }
+    
+        return JSON.parse(saved);
+      }
+      //Gör så att elementet existerar
+      if(addToCart && countingButton){
+        //Får det sparade state
+        let savedNumber = getFromLocalStorage();
+        //Gör så savedNumber existerar, om inte skippar vi detta.
+        if(savedNumber){
+          countingButton.innerText = savedNumber.cartCounting;
+        }
+      //CartCounting är antingen odefinerat eller ett number
+      //om det är odefinerat så få faller vi tillbaka på 0.
+      //Konvertera till int eftersom value från innertext ger
+      //tillbaka en string
+      let cartCounting = Number(countingButton.innerText || 0) + 1;
+      let state = {cartCounting};
+      //På varje klick sprar vi till local storage
+      localStorageKey(state);
+      //Ökar cartCounting med 1 för varje klick.
+      countingButton.innerText=String(cartCounting);
+
+
+
+
+      // if(typeof(Storage) !== "undefined") {
+      //   if (localStorage.clickcount) {
+      //     localStorage.clickcount = Number(localStorage.clickcount)+1;
+      //   } else {
+      //     localStorage.clickcount = 1;
+      //   }
+      // }
+    
       console.log(shoppingCart);
-      cartProductCount(); //CART COUNT
+      // cartProductCount(); //CART COUNT
+    }
     });
+  
 
     //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
     let infoBtn: HTMLButtonElement = document.createElement(
@@ -316,18 +361,19 @@ export function productsToPage() {
   console.log(products);
 }
 //Adding product cart counting
-function cartProductCount() {
-  let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-  let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
+// function cartProductCount() {
+//   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
+//   let cartAdding: HTMLButtonElement = document.getElementById("cartCount") as HTMLButtonElement;
   
-  if (purchaseBtnCount) {
-    if (cartAdding) {
-      let cartCount = Number(cartAdding.innerText || 0);
-      cartAdding.innerText = String(cartCount + 1);
-      cartAdding.style.visibility = "visible";
+//   if (purchaseBtnCount) {
+//     if (cartAdding) {
+//       let cartCount = Number(cartAdding.innerText || 0);
+//       cartAdding.innerText = String(cartCount + 1);
+//       cartAdding.style.visibility = "visible";
 
       
 
-    }
-  }
-}
+//     }
+//   }
+
+// }
