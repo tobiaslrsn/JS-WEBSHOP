@@ -10,6 +10,7 @@ window.onload = function () {
 
 
 let cart = new CartList();
+
 console.log(cart.getCart.length);
 
 document.getElementById("cartCount") .innerHTML = ""+cart.getCart.length;
