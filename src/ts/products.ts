@@ -1,7 +1,8 @@
 import * as productObjects from "./models/product-objects";
-import { Article } from "./models/product-objects";
+import { CartList } from "./models/Isomething";
+import { cartToPage } from "./checkout";
 
-let image001: string = "1.b18e163d.jpg";
+let image001: string = "/assets/product-feed-img/1.jpg";
 let image002: string = "2.0fe79b40.jpg";
 let image003: string = "11.cdc2b607.jpg";
 let image004: string = "4.a09afae4.jpg";
@@ -166,12 +167,13 @@ let products = [
   product008,
   product009,
 ];
+let cart = new CartList();
 
 let shoppingCart = [];
-
+document.getElementById("our-products").innerHTML = "";
 window.onload = function () {
   productsToPage();
-  offcanvasCart();
+  offcanvasCart(); //BACKUP
 };
 
 export function productsToPage() {
@@ -234,17 +236,25 @@ export function productsToPage() {
     productGenre.innerHTML = "Genre: " + products[i].genre;
 
     //PURCHASE BUTTON
+
     let addToCart: HTMLButtonElement = document.createElement(
       "button"
     ) as HTMLButtonElement;
     addToCart.className = "purchase-button";
     addToCart.innerHTML = products[i].addToCart;
 
-    //ADD PRODUCT TO LOCAL STORAGE
-    addToCart.addEventListener("click", () => {
-      shoppingCart.push(products[i]);
-      window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+    //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
 
+    addToCart.addEventListener("click", () => {
+      cart.addToCart(products[i]);
+
+      offcanvasCart();
+      cartToPage;
+      //BEHÅLLARE TÖMMAS
+      // shoppingCart.push(products[i]);
+      // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+
+      /*  MALCOLMS RÄKNARE
       if (typeof Storage !== "undefined") {
         if (localStorage.clickcount) {
           localStorage.clickcount = Number(localStorage.clickcount) + 1;
@@ -252,9 +262,9 @@ export function productsToPage() {
           localStorage.clickcount = 1;
         }
       }
-
-      console.log(shoppingCart);
-      cartProductCount(); //CART COUNT
+ */
+      // console.log(shoppingCart);
+      // cartProductCount(); //CART COUNT
     });
 
     //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
@@ -317,7 +327,7 @@ export function productsToPage() {
   console.log(products);
 }
 //Adding product cart counting
-function cartProductCount() {
+/* function cartProductCount() {
   let purchaseBtnCount = document.querySelectorAll(".purchase-button");
   let cartAdding: HTMLButtonElement = document.getElementById(
     "cartCount"
@@ -330,17 +340,14 @@ function cartProductCount() {
       cartAdding.style.visibility = "visible";
     }
   }
-}
+} */
 
-function offcanvasCart() {
-  let getCart: string = localStorage.getItem("addToCart");
-  let cartObject: any = JSON.parse(getCart);
+export function offcanvasCart() {
+  // document.getElementById("shopping-cart-offcanvas").innerHTML = "";
+  // let getCart: string = localStorage.getItem("addToCart");
+  // let cartObject: any = JSON.parse(getCart); //BACKUP
 
-  let cartContainer: HTMLDivElement = document.getElementById(
-    "shopping-cart-offcanvas"
-  ) as HTMLDivElement;
-
-  for (let i = 0; i < cartObject.length; i++) {
+  for (let i = 0; i < cart.getCart.length; i++) {
     let cartItem: HTMLUListElement = document.createElement(
       "ul"
     ) as HTMLUListElement;
@@ -350,23 +357,23 @@ function offcanvasCart() {
       "img"
     ) as HTMLImageElement;
     photo.className = "product-image-offcanvas";
-    photo.src = cartObject[i].photo;
+    photo.src = cart.getCart[i].photo;
 
     let artist: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     artist.className = "artist-offcanvas";
-    artist.innerHTML = cartObject[i].artist;
+    artist.innerHTML = cart.getCart[i].artist;
 
     let album: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     album.className = "album-offcanvas";
-    album.innerHTML = "'" + cartObject[i].album + "'";
+    album.innerHTML = "'" + cart.getCart[i].album + "'";
 
     let article: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     article.className = "article-offcanvas";
-    article.innerHTML = cartObject[i].article;
+    article.innerHTML = cart.getCart[i].article;
 
     let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
     price.className = "price-offcanvas";
-    price.innerHTML = cartObject[i].price + " SEK";
+    price.innerHTML = cart.getCart[i].price + " SEK";
 
     let removeItem: HTMLButtonElement = document.createElement(
       "button"
@@ -379,7 +386,7 @@ function offcanvasCart() {
     cartItem.appendChild(album);
     cartItem.appendChild(article);
     cartItem.appendChild(price);
-    cartContainer.appendChild(cartItem);
+    // cartContainer.appendChild(cartItem);
     cartItem.appendChild(removeItem);
   }
-}
+} //BACKUP
