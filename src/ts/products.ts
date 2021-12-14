@@ -2,14 +2,14 @@ import * as productObjects from "./models/product-objects";
 import { CartList } from "./models/Isomething";
 
 let image001: string = "/assets/product-feed-img/1.jpg";
-let image002: string = "2.0fe79b40.jpg";
-let image003: string = "11.cdc2b607.jpg";
-let image004: string = "4.a09afae4.jpg";
-let image005: string = "5.ad46c5a6.jpg";
-let image006: string = "6.692c53f5.jpg";
-let image007: string = "7.318e1685.jpg";
-let image008: string = "8.14acd5c6.jpg";
-let image009: string = "13.2d4597af.jpg";
+let image002: string = "/assets/product-feed-img/2.jpg";
+let image003: string = "/assets/product-feed-img/11.jpg";
+let image004: string = "/assets/product-feed-img/4.jpg";
+let image005: string = "/assets/product-feed-img/5.jpg";
+let image006: string = "/assets/product-feed-img/6.jpg";
+let image007: string = "/assets/product-feed-img/7.jpg";
+let image008: string = "/assets/product-feed-img/8.jpg";
+let image009: string = "/assets/product-feed-img/13.jpg";
 
 let product001: productObjects.Article = new productObjects.Article(
   image001,
@@ -171,10 +171,16 @@ let products = [
 
 window.onload = function () {
   productsToPage();
-  offcanvasCart(); //BACKUP
+  // cartProductCount();
+  offcanvasCart();
 };
 
+
 let cart = new CartList();
+
+document.getElementById("cartCount") .innerHTML = ""+cart.getCart.length;
+console.log(cart.getCart.length);
+
 
 export function productsToPage() {
   let productContainer: HTMLDivElement = document.getElementById(
@@ -242,24 +248,12 @@ export function productsToPage() {
     addToCart.className = "purchase-button";
     addToCart.innerHTML = products[i].addToCart;
 
-    //ADD PRODUCT TO LOCAL STORAGE // addToCart () {}
     addToCart.addEventListener("click", () => {
       cart.addToCart(products[i]);
       offcanvasCart();
-      //BEHÅLLARE TÖMMAS
-      // shoppingCart.push(products[i]);
-      // window.localStorage.setItem("addToCart", JSON.stringify(shoppingCart));
+      document.getElementById("cartCount") .innerHTML = ""+cart.getCart.length;
+      console.log(cart.getCart.length);
 
-      if (typeof Storage !== "undefined") {
-        if (localStorage.clickcount) {
-          localStorage.clickcount = Number(localStorage.clickcount) + 1;
-        } else {
-          localStorage.clickcount = 1;
-        }
-      }
-
-      // console.log(shoppingCart);
-      // cartProductCount(); //CART COUNT
     });
 
     //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
@@ -321,29 +315,16 @@ export function productsToPage() {
   }
   console.log(products);
 }
-//Adding product cart counting
-function cartProductCount() {
-  let purchaseBtnCount = document.querySelectorAll(".purchase-button");
-  let cartAdding: HTMLButtonElement = document.getElementById(
-    "cartCount"
-  ) as HTMLButtonElement;
 
-  if (purchaseBtnCount) {
-    if (cartAdding) {
-      let cartCount = Number(cartAdding.innerText || 0);
-      cartAdding.innerText = String(cartCount + 1);
-      cartAdding.style.visibility = "visible";
-    }
-  }
-}
 
 export function offcanvasCart() {
+  console.log(cart);
   // let getCart: string = localStorage.getItem("addToCart");
   // let cartObject: any = JSON.parse(getCart); //BACKUP
-
   let cartContainer: HTMLDivElement = document.getElementById(
     "shopping-cart-offcanvas"
   ) as HTMLDivElement;
+  cartContainer.innerHTML = "";
 
   for (let i = 0; i < cart.getCart.length; i++) {
     let cartItem: HTMLUListElement = document.createElement(
@@ -386,5 +367,7 @@ export function offcanvasCart() {
     cartItem.appendChild(price);
     cartContainer.appendChild(cartItem);
     cartItem.appendChild(removeItem);
+
+    console.log("funktion5");
   }
-} //BACKUP
+}
