@@ -461,6 +461,7 @@ function hmrAcceptRun(bundle, id) {
 },{}],"9WuRb":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
+// console.log(cart.getCart.length);
 parcelHelpers.export(exports, "productsToPage", ()=>productsToPage
 );
 var _isomething = require("./models/Isomething");
@@ -471,7 +472,6 @@ window.onload = function() {
     cart.offcanvasCart();
 };
 let cart = new _isomething.CartList();
-console.log(cart.getCart.length);
 function productsToPage() {
     let productContainer = document.getElementById("products");
     for(let i = 0; i < _header.products.length; i++){
@@ -557,7 +557,7 @@ function productsToPage() {
         listenBtn.appendChild(spotifyLogo);
         productContainer.appendChild(productFeed);
     }
-    console.log(_header.products);
+// console.log(products);
 }
 
 },{"./models/Isomething":"brPZg","./header":"7gBgG","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"7gBgG":[function(require,module,exports) {

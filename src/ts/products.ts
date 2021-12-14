@@ -9,7 +9,7 @@ window.onload = function () {
 };
 
 let cart = new CartList();
-console.log(cart.getCart.length);
+// console.log(cart.getCart.length);
 
 export function productsToPage() {
   let productContainer: HTMLDivElement = document.getElementById(
@@ -148,5 +148,5 @@ export function productsToPage() {
     listenBtn.appendChild(spotifyLogo);
     productContainer.appendChild(productFeed);
   }
-  console.log(products);
+  // console.log(products);
 }
