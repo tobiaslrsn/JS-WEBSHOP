@@ -596,6 +596,9 @@ main {
 main #ordernmbr {
   font-size: 20px;
 }
+main h1 {
+  text-align: center;
+}
 @keyframes rotating {
   from {
     transform: rotate(0deg);
