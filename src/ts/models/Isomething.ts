@@ -1,3 +1,4 @@
+import { cartToPage } from "../checkout";
 import { products } from "../header";
 import { Article } from "./product-objects";
 
