@@ -10,6 +10,8 @@ let image006: string = "/assets/product-feed-img/6.jpg";
 let image007: string = "/assets/product-feed-img/18.jpg";
 let image008: string = "/assets/product-feed-img/20.jpg";
 let image009: string = "/assets/product-feed-img/13.jpg";
+let image010: string = "/assets/product-feed-img/14.jpg";
+let image011: string = "/assets/product-feed-img/3.jpg";
 
 let product001: productObjects.Article = new productObjects.Article(
   image001,
@@ -151,7 +153,39 @@ let product009: productObjects.Article = new productObjects.Article(
   "purchase",
   "more info",
   "spotify",
-  8,
+  9,
+  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+);
+
+let product010: productObjects.Article = new productObjects.Article(
+  image010,
+  "The stone roses",
+  "The very best of the stone roses",
+  1111,
+  250,
+  "MJT010R",
+  "DESCRIPTION",
+  "Rock",
+  "purchase",
+  "more info",
+  "spotify",
+  10,
+  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+);
+
+let product011: productObjects.Article = new productObjects.Article(
+  image011,
+  "Queen",
+  "News of the world",
+  1111,
+  250,
+  "MJT011R",
+  "DESCRIPTION",
+  "Rock",
+  "purchase",
+  "more info",
+  "spotify",
+  11,
   "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
 );
 
@@ -165,4 +199,6 @@ export let products = [
   product007,
   product008,
   product009,
+  product010,
+  product011,
 ];
