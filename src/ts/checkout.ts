@@ -45,6 +45,12 @@ export function cartToPage() {
     ) as HTMLButtonElement;
     removeItem.className = "remove-from-cart";
     removeItem.innerHTML = "REMOVE";
+    removeItem.addEventListener("click", () => {
+      console.log("Du klickade ju!");
+      cart.getCart.splice(i, 1);
+      cartToPage();
+      localStorage.setItem("cart", JSON.stringify(cart.getCart));
+    });
 
     cartItem.appendChild(photo);
     cartItem.appendChild(artist);
