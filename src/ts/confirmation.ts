@@ -3,8 +3,6 @@ let cart = new CartList();
 
 window.onload = function () {
   cartToPage();
-  //   cart.offcanvasCart();
-  console.log("Det laddas in!");
 };
 
 function cartToPage() {

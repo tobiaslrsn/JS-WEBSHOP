@@ -46,7 +46,6 @@ export function cartToPage() {
     removeItem.className = "remove-from-cart";
     removeItem.innerHTML = "REMOVE";
     removeItem.addEventListener("click", () => {
-      console.log("Du klickade ju!");
       this.getCart.splice(i, 1);
       cartToPage();
       localStorage.setItem("cart", JSON.stringify(this.getCart));

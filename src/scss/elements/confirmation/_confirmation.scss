@@ -13,3 +13,17 @@ main {
     font-size: 20px;
   }
 }
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#vinyl {
+  animation: rotating 2s linear infinite;
+}
