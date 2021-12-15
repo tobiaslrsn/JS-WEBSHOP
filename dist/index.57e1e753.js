@@ -586,6 +586,12 @@ function offcanvasCart() {
         let removeItem = document.createElement("button");
         removeItem.className = "remove-from-offcanvas";
         removeItem.innerHTML = "REMOVE";
+        console.log(cart.getCart);
+        removeItem.addEventListener("click", ()=>{
+            cart.getCart.splice(i, 1);
+            console.log(cart.getCart);
+            offcanvasCart();
+        });
         cartItem.appendChild(photo);
         cartItem.appendChild(artist);
         cartItem.appendChild(album);
@@ -597,6 +603,7 @@ function offcanvasCart() {
     }
 }
 
+<<<<<<< HEAD
 },{"./models/Isomething":"brPZg","./header":"7gBgG","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"7gBgG":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
@@ -635,6 +642,9 @@ let products = [
 ];
 
 },{"./models/product-objects":"d5Ism","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
+=======
+},{"./models/product-objects":"d5Ism","./models/Isomething":"brPZg","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"d5Ism":[function(require,module,exports) {
+>>>>>>> feature/removeItem
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 parcelHelpers.export(exports, "Article", ()=>Article
