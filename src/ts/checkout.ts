@@ -46,9 +46,9 @@ export function cartToPage() {
     removeItem.className = "remove-from-cart";
     removeItem.innerHTML = "REMOVE";
     removeItem.addEventListener("click", () => {
-      this.getCart.splice(i, 1);
+      cart.getCart.splice(i, 1);
       cartToPage();
-      localStorage.setItem("cart", JSON.stringify(this.getCart));
+      localStorage.setItem("cart", JSON.stringify(cart.getCart));
     });
 
     cartItem.appendChild(photo);
