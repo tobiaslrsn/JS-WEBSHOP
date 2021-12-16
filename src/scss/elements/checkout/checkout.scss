@@ -16,11 +16,9 @@
   width: 50vw;
   height: 100%;
   display: flex;
-  // flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-
   margin: 1rem;
   gap: 3px;
   list-style: none;
@@ -34,19 +32,19 @@
 .artist-cart {
   width: 100%;
   height: 100%;
-  background-color: orange;
+  background-color: white;
 }
 .album-cart {
   width: 100%;
-  background-color: blanchedalmond;
+  background-color: white;
 }
 .article-cart {
   width: 100%;
-  background-color: gray;
+  background-color: white;
 }
 .price-cart {
   width: 100%;
-  background-color: green;
+  background-color: white;
 }
 .remove-from-cart {
   height: 2rem;
@@ -65,4 +63,13 @@
 .remove-from-cart:hover {
   transform: scale(1.01);
   box-shadow: 1px 1px 4px rgb(124, 121, 121);
+}
+
+@media screen {
+}
+
+@media screen and (max-width: 1200px) {
+  .cart-item {
+    flex-wrap: wrap;
+  }
 }
