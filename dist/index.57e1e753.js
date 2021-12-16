@@ -586,6 +586,12 @@ function offcanvasCart() {
         let removeItem = document.createElement("button");
         removeItem.className = "remove-from-offcanvas";
         removeItem.innerHTML = "REMOVE";
+        console.log(cart.getCart);
+        removeItem.addEventListener("click", ()=>{
+            cart.getCart.splice(i, 1);
+            console.log(cart.getCart);
+            offcanvasCart();
+        });
         cartItem.appendChild(photo);
         cartItem.appendChild(artist);
         cartItem.appendChild(album);

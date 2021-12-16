@@ -28,25 +28,29 @@
 }
 .artist-offcanvas {
   width: 70%;
-  background-color: red;
+  background-color: white;
   font-weight: 700;
   font-size: 0.8rem;
+  color: black;
 }
 .album-offcanvas {
   height: 10%;
   width: 70%;
-  background-color: greenyellow;
+  background-color: white;
   font-size: 0.8rem;
+  color: black;
 }
 .article-offcanvas {
   width: 70%;
-  background-color: gray;
+  background-color: white;
   font-size: 0.6rem;
+  color: black;
 }
 .price-offcanvas {
   width: 70%;
-  background-color: orange;
+  background-color: rgba(0, 0, 0, 0.048);
   padding: 0;
+  color: black;
 }
 .remove-from-offcanvas {
   height: 2rem;

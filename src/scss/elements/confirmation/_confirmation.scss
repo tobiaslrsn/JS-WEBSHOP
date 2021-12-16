@@ -1,0 +1,32 @@
+html {
+  scroll-behavior: smooth;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #ordernmbr {
+    font-size: 20px;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#vinyl {
+  animation: rotating 2s linear infinite;
+}

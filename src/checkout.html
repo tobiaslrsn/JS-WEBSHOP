@@ -51,17 +51,102 @@
         <div id="shopping-cart"></div>
 
         <h2>PLACE ORDER</h2>
-        <div id="customer-form">
-          <form>
-            <input type="name" placeholder="firstname" />
-            <input type="name" placeholder="lastname" />
-            <input type="adress" placeholder="adress" />
-            <input type="text" placeholder="city" />
-            <input type="number" placeholder="zip-code" />
-            <button type="submit">
-              <a href="./confirmation.html">Place order</a>
-            </button>
-          </form>
+        <!-- Form -->
+
+        <div id="identity-div">
+          <div id="payment-container">
+            <form action="http://localhost:1234/confirmation.html" method="GET" id="myform">
+  
+              <h3>Billing Address</h3>
+  
+              <div class="name-details">
+                <div class="staking-div">
+              <label for="fname"> First name</label>
+              <input type="text" id="fname" name="firstname" placeholder=""class="input-two" required>
+            </div>
+            <div class="staking-div">
+              <label for="lname"class="text-move"> Last name</label>
+              <input type="text" id="lname" name="lastname" placeholder=""class="input-two" required>
+              </div>
+            </div>
+            <div class="staking-div">
+              <label for="state">Email</label>
+              <input type="text" id="state" name="state" placeholder=""required>
+              </div>
+              <div class="staking-div">
+              <label for="adr"> Address</label>
+              <input type="text" id="adr" name="address" placeholder=""required>
+              </div>
+              <div class="name-details">
+                <div class="staking-div">
+              <label for="city"></i> City</label>
+              <input type="text" id="city" name="city" placeholder="" class="input-two"required>
+            </div>
+            <div class="staking-div">
+              <label for="zip" class="text-move">Zip</label>
+              <input type="text" id="zip" name="zip" placeholder="" class="zip"required>
+            </div>
+          </div>
+          <input type="checkbox" checked="checked" name="sameadr" class="checkbox-input"> Save information
+        </div>
+        
+        
+        <div class="vl">
+        </div>
+        
+        
+        
+        
+        <div id="payment-div">
+          <div id="icons-div">
+          <h3>Payment</h3>
+          <div class="card-symbols">
+            <div class="icon-container"> 
+              <input type="radio" checked="checked" name="radio" class="checkbox-input">
+              <span class="checkmark"></span><i class="fab fa-cc-visa"style="color:navy;"></i> <i class="fab fa-cc-mastercard" style="color:rgb(255, 153, 0);"></i> <i class="fab fa-cc-amex"style="color:blue;"></i>
+              
+              <label class="container-pay">
+                <input type="radio" checked="checked" name="radio" class="checkbox-input">
+                <span class="checkmark"></span><i class="fab fa-paypal" style="color:rgb(18, 99, 192);"></i> 
+              </div>
+            </div>
+          </div>
+            
+              <div class="staking-div">
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder=""class="">
+            </div>
+              <div class="staking-div">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder=""class="">
+            </div>
+            
+            <div class="name-details">
+              <div class="staking-div">
+                <label for="expmonth">Exp Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="" class="payment-details">
+              </div>
+              <div class="staking-div"id="year" >
+                <label for="expyear"> Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder=""class="payment-details">
+              </div>
+              <div class="staking-div">
+                <label for="cvv" class="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="" class="cvv">
+              </div>
+            </div>
+          
+            <label>
+              <a href="./confirmation.html">  <button type="submit" class="btn" id="submit-btn">Place order</button>  </a> 
+            </label>
+          </div>
+        </form>
+      </div>
+
+
+
+
+
         </div>
       </div>
     </main>
