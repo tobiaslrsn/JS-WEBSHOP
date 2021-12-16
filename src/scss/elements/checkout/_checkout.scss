@@ -72,33 +72,31 @@
 //   padding: 8px;
 // }
 
-  h3{
-    display: flex;
-    justify-content: center;
-  }
+h3 {
+  display: flex;
+  justify-content: center;
+}
 
-  .icon-container{
-    font-size: 2rem;
-    display: flex;
-  }
-  .container-pay{
-    display: flex;
-  }
-  .card-symbols{
-    visibility: hidden;
-
-  }
-input{
+.icon-container {
+  font-size: 2rem;
+  display: flex;
+}
+.container-pay {
+  display: flex;
+}
+.card-symbols {
+  visibility: hidden;
+}
+input {
   display: flex;
   justify-content: center;
   margin-bottom: 10px;
   padding: 6px;
   border: 2px solid #ccc;
   border-radius: 3px;
-
 }
 
-.staking-div{
+.staking-div {
   display: flex;
   flex-direction: column;
 }
@@ -119,139 +117,139 @@ input{
   background-color: #41a0a0;
 }
 
-
-@media screen and (min-width: 803px){
+@media screen and (min-width: 803px) {
   /* Stor-diven */
-#identity-div{
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+  #identity-div {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+  }
 
-}
+  #payment-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  #payment-div {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+  .card-symbols {
+    display: flex;
+    flex-direction: row;
+    visibility: visible;
+  }
 
-#payment-container{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 400px;
-  padding: 20px;
-  border-radius: 5px;
+  input {
+    width: 200px;
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+  .vl {
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 440px;
+  }
 
-}
-#payment-div{
-  display: flex;
-  flex-direction: column;
-  width: 400px;
-  height: 400px;
-  padding: 20px;
-  border-radius: 5px;
+  .checkbox-input {
+    width: auto;
+  }
 
+  .name-details {
+    display: flex;
+    flex-direction: row;
+  }
+  .staking-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .input-two {
+    width: 160px;
+  }
+  .zip {
+    width: 50px;
+    margin-left: 20px;
+  }
 
-}
-.card-symbols{
-  display: flex;
-  flex-direction: row;
-  visibility: visible;
-}
+  #lname,
+  #zip {
+    margin-left: 20px;
+  }
 
-input{
-  width: 200px;
-  margin-bottom: 10px;
-  padding: 6px;
-  border: 2px solid #ccc;
-  border-radius: 3px;
+  .text-move {
+    margin-left: 20px;
+  }
 
-}
-.vl {
-  border-left: 1px solid rgb(0, 0, 0);
-  height: 440px;
-}
+  .payment-details {
+    width: 50px;
+  }
 
-.checkbox-input{
-  width: auto;
-}
+  #year {
+    margin-left: 10px;
+  }
 
-.name-details{
-  display: flex;
-  flex-direction: row;
-}
-.staking-div{
-  display: flex;
-  flex-direction: column;
-}
-.input-two{
-  width: 160px;
+  .btn {
+    background-color: #1376b8;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 80%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
 
-}
-.zip{
-  width: 50px;
-  margin-left: 20px;
-}
+  .btn:hover {
+    background-color: #2862a5;
+  }
 
-#lname, #zip{
-  margin-left: 20px;
-}
+  .card-symbols {
+    display: flex;
+  }
+  .icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+    font-size: 2rem;
+  }
 
-.text-move{
-  margin-left: 20px;
-}
+  .container-pay {
+    display: flex;
+  }
 
-.payment-details{
-  width: 50px;
-}
+  .fab {
+    margin: 5px;
+  }
 
-#year{
-  margin-left: 10px;
-}
+  #cvv {
+    width: 25px;
+  }
 
-.btn {
-  background-color: #1376b8;
-  color: white;
-  padding: 12px;
-  margin: 10px 0;
-  border: none;
-  width: 80%;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-.btn:hover {
-  background-color: #2862a5;
-}
-
-.card-symbols{
-  display: flex;
-}
-.icon-container{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  margin: 20px;
-  font-size: 2rem;
-}
-
-.container-pay{
-  display: flex;
-}
-
-.fab{
-  margin: 5px;
-}
-
-#cvv{
-  width: 25px;
-}
-
-.cvv{
-  margin-left: 10px;
-}
-#icons-div{
-  display: flex;
-  height: 64px;
+  .cvv {
+    margin-left: 10px;
+  }
+  #icons-div {
+    display: flex;
+    height: 64px;
+  }
 }
 
+@media screen and (max-width: 1200px) {
+  .cart-item {
+    flex-wrap: wrap;
+    padding-left: 75px;
+  }
 }
