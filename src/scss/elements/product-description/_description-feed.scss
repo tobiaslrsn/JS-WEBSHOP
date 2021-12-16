@@ -47,11 +47,11 @@
 
 .fa-close {
   background-color: transparent;
-  right: 0;
-  top: 0;
-  padding: 8rem 5rem;
-  position: absolute;
+  right: 4rem;
+  top: 8rem;
+  position: fixed;
   z-index: 1;
+  font-size: 2rem;
 }
 
 .fa-close:hover {
@@ -181,6 +181,7 @@ a {
 @media screen and (max-width: 1023px) {
   .main-description {
     height: 100vh;
+
     margin-bottom: 30%;
     padding-top: 30px;
     display: flex;
@@ -217,10 +218,11 @@ a {
   .fa-close {
     // display: none;
     background-color: transparent;
-    right: 0;
-    top: 0;
-    position: absolute;
+    right: 4rem;
+    top: 8rem;
+    position: fixed;
     z-index: 1;
+    font-size: 2rem;
   }
 }
 @media screen and (max-width: 656px) {
@@ -235,7 +237,8 @@ a {
   }
   .main-description {
     height: 100vh;
-    margin-bottom: 50%;
+    margin-top: 20%;
+    margin-bottom: 55%;
     padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
