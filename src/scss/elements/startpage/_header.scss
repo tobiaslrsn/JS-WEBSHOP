@@ -1,83 +1,53 @@
-header {
-  height: 5rem;
-  width: 100%;
-  position: fixed;
-  background-color: white;
-  z-index: 1;
+nav {
   display: flex;
-  align-items: center;
+  flex-direction: row;
   justify-content: space-between;
-  gap: 1;
+  align-items: center;
+  width: 100vw;
+  height: 6rem;
+  position: fixed;
+  z-index: 3;
+  background-color: white;
 }
 
-.cart {
-  display: flex;
-  width: 2rem;
-  margin-right: 1rem;
-}
-
-.logo {
-  width: 4rem;
+.nav-logo {
+  width: 3rem;
+  top: 0;
+  left: 0;
   margin-left: 1rem;
+  display: none;
 }
 
-#hamnav {
+#link-container {
+  display: flex;
+  flex-direction: row;
+  font-size: 0.8rem;
   justify-content: center;
   align-items: center;
-  position: relative;
-  letter-spacing: 0.2rem;
+  text-align: center;
 }
-
-#hamitems a {
-  font-size: 1rem;
-  padding: 10px;
+.nav-link {
+  margin-right: -1rem;
   color: black;
-  text-decoration: none;
+  margin: 1rem;
 }
 
-#hamitems a:hover {
-  color: gray;
+.cart-image {
+  width: 2rem;
+  top: 0;
+  right: 0;
+  margin-top: -0.5rem;
+  margin-right: 2rem;
+  z-index: 5;
 }
-
-@media screen and (max-width: 600px) {
-  #hamnav {
-    width: 75%;
-  }
-
-  #hamitems {
-    display: flex;
-    position: initial;
-  }
-
-  .logo {
-    width: 10px;
-    margin-left: 25px;
-  }
-
-  .cart {
-    display: flex;
-    width: 1.3rem;
-    margin-right: 25px;
-  }
-
-  .logo {
-    display: none;
-  }
-
-  #hamitems a {
-    font-size: 0.7rem;
-    color: black;
-    text-decoration: none;
-    text-align: center;
-    width: 100%;
-  }
-
-  #hamitems a:hover {
-    background-color: gray;
-  }
-
-  #hamnav label,
-  #hamburger {
-    display: none;
-  }
+#cartCount {
+  z-index: 6;
+  border: none;
+  font-size: 0.8rem;
+  right: 0;
+  margin-top: -1rem;
+  margin-right: 1.8rem;
+  background-color: yellow;
+  border-radius: 100%;
+  position: absolute;
 }

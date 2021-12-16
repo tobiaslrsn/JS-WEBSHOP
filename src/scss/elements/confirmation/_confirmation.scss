@@ -4,7 +4,6 @@ html {
 }
 
 main {
-  padding-top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,9 +11,30 @@ main {
   #ordernmbr {
     font-size: 20px;
   }
+  #ordernmbr {
+    text-align: center;
+  }
   h1 {
     text-align: center;
   }
+}
+.nav-position {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100vw;
+  height: 6rem;
+  z-index: 3;
+  background-color: white;
+}
+
+.cart-image-hide {
+  display: none;
+}
+#cartCount-hide {
+  display: none;
 }
 
 @keyframes rotating {

@@ -21,36 +21,48 @@
   </head>
   <body>
     <header>
-      <a href="./index.html#mjt-records"
-        ><img
-          class="logo"
-          src="assets/Logos/MJT-Logo-Darkversion transparent.png"
-      /></a>
-      <nav id="hamnav">
-        <div id="hamitems">
-          <a href="./index.html#mjt-records">HOME</a>
-          <a href="./index.html#our-products">PRODUCTS</a>
-          <a href="#faq">CONTACT</a>
+      <nav class="nav-position">
+        <a href="./index.html">
+          <img
+            class="nav-logo"
+            src="assets/Logos/MJT-Logo-Darkversion transparent.png"
+        /></a>
+        <div id="link-container">
+      
+          <a class="nav-link" href="./index.html#mjt-records">HOME</a>
+          <a class="nav-link" href="./index.html#our-products"> PRODUCTS</a>
+          <a class="nav-link" href="#faq"> CONTACT</a>
         </div>
-      </nav>
-      <button
-        class="button-offcanvas"
-        data-bs-toggle="offcanvas"
-        data-bs-target="#offcanvasRight"
-        aria-controls="offcanvasRight"
-      ></button>
-    </header>
 
-    <div id="return-to-start">
-      <a href="./index.html">index</a>
-    </div>
+        <button id="cartCount-hide">0</button>
+        <!-- OFFCANVAS BOOTSTRAP -->
+        <button
+          class="button-offcanvas"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasRight"
+          aria-controls="offcanvasRight"
+        >
+          <img class="cart-image-hide" src="./assets/NewShopIcon.png" />
+        </button>
+      </nav>
+    </header>
 
     <main>
       <h2>CART</h2>
       <div id="checkout-container">
         <div id="shopping-cart"></div>
 
-        <h2>PLACE ORDER</h2>
+        
+
+
+
+
+
+        </div>
+      </div>
+    </main>
+    <div class="form-container">
+    <h2>PLACE ORDER</h2>
         <!-- Form -->
 
         <div id="identity-div">
@@ -91,12 +103,8 @@
         </div>
         
         
-        <div class="vl">
-        </div>
-        
-        
-        
-        
+        <div class="vl"></div>
+
         <div id="payment-div">
           <div id="icons-div">
           <h3>Payment</h3>
@@ -142,15 +150,11 @@
           </div>
         </form>
       </div>
+    </div>
+      <footer>
 
+    
 
-
-
-
-        </div>
-      </div>
-    </main>
-    <footer>
       <a id="faq"></a>
       <p class="subscribe-paragraph">
         Subscribe to our newsletter for new releases!
