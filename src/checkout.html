@@ -4,58 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="./scss/main.scss" />
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
 
-    
-  <script>
-    src = "https://kit.fontawesome.com/7c490574c4.js";
-    crossorigin = "anonymous";
-  </script>
+    <script>
+      src = "https://kit.fontawesome.com/7c490574c4.js";
+      crossorigin = "anonymous";
+    </script>
     <script src="./ts/checkout.ts" type="module"></script>
-    
 
     <title>Document</title>
   </head>
   <body>
     <header>
-      <a href="./index.html#mjt-records"><img
-        class="logo"
-        src="assets/Logos/MJT-Logo-Darkversion transparent.png"
+      <a href="./index.html#mjt-records"
+        ><img
+          class="logo"
+          src="assets/Logos/MJT-Logo-Darkversion transparent.png"
       /></a>
       <nav id="hamnav">
-        <label for="hamburger">&#9776;</label>
-        <input type="checkbox" id="hamburger" />
         <div id="hamitems">
           <a href="./index.html#mjt-records">HOME</a>
           <a href="./index.html#our-products">PRODUCTS</a>
           <a href="#faq">CONTACT</a>
-          <a class="redirect" href="./checkout.html"
-          >CHECKOUT</a
-        >
         </div>
       </nav>
-
-
-      
-      </div>
+      <button
+        class="button-offcanvas"
+        data-bs-toggle="offcanvas"
+        data-bs-target="#offcanvasRight"
+        aria-controls="offcanvasRight"
+      ></button>
     </header>
 
     <div id="return-to-start">
       <a href="./index.html">index</a>
     </div>
-    
+
     <main>
       <h2>CART</h2>
       <div id="checkout-container">
         <div id="shopping-cart"></div>
 
         <h2>PLACE ORDER</h2>
+<<<<<<< HEAD
         <!-- Form -->
 
         <div id="identity-div">
@@ -152,6 +148,19 @@
 
 
 
+=======
+        <div id="customer-form">
+          <form>
+            <input type="name" placeholder="firstname" />
+            <input type="name" placeholder="lastname" />
+            <input type="adress" placeholder="adress" />
+            <input type="text" placeholder="city" />
+            <input type="number" placeholder="zip-code" />
+            <button type="submit">
+              <a href="./confirmation.html">Place order</a>
+            </button>
+          </form>
+>>>>>>> feature/cypress-testing
         </div>
       </div>
     </main>
@@ -169,7 +178,7 @@
             placeholder="email@example.com"
           />
           <button class="subscribe" type="submit">Subscribe</button>
-        </form>        
+        </form>
       </div>
       <div class="info">
         <div class="footer-column">

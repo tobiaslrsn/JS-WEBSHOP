@@ -7,65 +7,39 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 1;
+}
 
-  .logo {
-    width: 75px;
-    margin-left: 25px;
-  }
+.cart {
+  display: flex;
+  width: 2rem;
+  margin-right: 1rem;
+}
 
-  .cart {
-    display: flex;
-    width: 35px;
-    margin-right: 25px;
-  }
+.logo {
+  width: 4rem;
+  margin-left: 1rem;
 }
 
 #hamnav {
   justify-content: center;
   align-items: center;
   position: relative;
-  width: 100%;
+  letter-spacing: 0.2rem;
 }
+
 #hamitems a {
-  box-sizing: border-box;
-  display: block;
-  width: 100%;
+  font-size: 1rem;
+  padding: 10px;
   color: black;
   text-decoration: none;
-  font-size: 18px;
-  display: flex;
-  justify-content: center;
-  padding: 50px;
-  background-color: white;
 }
 
-#hamnav label {
-  display: inline-block;
-  color: black;
-  font-style: normal;
-  font-size: 1.2em;
-  padding: 10px;
-  display: flex;
-  justify-content: flex-end;
-}
-
-#hamitems {
-  position: absolute;
-  display: none;
-  background-color: #f2f2f2;
-}
 #hamitems a:hover {
-  background-color: gray;
-}
-#hamnav input:checked ~ #hamitems {
-  display: block;
+  color: gray;
 }
 
-#hamburger {
-  display: none;
-}
-
-@media screen and (min-width: 600px) {
+@media screen and (max-width: 600px) {
   #hamnav {
     width: 75%;
   }
@@ -75,13 +49,27 @@ header {
     position: initial;
   }
 
+  .logo {
+    width: 10px;
+    margin-left: 25px;
+  }
+
+  .cart {
+    display: flex;
+    width: 1.3rem;
+    margin-right: 25px;
+  }
+
+  .logo {
+    display: none;
+  }
+
   #hamitems a {
-    flex-grow: 1;
-    flex-basis: 0;
-    padding: 10px;
+    font-size: 0.7rem;
     color: black;
     text-decoration: none;
     text-align: center;
+    width: 100%;
   }
 
   #hamitems a:hover {

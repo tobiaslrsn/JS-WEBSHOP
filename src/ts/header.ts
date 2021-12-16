@@ -10,6 +10,9 @@ let image006: string = "/assets/product-feed-img/6.jpg";
 let image007: string = "/assets/product-feed-img/18.jpg";
 let image008: string = "/assets/product-feed-img/20.jpg";
 let image009: string = "/assets/product-feed-img/13.jpg";
+let image010: string = "/assets/product-feed-img/14.jpg";
+let image011: string = "/assets/product-feed-img/3.jpg";
+let image012: string = "/assets/product-feed-img/21.jpg";
 
 let product001: productObjects.Article = new productObjects.Article(
   image001,
@@ -35,7 +38,7 @@ let product002: productObjects.Article = new productObjects.Article(
   250,
   "MJT002R",
   "Holy Diver is the debut studio album by the American heavy metal band Dio, released in 1983. <br/> Vocalist Ronnie James Dio had just finished his first tenure in Black Sabbath, whose drummer, Vinny Appice, he took with him to put together his own band. <br/><br/>The roster was completed by his former bandmate from Rainbow, Jimmy Bain, on bass and by the young guitarist Vivian Campbell, coming from the new wave of British heavy metal band Sweet Savage. <br/>The album was acclaimed by the music press and is the band's most successful effort.",
-  "rock",
+  "Rock",
   "purchase",
   "more info",
   "spotify",
@@ -50,7 +53,7 @@ let product003: productObjects.Article = new productObjects.Article(
   2010,
   250,
   "MJT003R",
-  "Diamond Eyes is the sixth studio album by American alternative metal band Deftones, released on May 4, 2010 by Reprise Records. <br/> It was the first album to feature bassist Sergio Vega, who replaced original bassist Chi Cheng.<br/><br/> An album tentatively titled Eros was originally intended to be the band's sixth full-length release following Saturday Night Wrist (2006), but was not finished due to Cheng entering a coma after a serious car accident that occurred in November 2008, eventually resulting in his death in 2013. <br/><br/>The band continued on with Vega as his replacement, and the release of Eros was put on hold in favor of Diamond Eyes in June 2009.",
+  "Diamond Eyes is the sixth studio album by American alternative metal band Deftones, released on May 4, 2010 by Reprise Records. <br/> It was the first album to feature bassist Sergio Vega, who replaced original bassist Chi Cheng.<br/><br/> An album tentatively titled Eros was originally intended to be the band's sixth full-length release following Saturday Night Wrist (2006), but was not finished due to Cheng entering a coma after a serious car accident that occurred in November 2008, eventually resulting in his death in 2013.",
   "Rock",
   "purchase",
   "more info",
@@ -99,7 +102,7 @@ let product006: productObjects.Article = new productObjects.Article(
   250,
   "MJT006R",
   "The Stone Roses is the debut studio album by English rock band the Stone Roses. <br/><br/>It was recorded mostly at Battery Studios in London with producer John Leckie from June 1988 to February 1989 and released in May of that year by Silvertone Records.<br/><br/>Despite not being an immediate success, the album grew popular alongside the band's high-profile concert performances, which also helped establish them as fixtures of the Madchester and baggy cultural scenes.",
-  "rock",
+  "Rock",
   "purchase",
   "more info",
   "spotify",
@@ -147,14 +150,60 @@ let product009: productObjects.Article = new productObjects.Article(
   250,
   "MJT009R",
   "The Valley is the seventh studio album by the American deathcore band Whitechapel.<br/><br/> It was released through Metal Blade Records on March 29, 2019 to very positive reviews.<br/><br/> On April 14, 2020, an acoustic version of 'Hickory Creek' was released. It marks the first Whitechapel song to include entirely clean vocals.<br/><br/> Loudwire named it one of the 50 best metal albums of 2019.[9]",
+  "Metal",
+  "purchase",
+  "more info",
+  "spotify",
+  9,
+  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+);
+
+let product010: productObjects.Article = new productObjects.Article(
+  image010,
+  "The stone roses",
+  "The very best of the stone roses",
+  2002,
+  250,
+  "MJT010R",
+  "The Very Best of The Stone Roses is a compilation album released by Silvertone Records in 2002. <br/><br/>It features most of their singles plus album tracks including 'Breaking into Heaven' and 'This is the One', all of which were remastered for this album. It charted at #19 in the UK and spent nine weeks in the Top 75. <br/><br/> The Very Best of is a fairly comprehensive compilation in that it gathers all the Stone Roses' best known tracks. The track listing was decided upon by band members.",
   "Rock",
   "purchase",
   "more info",
   "spotify",
-  8,
+  10,
   "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
 );
 
+let product011: productObjects.Article = new productObjects.Article(
+  image011,
+  "Queen",
+  "News of the world",
+  1977,
+  250,
+  "MJT011R",
+  "News of the World is the sixth studio album by the British rock band Queen, released on 28 October 1977 by EMI Records in the United Kingdom and by Elektra Records in the United States.<br/><br/> News of the World was the band's second album to be recorded at Sarm and Wessex Sound Studios in London, and engineered by Mike Stone, and was co-produced by the band and Stone.",
+  "Rock",
+  "purchase",
+  "more info",
+  "spotify",
+  11,
+  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+);
+let product012: productObjects.Article = new productObjects.Article(
+  image012,
+  "Whitechapel",
+  "Kin",
+  2021,
+  250,
+  "MJT012R",
+  "On August 30 2021, Whitechapel revealed the albums title as Kin, scheduled for release on October 29, 2021. <br/>The band released the first single from Kin, entitled 'Lost Boy', on August 31, 2021. They released a second single, 'A Bloodsoaked Symphony', on September 23, 2021. <br/><br/<br/>The album's third and final single before release, titled 'Orphan', premiered on October 14, 2021, just over two weeks before the release of Kin. ",
+  "Metal",
+  "purchase",
+  "more info",
+  "spotify",
+  11,
+  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+);
 export let products = [
   product001,
   product002,
@@ -165,4 +214,7 @@ export let products = [
   product007,
   product008,
   product009,
+  product010,
+  product011,
+  product012,
 ];
