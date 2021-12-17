@@ -73,7 +73,6 @@ a {
 
 .offcanvas-end {
   height: 100vh;
-  display: flex;
 }
 
 .cart-item-offcanvas {
@@ -237,7 +236,7 @@ a {
   }
   .main-description {
     height: 100vh;
-    margin-top: 20%;
+    // margin-top: 20%;
     margin-bottom: 55%;
     padding-top: 30px;
     display: flex;
