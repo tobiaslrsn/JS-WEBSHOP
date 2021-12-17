@@ -1,18 +1,18 @@
-@use "./elements/header-footer/header";
-@use "./elements/startpage/hero";
+@use "./elements/startpage/header";
+@use "./elements/startpage/carousell";
 @use "./elements/startpage/feed";
-@use "./elements/header-footer/footer";
+@use "./elements/startpage/footer";
 @use "./elements/checkout/checkout.scss";
 @use "./elements/product-description/description-feed";
-@use "./elements/header-footer/cart-offcanvas";
+@use "./elements/startpage/cart-offcanvas";
 @use "./elements/confirmation/confirmation";
-// @import "mixins";
-// @use "./elements/startpage/cart-offcanvas";
 html {
   scroll-behavior: smooth;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
 body {
   margin: 0;
   padding: 0;
 }
+/*# sourceMappingURL=main.css.map */

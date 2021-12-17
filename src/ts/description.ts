@@ -51,10 +51,6 @@ function descriptionToPage() {
   year.className = "year-description";
   year.innerHTML = "YEAR: " + productObject.year;
 
-  let price: HTMLLIElement = document.createElement("li") as HTMLLIElement;
-  price.className = "price-description";
-  price.innerHTML = "PRICE: " + productObject.price + " SEK";
-
   let addToCart: HTMLButtonElement = document.createElement(
     "button"
   ) as HTMLButtonElement;
@@ -62,14 +58,13 @@ function descriptionToPage() {
   addToCart.innerHTML = productObject.addToCart;
 
   descriptionContainer.appendChild(photo);
-  descriptionContainer.appendChild(description);
   description.appendChild(descriptionUnorderedList);
+  descriptionContainer.appendChild(description);
   descriptionUnorderedList.appendChild(artist);
   descriptionUnorderedList.appendChild(album);
   descriptionUnorderedList.appendChild(article);
   descriptionUnorderedList.appendChild(genre);
   descriptionUnorderedList.appendChild(year);
-  descriptionUnorderedList.appendChild(price);
 
   console.log(productObject);
 }

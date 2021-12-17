@@ -2,6 +2,7 @@ main {
   width: 100%;
   background-color: white;
   padding-bottom: 70px;
+  margin-top: 5rem;
   z-index: -10;
 }
 
@@ -10,20 +11,13 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 1.9rem;
+  width: 100%;
 }
+
 h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding-top: 3rem;
-}
-.product {
-  // padding: 10px;
-  margin: 2rem;
-
-  display: inline-block;
-  // width: 300px;
 }
 
 .artist,
@@ -45,7 +39,7 @@ h2 {
   width: 5rem;
   font-weight: 700;
   font-size: 10pt;
-  margin: 5px;
+  margin: 10px;
   margin-bottom: 20px;
   background-color: yellow;
   color: black;
@@ -53,6 +47,8 @@ h2 {
   border: none;
   border-radius: 2rem;
   transition: transform 0.2s;
+  justify-content: center;
+  align-items: center;
 }
 
 .purchase-button:hover,
@@ -60,12 +56,13 @@ h2 {
   transform: scale(1.01);
   box-shadow: 1px 1px 4px rgb(124, 121, 121);
 }
+
 .listen-button {
   height: 2rem;
   width: 5rem;
   font-weight: 700;
   font-size: 10pt;
-  margin: 5px;
+  margin: 10px;
   margin-bottom: 20px;
   background-color: black;
   color: #1db954;
@@ -73,12 +70,15 @@ h2 {
   border: none;
   border-radius: 2rem;
   transition: transform 0.1s;
+  justify-content: center;
+  align-items: center;
 }
 
 .listen-button:hover {
   transform: scale(1.01);
   box-shadow: 1px 1px 4px rgb(124, 121, 121);
 }
+
 .product-image {
   max-width: 21rem;
   margin-bottom: 0.8rem;
@@ -87,9 +87,11 @@ h2 {
   transition: transform 0.2s;
   cursor: pointer;
 }
+
 .product-image:hover {
   transform: scale(1.03);
 }
+
 .artist {
   font-size: 15pt;
   font-weight: 700;
