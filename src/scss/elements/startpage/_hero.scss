@@ -1,0 +1,45 @@
+#karusell {
+  background-image: url(/src/assets/Vinylrecords.png);
+  height: 100vh;
+  margin: 0;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-top: 5rem;
+}
+
+.text {
+  position: absolute;
+  margin: 0 auto;
+  padding: 2.4rem;
+  padding-top: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: 10rem;
+  font-weight: 900;
+  line-height: 0.5;
+  word-wrap: break-word;
+  color: black;
+  background-color: white;
+  mix-blend-mode: screen;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  #karusell {
+    width: 100%;
+  }
+
+  .text {
+    padding: 0;
+    height: 100vh;
+    width: 100%;
+    font-size: 8rem;
+    margin-top: -5rem;
+  }
+}

@@ -1,0 +1,382 @@
+.return-to-start {
+  position: fixed;
+  border: 1px solid red;
+}
+
+.nav-position {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
+  position: fixed;
+  z-index: 3;
+  background-color: white;
+  padding: 0;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.cart-image-hide {
+  display: none;
+}
+
+#cartCount-hide {
+  display: none;
+}
+
+.cart-item {
+  width: 70vw;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1rem;
+  gap: 3px;
+  list-style: none;
+}
+
+.product-image-cart {
+  width: 100px;
+  height: 100px;
+}
+
+.artist-cart {
+  width: 100%;
+  height: 100%;
+  margin: 0 0 0 2rem;
+  background-color: white;
+}
+
+.album-cart {
+  width: 100%;
+  margin: 0 0 0 1rem;
+  background-color: white;
+}
+
+.article-cart {
+  width: 100%;
+  margin: 0 0 0 1rem;
+  background-color: white;
+}
+
+.price-cart {
+  width: 100%;
+  margin: 0 0 0 1rem;
+  background-color: white;
+}
+
+.remove-from-cart {
+  height: 2rem;
+  width: 5rem;
+  font-weight: 700;
+  font-size: 10pt;
+  margin: 5px;
+  margin-bottom: 20px;
+  background-color: yellow;
+  color: black;
+  cursor: pointer;
+  border: none;
+  border-radius: 2rem;
+  transition: transform 0.2s;
+}
+
+.remove-from-cart:hover {
+  transform: scale(1.01);
+  box-shadow: 1px 1px 4px rgb(124, 121, 121);
+}
+
+h3 {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.icon-container {
+  font-size: 2rem;
+  display: flex;
+}
+
+.container-pay {
+  display: flex;
+}
+
+.card-symbols {
+  visibility: hidden;
+}
+
+.input-two {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  padding: 6px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
+#ordernmbr {
+  text-align: center;
+}
+
+p {
+  text-align: center;
+}
+
+.staking-div {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  background-color: #0468aa;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 100%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+
+.shopping-cart {
+  margin: 0 auto;
+}
+
+#adr {
+  margin-bottom: 10px;
+  padding: 6px;
+  border: 2px solid #ccc;
+  border-radius: 3px;
+  width: 100%;
+}
+
+.btn:hover {
+  background-color: #41a0a0;
+}
+
+@media screen and (min-width: 803px) {
+  #identity-div {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 80vw;
+  }
+
+  #payment-container {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  #payment-div {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .card-symbols {
+    display: flex;
+    flex-direction: row;
+    visibility: visible;
+  }
+
+  #state {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  #zip {
+    width: 5rem;
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .vl {
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 440px;
+  }
+
+  #adr {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .checkbox-input {
+    width: auto;
+  }
+
+  .name-details {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #cname {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  #ccnum {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  #state {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .staking-div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-two {
+    width: 160px;
+  }
+
+  .zip {
+    width: 50px;
+    margin-left: 20px;
+  }
+
+  #lname,
+  #zip {
+    margin-left: 20px;
+  }
+
+  .text-move {
+    margin-left: 20px;
+  }
+
+  .payment-details {
+    width: 50px;
+  }
+
+  #expyear {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  #expmonth {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .btn {
+    background-color: #1376b8;
+    color: white;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    width: 80%;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 17px;
+  }
+
+  .btn:hover {
+    background-color: #2862a5;
+  }
+
+  .card-symbols {
+    display: flex;
+  }
+
+  .icon-container {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+    font-size: 2rem;
+  }
+
+  .container-pay {
+    display: flex;
+  }
+
+  .fab {
+    margin: 5px;
+  }
+
+  #cvv {
+    width: 2rem;
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .cvv {
+    margin-left: 10px;
+  }
+
+  #icons-div {
+    display: flex;
+    height: 64px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .cart-item {
+    width: 80vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem;
+    list-style: none;
+
+    margin-left: -40px;
+    text-align: center;
+  }
+
+  #adr {
+    margin-bottom: 10px;
+    padding: 6px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+  }
+
+  .article-cart,
+  .artist-cart,
+  .album-cart,
+  .price-cart {
+    margin: 0;
+  }
+}

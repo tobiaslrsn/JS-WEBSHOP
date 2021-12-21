@@ -1,0 +1,52 @@
+html {
+  scroll-behavior: smooth;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #ordernmbr {
+    font-size: 20px;
+  }
+  #ordernmbr {
+    text-align: center;
+  }
+  h1 {
+    text-align: center;
+  }
+}
+.nav-position {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 6rem;
+  z-index: 3;
+  background-color: white;
+}
+
+.cart-image-hide {
+  display: none;
+}
+#cartCount-hide {
+  display: none;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#vinyl {
+  animation: rotating 1.81s linear infinite;
+}

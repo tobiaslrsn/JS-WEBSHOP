@@ -1,0 +1,94 @@
+footer {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  color: white;
+
+  .subscribe-paragraph {
+    text-align: center;
+    padding-top: 2rem;
+  }
+
+  .news-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+    background-color: black;
+    width: 100%;
+    height: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .newsletter {
+    width: 50vw;
+    border: none;
+  }
+
+  .subscribe {
+    width: 22vw;
+    border: none;
+  }
+
+  .info {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 0.85rem;
+    padding: 1rem;
+  }
+
+  .footer-column {
+    width: 350px;
+  }
+
+  .contact-links {
+    color: white;
+    cursor: pointer;
+  }
+
+  ul {
+    list-style: none;
+  }
+
+  li {
+    list-style: none;
+    padding: 10px;
+  }
+}
+
+.fa-linkedin-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+
+.fa-github-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+
+.fa-envelope-square {
+  font-size: 1.5rem;
+  margin-right: 0.3rem;
+}
+
+.contact-mail {
+  color: white;
+}
+
+@media screen and (min-width: 601px) {
+  .news-container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    justify-content: space-around;
+    align-items: center;
+  }
+}
