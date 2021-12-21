@@ -1,17 +1,14 @@
-import * as productObjects from "./models/product-objects";
-import { CartList } from "./models/Isomething";
-import { products } from "./header";
+import { CartList } from "./models/shoppingcart";
+import { products } from "./product-object";
 
 window.onload = function () {
   productsToPage();
-  // cartProductCount();
   cart.offcanvasCart();
 };
 
 let cart = new CartList();
 
 document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
-console.log(cart.getCart.length);
 
 export function productsToPage() {
   let productContainer: HTMLDivElement = document.getElementById(
@@ -84,7 +81,6 @@ export function productsToPage() {
       cart.offcanvasCart();
 
       document.getElementById("cartCount").innerHTML = "" + cart.getCart.length;
-      console.log(cart.getCart.length);
     });
 
     //CREATE INFOBUTTON (PRODUCTDESCRIPTION)
@@ -203,7 +199,5 @@ export function offcanvasCart() {
     cartItem.appendChild(price);
     cartContainer.appendChild(cartItem);
     cartItem.appendChild(removeItem);
-
-    console.log("funktion5");
   }
 }

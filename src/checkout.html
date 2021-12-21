@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,7 +16,7 @@
     </script>
     <script src="./ts/checkout.ts" type="module"></script>
 
-    <title>Document</title>
+    <title>MJT.RECORDS</title>
   </head>
   <body>
     <header>
@@ -25,7 +24,7 @@
         <a href="./index.html">
           <img
             class="nav-logo"
-            src="assets/Logos/MJT-Logo-Darkversion transparent.png"
+            src="assets/Logos/MJT-Logo-Darkversion transparent.png" alt="MJT logo"
         /></a>
         <div id="link-container">
       
@@ -35,6 +34,7 @@
         </div>
 
         <button id="cartCount-hide">0</button>
+
         <!-- OFFCANVAS BOOTSTRAP -->
         <button
           class="button-offcanvas"
@@ -51,13 +51,6 @@
       <h2>CART</h2>
       <div id="checkout-container">
         <div id="shopping-cart"></div>
-
-        
-
-
-
-
-
         </div>
       </div>
     </main>
@@ -74,29 +67,29 @@
               <div class="name-details">
                 <div class="staking-div">
               <label for="fname"> First name</label>
-              <input type="text" id="fname" name="firstname" placeholder=""class="input-two" required>
+              <input type="text" id="fname" name="firstname" placeholder="Firstname"class="input-two" required>
             </div>
             <div class="staking-div">
               <label for="lname"class="text-move"> Last name</label>
-              <input type="text" id="lname" name="lastname" placeholder=""class="input-two" required>
+              <input type="text" id="lname" name="lastname" placeholder="Lastname"class="input-two" required>
               </div>
             </div>
             <div class="staking-div">
               <label for="state">Email</label>
-              <input type="text" id="state" name="state" placeholder=""required>
+              <input type="text" id="state" name="state" placeholder="Email"required>
               </div>
               <div class="staking-div">
               <label for="adr"> Address</label>
-              <input type="text" id="adr" name="address" placeholder=""required>
+              <input type="text" id="adr" name="address" placeholder="Adress"required>
               </div>
               <div class="name-details">
                 <div class="staking-div">
-              <label for="city"></i> City</label>
-              <input type="text" id="city" name="city" placeholder="" class="input-two"required>
+              <label for="city"> City</label>
+              <input type="text" id="city" name="city" placeholder="City" class="input-two"required>
             </div>
             <div class="staking-div">
               <label for="zip" class="text-move">Zip</label>
-              <input type="text" id="zip" name="zip" placeholder="" class="zip"required>
+              <input type="text" id="zip" name="zip" placeholder="Zip-code" class="zip"required>
             </div>
           </div>
           <input type="checkbox" checked="checked" name="sameadr" class="checkbox-input"> Save information
@@ -122,25 +115,25 @@
             
               <div class="staking-div">
             <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="cardname" placeholder=""class="">
+            <input type="text" id="cname" name="cardname" placeholder="Full name" class="">
             </div>
               <div class="staking-div">
             <label for="ccnum">Credit card number</label>
-            <input type="text" id="ccnum" name="cardnumber" placeholder=""class="">
+            <input type="text" id="ccnum" name="cardnumber" placeholder="Cardnumber"class="">
             </div>
             
             <div class="name-details">
               <div class="staking-div">
-                <label for="expmonth">Exp Month</label>
-                <input type="text" id="expmonth" name="expmonth" placeholder="" class="payment-details">
+                <label for="expmonth">Month</label>
+                <input type="text" id="expmonth" name="expmonth" placeholder="Month" class="payment-details">
               </div>
               <div class="staking-div"id="year" >
                 <label for="expyear"> Year</label>
-                <input type="text" id="expyear" name="expyear" placeholder=""class="payment-details">
+                <input type="text" id="expyear" name="expyear" placeholder="Year" class="payment-details">
               </div>
               <div class="staking-div">
                 <label for="cvv" class="cvv">CVV</label>
-                <input type="text" id="cvv" name="cvv" placeholder="" class="cvv">
+                <input type="text" id="cvv" name="cvv" placeholder="CVV" class="cvv">
               </div>
             </div>
           

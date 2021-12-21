@@ -1,4 +1,4 @@
-import { CartList } from "./models/Isomething";
+import { CartList } from "./models/shoppingcart";
 
 window.onload = function () {
   cartToPage();

@@ -11,17 +11,13 @@ main {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 1.9rem;
+  width: 100%;
 }
 
 h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.product {
-  margin: 2rem;
 }
 
 .artist,

@@ -1,5 +1,4 @@
-import * as productObjects from "./models/product-objects";
-import { CartList } from "./models/Isomething";
+import * as productObjects from "./models/Article-class";
 
 let image001: string = "/assets/product-feed-img/1.jpg";
 let image002: string = "/assets/product-feed-img/2.jpg";
@@ -171,7 +170,7 @@ let product010: productObjects.Article = new productObjects.Article(
   "more info",
   "spotify",
   10,
-  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+  "https://open.spotify.com/album/4hGSG3qWkKxmZn72EEMFo5?si=K_8xFk7HSY62ugzLJuSPxg"
 );
 
 let product011: productObjects.Article = new productObjects.Article(
@@ -187,7 +186,7 @@ let product011: productObjects.Article = new productObjects.Article(
   "more info",
   "spotify",
   11,
-  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+  "https://open.spotify.com/album/7tB40pGzj6Tg0HePj2jWZt?si=-mD0qyD4TK6YP-ktTw7u3g"
 );
 let product012: productObjects.Article = new productObjects.Article(
   image012,
@@ -202,7 +201,7 @@ let product012: productObjects.Article = new productObjects.Article(
   "more info",
   "spotify",
   11,
-  "https://open.spotify.com/album/3CuUGJ6cFro2LQIiWlXOue?si=E7MhQu3qSoa0HRHoRZ7eNA"
+  "https://open.spotify.com/album/25ozhEOZbGRseRm8QSkfFL?si=bWbUrSnPTCWClbPRXZQfjQ"
 );
 export let products = [
   product001,

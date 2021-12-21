@@ -5,7 +5,7 @@
   justify-content: center;
   align-items: center;
   margin-top: 0;
-  margin-bottom: 10rem;
+  margin-bottom: 5rem;
 }
 
 #description-container {
@@ -33,16 +33,16 @@
   list-style: none;
 }
 
-.return-home {
-  font-weight: 700;
-  color: black;
+.return-home > a > .fa-close {
   background-color: white;
-  cursor: pointer;
-  border: none;
-  padding: 0;
-  margin-right: 10px;
-  font-size: 2.3rem;
-  margin-left: -1.5rem;
+  border-radius: 100%;
+  width: 2rem;
+  height: 2rem;
+  right: 3rem;
+  top: 8rem;
+  position: fixed;
+  z-index: 1;
+  font-size: 2rem;
 }
 
 .fa-close {
@@ -63,10 +63,7 @@ a {
   color: black;
 }
 
-#shopping-cart-offcanvas {
-  //cart-container
-}
-
+/* OFFCANVAS-CART */
 .overflow-auto {
   height: auto;
 }
@@ -76,7 +73,6 @@ a {
 }
 
 .cart-item-offcanvas {
-  //cart-product-container
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -136,6 +132,7 @@ a {
   transform: scale(1.01);
   box-shadow: 1px 1px 4px rgb(124, 121, 121);
 }
+
 .description-description > ul {
   list-style: none;
   position: absolute;
@@ -180,13 +177,13 @@ a {
 @media screen and (max-width: 1023px) {
   .main-description {
     height: 100vh;
-
     margin-bottom: 30%;
     padding-top: 30px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
   }
+
   .description-description > ul {
     list-style: none;
     position: absolute;
@@ -195,7 +192,6 @@ a {
     font-size: 0.8rem;
     width: 25%;
     padding: 1rem 0 1rem 1rem;
-    // border-top: 1px solid black;
   }
 
   #description-container {
@@ -206,6 +202,7 @@ a {
     font-size: 1.2rem;
     padding-top: 5rem;
   }
+
   .description-description {
     margin: 0;
   }
@@ -214,6 +211,7 @@ a {
     width: 25rem;
     height: 25rem;
   }
+
   .fa-close {
     // display: none;
     background-color: transparent;
@@ -224,6 +222,7 @@ a {
     font-size: 2rem;
   }
 }
+
 @media screen and (max-width: 656px) {
   #description-container {
     display: flex;
@@ -232,11 +231,11 @@ a {
     flex-wrap: wrap;
     font-size: 1rem;
     padding-top: 5rem;
-    padding-bottom: 1rem;
   }
+
   .main-description {
     height: 100vh;
-    margin-top: 20%;
+    // margin-top: 20%;
     margin-bottom: 55%;
     padding-top: 30px;
     display: flex;
@@ -248,9 +247,11 @@ a {
     width: 20rem;
     height: 20rem;
   }
+
   .fa-close {
     display: none;
   }
+
   .description-description {
     padding-bottom: 1rem;
   }
@@ -263,6 +264,5 @@ a {
     font-size: 0.8rem;
     width: 50%;
     padding: 1rem 0 1rem 1rem;
-    // border-top: 1px solid black;
   }
 }

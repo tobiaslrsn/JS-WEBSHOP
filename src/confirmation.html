@@ -4,19 +4,26 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="./scss/main.scss" />
+
+    <!-- FONT-AWESOME -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="./scss/main.scss" />
     <script>
       src = "https://kit.fontawesome.com/7c490574c4.js";
       crossorigin = "anonymous";
     </script>
+
+    <!-- SCRIPT -->
     <script src="./ts/confirmation.ts" type="module"></script>
 
-    <title>Document</title>
+    <title>MJT.RECORDS</title>
   </head>
+
   <body>
     <header>
       <nav class="nav-position">
@@ -32,6 +39,7 @@
         </div>
 
         <button id="cartCount-hide">0</button>
+
         <!-- OFFCANVAS BOOTSTRAP -->
         <button
           class="button-offcanvas"
@@ -43,6 +51,7 @@
         </button>
       </nav>
     </header>
+
     <main>
       <img id="vinyl" src="assets/Vinyl-record-icon.png" />
       <h1>Thank you for your order!</h1>
@@ -50,6 +59,7 @@
       <p>You will be receiving an email with order details</p>
       <div id="shopping-cart"></div>
     </main>
+
     <footer>
       <a id="faq"></a>
       <p class="subscribe-paragraph">

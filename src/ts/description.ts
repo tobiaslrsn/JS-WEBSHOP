@@ -1,10 +1,10 @@
-import { CartList } from "./models/Isomething";
+import { CartList } from "./models/shoppingcart";
 
 let cart = new CartList();
 
 window.onload = function () {
-  descriptionToPage();
   cart.offcanvasCart();
+  descriptionToPage();
 };
 
 let getObject: string = localStorage.getItem("product");

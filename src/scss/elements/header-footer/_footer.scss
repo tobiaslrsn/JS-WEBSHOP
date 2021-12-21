@@ -8,6 +8,7 @@ footer {
     text-align: center;
     padding-top: 2rem;
   }
+
   .news-container {
     display: flex;
     justify-content: center;
@@ -18,25 +19,31 @@ footer {
     height: 2.5rem;
     margin-bottom: 3rem;
   }
+
   .newsletter {
     width: 50vw;
     border: none;
   }
+
   .subscribe {
     width: 22vw;
     border: none;
   }
+
   .info {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-    // justify-content: center;
     align-items: center;
+    justify-content: space-evenly;
+    font-size: 0.85rem;
+    padding: 1rem;
   }
 
   .footer-column {
     width: 350px;
   }
+
   .contact-links {
     color: white;
     cursor: pointer;
@@ -51,6 +58,7 @@ footer {
     padding: 10px;
   }
 }
+
 .fa-linkedin-square {
   font-size: 1.5rem;
   margin-right: 0.3rem;
@@ -60,10 +68,12 @@ footer {
   font-size: 1.5rem;
   margin-right: 0.3rem;
 }
+
 .fa-envelope-square {
   font-size: 1.5rem;
   margin-right: 0.3rem;
 }
+
 .contact-mail {
   color: white;
 }
@@ -73,6 +83,7 @@ footer {
     display: flex;
     justify-content: center;
   }
+
   .info {
     display: flex;
     flex-direction: column;
