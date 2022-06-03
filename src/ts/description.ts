@@ -1,5 +1,6 @@
 import { CartList } from "./models/shoppingcart";
 
+import { products } from "./product-object";
 let cart = new CartList();
 
 window.onload = function () {

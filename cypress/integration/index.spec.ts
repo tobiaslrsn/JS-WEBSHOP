@@ -10,7 +10,7 @@ describe("click 'purchase' => added product to off canvas cart", () => {
 });
 
 //Can't find ciiiV? Vad betyder det?
-describe("click 'purchase' => added product to off canvas cart", () => {
+describe("press infor-button", () => {
   it("This should click on all .info-button & redirect to confirmation.html ( 12 in total)", () => {
     cy.visit("http://localhost:1234");
     cy.get(".info-button").click({ multiple: true, force: true });
